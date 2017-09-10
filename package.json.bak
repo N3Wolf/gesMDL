@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "gesMDL - Gestão MDL",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app"
-  },
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "^1.17.2",
@@ -20,7 +16,9 @@
     "typescript": "^2.5.2"
   },
   "devDependencies": {},
- 
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/N3Wolf/gesMDL.git"
