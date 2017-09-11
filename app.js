@@ -27,7 +27,7 @@ const app = express();
 const users = require('./routes/users');
 
 // Port number
-const port = process.env.PORT || 8080;
+const port = 3000;//process.env.PORT || 8080;
 
 // CORS middleware
 app.use(cors());
@@ -44,6 +44,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./config/passport')(passport);
+
+
+// app.use('/ng-gentelella', express.static(path.join(__dirname, 'node_modules', 'ng-gentelella')));
 
 app.use('/users', users);
 
