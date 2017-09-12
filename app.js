@@ -23,8 +23,11 @@ mongoose.connection.on('error', (err) => {
 // Tipo do App
 const app = express();
 
-// Declaração da rota do users
+// Declaração de rotas
 const users = require('./routes/users');
+const federacoes = require('./routes/federacoes');
+//const clubesdelaco = require('./routes/clubesdelaco');
+//const lacadores = require('./routes/lacadores');
 
 // Port number
 //const port = 3000;
@@ -47,9 +50,11 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 
-// app.use('/ng-gentelella', express.static(path.join(__dirname, 'node_modules', 'ng-gentelella')));
+app.use('/user', users);
+app.use('/federacao', federacoes);
+//app.use('/clubedelaco', clubesdelaco);
+//app.use('/lacador', lacadores);
 
-app.use('/users', users);
 
 // Index route
 app.get('/', (req,res) => {

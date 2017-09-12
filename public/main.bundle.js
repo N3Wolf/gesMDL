@@ -90,13 +90,17 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_sidenav_sidenav_component__ = __webpack_require__("../../../../../src/app/components/sidenav/sidenav.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_clubesdelaco_clubesdelaco_component__ = __webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_federacao_federacao_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_lacadores_lacadores_component__ = __webpack_require__("../../../../../src/app/components/lacadores/lacadores.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_federacao_service__ = __webpack_require__("../../../../../src/app/services/federacao.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_clubesdelaco_clubesdelaco_component__ = __webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_federacao_federacao_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_lacadores_lacadores_component__ = __webpack_require__("../../../../../src/app/components/lacadores/lacadores.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_federacao_federacao_view_federacao_view_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao-view/federacao-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_add_federacao_add_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao-add/federacao-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_federacao_federacao_edit_federacao_edit_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -124,15 +128,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
+
+
 var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'clubesdelaco', component: __WEBPACK_IMPORTED_MODULE_18__components_clubesdelaco_clubesdelaco_component__["a" /* ClubesdelacoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'federacao', component: __WEBPACK_IMPORTED_MODULE_19__components_federacao_federacao_component__["a" /* FederacaoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'lacadores', component: __WEBPACK_IMPORTED_MODULE_20__components_lacadores_lacadores_component__["a" /* LacadoresComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'clubesdelaco', component: __WEBPACK_IMPORTED_MODULE_19__components_clubesdelaco_clubesdelaco_component__["a" /* ClubesdelacoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'federacao', component: __WEBPACK_IMPORTED_MODULE_20__components_federacao_federacao_component__["a" /* FederacaoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'federacao-view', component: __WEBPACK_IMPORTED_MODULE_20__components_federacao_federacao_component__["a" /* FederacaoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'federacao-add', component: __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_add_federacao_add_component__["a" /* FederacaoAddComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'federacao-edit', component: __WEBPACK_IMPORTED_MODULE_24__components_federacao_federacao_edit_federacao_edit_component__["a" /* FederacaoEditComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'lacadores', component: __WEBPACK_IMPORTED_MODULE_21__components_lacadores_lacadores_component__["a" /* LacadoresComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] }
     //resto das routes aqui
 ];
 var AppModule = (function () {
@@ -151,19 +162,22 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
             __WEBPACK_IMPORTED_MODULE_12__components_sidenav_sidenav_component__["a" /* SidenavComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_clubesdelaco_clubesdelaco_component__["a" /* ClubesdelacoComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_federacao_federacao_component__["a" /* FederacaoComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_lacadores_lacadores_component__["a" /* LacadoresComponent */]
+            __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_clubesdelaco_clubesdelaco_component__["a" /* ClubesdelacoComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_federacao_federacao_component__["a" /* FederacaoComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_lacadores_lacadores_component__["a" /* LacadoresComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_federacao_federacao_view_federacao_view_component__["a" /* FederacaoViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_add_federacao_add_component__["a" /* FederacaoAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_federacao_federacao_edit_federacao_edit_component__["a" /* FederacaoEditComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-            __WEBPACK_IMPORTED_MODULE_15_angular2_flash_messages__["FlashMessagesModule"]
+            __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__["FlashMessagesModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_13__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_16__guards_auth_guard__["a" /* AuthGuard */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_13__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_15__services_federacao_service__["a" /* FederacaoService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -294,6 +308,237 @@ DashboardComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/federacao/federacao-add/federacao-add.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/federacao/federacao-add/federacao-add.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-sidenav></app-sidenav>\n<div class=\"col-md-9\">\n  <div id=\"addboxFederacao\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\n    <div class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n        <div class=\"panel-title\">Cadastro de nova Federação</div>\n      </div>\n      <div class=\"panel-body\">\n\n\n\n          <form id=\"federacaoForm\" class=\"form-horizontal\" role=\"form\" (submit)=\"onFederacaoSubmit()\">\n            <!-- Nome do clube -->\n            <div id=\"div_id_As\" class=\"form-group required\">\n              <div id=\"div_nomeclube\" class=\"form-group required\">\n                <label for=\"nomeclube\" class=\"control-label col-md-4  requiredField\"> Nome da Federação: <span class=\"asteriskField\">*</span> </label>\n                <div class=\"controls col-md-8 \">\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_nome\" maxlength=\"30\" [(ngModel)]=\"name\" name=\"name\" placeholder=\"Digite o nome da Federação\" style=\"margin-bottom: 10px\" type=\"text\" />\n                </div>\n              </div>\n              <!-- Razão Social -->\n              <div id=\"div_razaosocial\" class=\"form-group required\">\n                <label for=\"razaosocial\" class=\"control-label col-md-4  requiredField\"> Razão social <span class=\"asteriskField\">*</span> </label>\n                <div class=\"controls col-md-8 \">\n                  <input class=\"input-md textinput form-control\" id=\"id_razaosocial\" [(ngModel)]=\"razaosocial\" name=\"razaosocial\" placeholder=\"Digite a razão social\" style=\"margin-bottom: 10px\" type=\"text\" />\n                </div>\n              </div>\n              <!-- CNPJ -->\n              <div id=\"div_razaosocial\" class=\"form-group required\">\n                <label for=\"razaosocial\" class=\"control-label col-md-4  requiredField\"> CNPJ <span class=\"asteriskField\">*</span> </label>\n                <div class=\"controls col-md-8 \">\n                  <input class=\"input-md textinput form-control\" id=\"id_CNPJ\" [(ngModel)]=\"cnpj\" name=\"cnpj\" placeholder=\"Digite o CNPJ\" style=\"margin-bottom: 10px\" type=\"text\" />\n                </div>\n              </div>\n              <!-- email -->\n              <div id=\"div_email\" class=\"form-group required\">\n                <label for=\"email\" class=\"control-label col-md-4  requiredField\"> E-mail <span class=\"asteriskField\">*</span> </label>\n                <div class=\"controls col-md-8 \">\n                  <input class=\"input-md textinput form-control\" id=\"id_email\" [(ngModel)]=\"email\" name=\"email\" placeholder=\"Digite um e-mail de contato\" style=\"margin-bottom: 10px\" type=\"email\" />\n                </div>\n              </div>\n              <!-- STATUS -->\n              <label for=\"id_As\" class=\"control-label col-md-4  requiredField\">Status<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"status\" id=\"id_status_1\" [(ngModel)]=\"status\" value=\"true\"  style=\"margin-bottom: 10px\">Ativa </label>\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"status2\" id=\"id_status_2\" [(ngModel)]=\"status\" value=\"false\" style=\"margin-bottom: 10px\">Inativa</label>\n              </div>\n            </div>\n\n<!--\n            <div id=\"div_id_password1\" class=\"form-group required\">\n              <label for=\"id_password1\" class=\"control-label col-md-4  requiredField\">Password<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password1\" name=\"password1\" placeholder=\"Create a password\" style=\"margin-bottom: 10px\" type=\"password\" />\n              </div>\n            </div>\n            <div id=\"div_id_password2\" class=\"form-group required\">\n              <label for=\"id_password2\" class=\"control-label col-md-4  requiredField\"> Re:password<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password2\" name=\"password2\" placeholder=\"Confirm your password\" style=\"margin-bottom: 10px\" type=\"password\" />\n              </div>\n            </div>\n            <div id=\"div_id_name\" class=\"form-group required\">\n              <label for=\"id_name\" class=\"control-label col-md-4  requiredField\"> full name<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_name\" name=\"name\" placeholder=\"Your Frist name and Last name\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_gender\" class=\"form-group required\">\n              <label for=\"id_gender\" class=\"control-label col-md-4  requiredField\"> Gender<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_1\" value=\"M\"  style=\"margin-bottom: 10px\">Male</label>\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_2\" value=\"F\"  style=\"margin-bottom: 10px\">Female </label>\n              </div>\n            </div>\n            <div id=\"div_id_company\" class=\"form-group required\">\n              <label for=\"id_company\" class=\"control-label col-md-4  requiredField\"> company name<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_company\" name=\"company\" placeholder=\"your company name\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_catagory\" class=\"form-group required\">\n              <label for=\"id_catagory\" class=\"control-label col-md-4  requiredField\"> catagory<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_catagory\" name=\"catagory\" placeholder=\"skills catagory\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_number\" class=\"form-group required\">\n              <label for=\"id_number\" class=\"control-label col-md-4  requiredField\"> contact number<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_number\" name=\"number\" placeholder=\"provide your number\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_location\" class=\"form-group required\">\n              <label for=\"id_location\" class=\"control-label col-md-4  requiredField\"> Your Location<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_location\" name=\"location\" placeholder=\"Your Pincode and City\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div class=\"form-group\">\n              <div class=\"controls col-md-offset-4 col-md-8 \">\n                <div id=\"div_id_terms\" class=\"checkbox required\">\n                  <label for=\"id_terms\" class=\" requiredField\">\n                                         <input class=\"input-ms checkboxinput\" id=\"id_terms\" name=\"terms\" style=\"margin-bottom: 10px\" type=\"checkbox\" />\n                                         Agree with the terms and conditions\n                                    </label>\n                </div>\n\n              </div>\n            </div>  -->\n            <div class=\"form-group\">\n              <div class=\"aab controls col-md-4 \"></div>\n              <div class=\"controls col-md-8 \">\n                <button id=\"submit-id-save\" type=\"submit\" class=\"btn btn-primary btn btn-confirm\"><i class=\"icon-hand-right\">Salvar</i></button>\n\n                <input type=\"button\" name=\"BtnCancel\" value=\"Cancelar\" class=\"btn btn btn-cancel\" id=\"button-id-cancelar\" />\n              </div>\n            </div>\n\n          </form>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/federacao/federacao-add/federacao-add.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FederacaoAddComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__ = __webpack_require__("../../../../../src/app/services/federacao.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var FederacaoAddComponent = (function () {
+    function FederacaoAddComponent(validateService, flashMessage, federacaoService, router) {
+        this.validateService = validateService;
+        this.flashMessage = flashMessage;
+        this.federacaoService = federacaoService;
+        this.router = router;
+    }
+    FederacaoAddComponent.prototype.ngOnInit = function () {
+    };
+    FederacaoAddComponent.prototype.onFederacaoSubmit = function () {
+        var _this = this;
+        var federacao = {
+            name: this.name,
+            cnpj: this.cnpj,
+            razaosocial: this.razaosocial,
+            status: this.status,
+            email: this.email
+        };
+        // Required Fields
+        //  if(!this.validateService.validateFederacao(federacao)){
+        //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
+        //    return false;
+        //  }
+        //
+        //   // Validar o email
+        //   if(!this.validateService.validateEmail(user.email)){
+        //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
+        //     return false;
+        //   }
+        //
+        // Register user
+        this.federacaoService.addFederacao(federacao).subscribe(function (data) {
+            if (data.success) {
+                //console.log(data);
+                _this.router.navigate(['federacao-view'], { queryParams: { id: data.id } });
+                _this.flashMessage.show('Federação registrada com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
+            }
+            else {
+                _this.flashMessage.show('Ocorreu um erro ao tentar registrar seu usuário. Favor entre em contato com o suporte técnico do sistema.', { cssClass: 'alert-danger', timeout: 3000 });
+            }
+        });
+    };
+    return FederacaoAddComponent;
+}());
+FederacaoAddComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-federacao-add',
+        template: __webpack_require__("../../../../../src/app/components/federacao/federacao-add/federacao-add.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/federacao/federacao-add/federacao-add.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _d || Object])
+], FederacaoAddComponent);
+
+;
+var _a, _b, _c, _d;
+//# sourceMappingURL=federacao-add.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  federacao-edit works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FederacaoEditComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FederacaoEditComponent = (function () {
+    function FederacaoEditComponent() {
+    }
+    FederacaoEditComponent.prototype.ngOnInit = function () {
+    };
+    return FederacaoEditComponent;
+}());
+FederacaoEditComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-federacao-edit',
+        template: __webpack_require__("../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], FederacaoEditComponent);
+
+//# sourceMappingURL=federacao-edit.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/federacao/federacao-view/federacao-view.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/federacao/federacao-view/federacao-view.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  federacao-view works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/federacao/federacao-view/federacao-view.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FederacaoViewComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FederacaoViewComponent = (function () {
+    function FederacaoViewComponent() {
+    }
+    FederacaoViewComponent.prototype.ngOnInit = function () {
+    };
+    return FederacaoViewComponent;
+}());
+FederacaoViewComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-federacao-view',
+        template: __webpack_require__("../../../../../src/app/components/federacao/federacao-view/federacao-view.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/federacao/federacao-view/federacao-view.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], FederacaoViewComponent);
+
+//# sourceMappingURL=federacao-view.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/federacao/federacao.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -315,7 +560,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/federacao/federacao.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-sidenav></app-sidenav>\n<div class=\"col-md-9\">\n  <div id=\"addboxFederacao\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\n    <div class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n        <div class=\"panel-title\">Registro da Federação</div>\n      </div>\n      <div class=\"panel-body\">\n        <form method=\"post\" action=\".\">\n          <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />\n\n\n          <form class=\"form-horizontal\" method=\"post\" (submit)=\"onFederacaoSubmit()\">\n            <!-- Nome do clube -->\n            <div id=\"div_id_As\" class=\"form-group required\">\n              <div id=\"div_nomeclube\" class=\"form-group required\">\n                <label for=\"nomeclube\" class=\"control-label col-md-4  requiredField\"> Nome da Federação: <span class=\"asteriskField\">*</span> </label>\n                <div class=\"controls col-md-8 \">\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_nome\" maxlength=\"30\" [(ngModel)]=\"nome\" name=\"nome\" placeholder=\"Digite o nome da Federação\" style=\"margin-bottom: 10px\" type=\"text\" />\n                </div>\n              </div>\n              <!-- Razão Social -->\n              <div id=\"div_razaosocial\" class=\"form-group required\">\n                <label for=\"razaosocial\" class=\"control-label col-md-4  requiredField\"> Razão social <span class=\"asteriskField\">*</span> </label>\n                <div class=\"controls col-md-8 \">\n                  <input class=\"input-md textinput form-control\" id=\"id_razaosocial\" [(ngModel)]=\"razaosocial\" name=\"razaosocial\" placeholder=\"Digite a razão social\" style=\"margin-bottom: 10px\" type=\"text\" />\n                </div>\n              </div>\n              <!-- CNPJ -->\n              <div id=\"div_razaosocial\" class=\"form-group required\">\n                <label for=\"razaosocial\" class=\"control-label col-md-4  requiredField\"> CNPJ <span class=\"asteriskField\">*</span> </label>\n                <div class=\"controls col-md-8 \">\n                  <input class=\"input-md textinput form-control\" id=\"id_CNPJ\" [(ngModel)]=\"CNPJ\" name=\"CNPJ\" placeholder=\"Digite o CNPJ\" style=\"margin-bottom: 10px\" type=\"text\" />\n                </div>\n              </div>\n              <!-- STATUS -->\n              <label for=\"id_As\" class=\"control-label col-md-4  requiredField\">Status<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\n                <label class=\"radio-inline\"> <input type=\"radio\"  checked name=\"status\" id=\"id_status_1\" value=\"true\"  style=\"margin-bottom: 10px\">Ativa </label>\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"status\" id=\"id_status_2\" value=\"false\"  style=\"margin-bottom: 10px\">Inativa</label>\n              </div>\n            </div>\n\n<!--\n            <div id=\"div_id_password1\" class=\"form-group required\">\n              <label for=\"id_password1\" class=\"control-label col-md-4  requiredField\">Password<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password1\" name=\"password1\" placeholder=\"Create a password\" style=\"margin-bottom: 10px\" type=\"password\" />\n              </div>\n            </div>\n            <div id=\"div_id_password2\" class=\"form-group required\">\n              <label for=\"id_password2\" class=\"control-label col-md-4  requiredField\"> Re:password<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password2\" name=\"password2\" placeholder=\"Confirm your password\" style=\"margin-bottom: 10px\" type=\"password\" />\n              </div>\n            </div>\n            <div id=\"div_id_name\" class=\"form-group required\">\n              <label for=\"id_name\" class=\"control-label col-md-4  requiredField\"> full name<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_name\" name=\"name\" placeholder=\"Your Frist name and Last name\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_gender\" class=\"form-group required\">\n              <label for=\"id_gender\" class=\"control-label col-md-4  requiredField\"> Gender<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_1\" value=\"M\"  style=\"margin-bottom: 10px\">Male</label>\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_2\" value=\"F\"  style=\"margin-bottom: 10px\">Female </label>\n              </div>\n            </div>\n            <div id=\"div_id_company\" class=\"form-group required\">\n              <label for=\"id_company\" class=\"control-label col-md-4  requiredField\"> company name<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_company\" name=\"company\" placeholder=\"your company name\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_catagory\" class=\"form-group required\">\n              <label for=\"id_catagory\" class=\"control-label col-md-4  requiredField\"> catagory<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_catagory\" name=\"catagory\" placeholder=\"skills catagory\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_number\" class=\"form-group required\">\n              <label for=\"id_number\" class=\"control-label col-md-4  requiredField\"> contact number<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_number\" name=\"number\" placeholder=\"provide your number\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_location\" class=\"form-group required\">\n              <label for=\"id_location\" class=\"control-label col-md-4  requiredField\"> Your Location<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_location\" name=\"location\" placeholder=\"Your Pincode and City\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div class=\"form-group\">\n              <div class=\"controls col-md-offset-4 col-md-8 \">\n                <div id=\"div_id_terms\" class=\"checkbox required\">\n                  <label for=\"id_terms\" class=\" requiredField\">\n                                         <input class=\"input-ms checkboxinput\" id=\"id_terms\" name=\"terms\" style=\"margin-bottom: 10px\" type=\"checkbox\" />\n                                         Agree with the terms and conditions\n                                    </label>\n                </div>\n\n              </div>\n            </div>  -->\n            <div class=\"form-group\">\n              <div class=\"aab controls col-md-4 \"></div>\n              <div class=\"controls col-md-8 \">\n                <input type=\"submit\" name=\"btnSAlvar\" value=\"Salvar\" class=\"btn btn-primary btn btn-confirm\" id=\"submit-id-save\" />\n                <input type=\"button\" name=\"BtnCancel\" value=\"Cancelar\" class=\"btn btn btn-cancel\" id=\"button-id-cancelar\" />\n              </div>\n            </div>\n\n          </form>\n\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<app-sidenav></app-sidenav>\r\n\r\n<div class=\"col-md-9\">\r\n  <div id=\"addboxFederacao\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\r\n    <div class=\"panel panel-info\">\r\n      <div class=\"panel-heading\">\r\n        <div class=\"panel-title\">Federações Cadastradas                         <a [routerLink]=\"['/federacao-add']\" style=\"float: right; font-size: 16px; border-style='solid'\"><span class=\"fa fa-plus\" > Adicionar </span></a></div>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n  <!-- <div class=\"panel-body col-md-12 col-md-offset-0 col-sm-0\" style=\"margin-top:30px\">\r\n\r\n  <div id=\"DataTables_Table_0_wrapper\" class=\"dataTables_wrapper no-footer\">\r\n    <div class=\"dataTables_length\" id=\"DataTables_Table_0_length\">\r\n      <label>Show <select name=\"DataTables_Table_0_length\" aria-controls=\"DataTables_Table_0\" class=\"form-control\">\r\n        <option value=\"10\">10</option><option value=\"25\">25</option>\r\n        <option value=\"50\">50</option><option value=\"100\">100</option>\r\n      </select> entries</label></div>\r\n    <div id=\"DataTables_Table_0_filter\" class=\"dataTables_filter\">\r\n      <label>Search:<input type=\"search\" class=\"form-control \" placeholder=\"\" aria-controls=\"DataTables_Table_0\"></label></div> -->\r\n\r\n  <table *ngFor=\"let obj of objfed\" class=\"table datatable dataTable no-footer\" id=\"DataTables_Table_0\" role=\"grid\" aria-describedby=\"DataTables_Table_0_info\">\r\n    <thead>\r\n      <tr role=\"row\">\r\n        <th class=\"sorting_asc\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-sort=\"ascending\" aria-label=\"\" style=\"width: 307px;\">Nome</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Position: activate to sort column ascending\" style=\"width: 476px;\">Razão Social</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Office: activate to sort column ascending\" style=\"width: 233px;\">CNPJ</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Age: activate to sort column ascending\" style=\"width: 115px;\">E-mail</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Start date: activate to sort column ascending\" style=\"width: 215px;\">Status</th>\r\n        <!-- <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Start date: activate to sort column ascending\" style=\"width: 215px;\">Ações</th> -->\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr role=\"row\" >\r\n          <tr role=\"row\" *ngFor=\"let registro of obj\">\r\n            <td class=\"sorting_1\">{{registro.name}}</td>\r\n            <td>{{registro.razaosocial}}</td>\r\n            <td>{{registro.cnpj}}</td>\r\n            <td>{{registro.email}}</td>\r\n            <td>{{registro.status ? 'Ativo': 'Inativo'}}</td>\r\n            <td><span class=\"fa fa-edit\"></span></td>\r\n            <td><span class=\"glyphicon glyphicon-remove\"></span></td>\r\n\r\n          </tr>\r\n    </tbody>\r\n  </table>\r\n  <!-- <div class=\"dataTables_info\" id=\"DataTables_Table_0_info\" role=\"status\" aria-live=\"polite\">Showing 1 to 10 of 57 entries</div> -->\r\n  <!-- <div class=\"dataTables_paginate paging_simple_numbers\" id=\"DataTables_Table_0_paginate\"><a class=\"paginate_button previous disabled\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\">Previous</a><span><a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"1\" tabindex=\"0\">1</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"2\" tabindex=\"0\">2</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"3\" tabindex=\"0\">3</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"4\" tabindex=\"0\">4</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"5\" tabindex=\"0\">5</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"6\" tabindex=\"0\">6</a></span> -->\r\n    <!-- <a class=\"paginate_button next\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"7\" tabindex=\"0\" id=\"DataTables_Table_0_next\">Next</a> -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -325,6 +570,11 @@ module.exports = "<app-sidenav></app-sidenav>\n<div class=\"col-md-9\">\n  <div 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FederacaoComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__ = __webpack_require__("../../../../../src/app/services/federacao.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -335,10 +585,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
 var FederacaoComponent = (function () {
-    function FederacaoComponent() {
+    function FederacaoComponent(validateService, flashMessage, federacaoService, router) {
+        this.validateService = validateService;
+        this.flashMessage = flashMessage;
+        this.federacaoService = federacaoService;
+        this.router = router;
     }
     FederacaoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.federacaoService.getFederacoes().subscribe(function (federacoes) {
+            var registros = 0;
+            var teste = Object.keys(federacoes).map(function (key) { return federacoes[key]; });
+            _this.objfed = teste;
+        });
+        //this.federacoes.count = 1 ;// = this.federacoes.length;
     };
     return FederacaoComponent;
 }());
@@ -348,9 +613,10 @@ FederacaoComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/federacao/federacao.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/federacao/federacao.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _d || Object])
 ], FederacaoComponent);
 
+var _a, _b, _c, _d;
 //# sourceMappingURL=federacao.component.js.map
 
 /***/ }),
@@ -916,7 +1182,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/sidenav/sidenav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n        <div class=\"col-md-3\" style=\"margin-top:30px\">\r\n            <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->\r\n            <div id=\"sidebar\" class=\"well sidebar-nav\">\r\n                <h5><i class=\"glyphicon glyphicon-info-sign\"></i>\r\n                  <small><b>INFORMAÇÕES</b></small>\r\n              </h5>\r\n                <ul class=\"nav nav-pills nav-stacked\">\r\n                    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n                </ul>\r\n                <h5><i class=\"glyphicon glyphicon-home\"></i>\r\n                    <small><b>GESTÃO</b></small>\r\n                </h5>\r\n                <ul class=\"nav nav-pills nav-stacked\">\r\n                    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/federacao']\">Federação</a></li>\r\n                    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/clubesdelaco']\">Clubes de laço</a></li>\r\n                    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/lacadores']\">Laçadores</a></li>\r\n                    \r\n                </ul>\r\n            </div>\r\n        </div>\r\n"
+module.exports = "        <div class=\"col-md-3 col-md-offset-0 col-sm-0 \" style=\"margin-top:30px\">\r\n          <div >\r\n              <div class=\"panel panel-info\">\r\n                <div class=\"panel-heading\">\r\n                  <div class=\"panel-title\">Menu de navegação</div>\r\n                </div>\r\n\r\n            <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->\r\n            <div id=\"sidebar\" class=\"well sidebar-nav\" style=\"background-color:#ffffff \">\r\n                <h5><i class=\"glyphicon glyphicon-info-sign\"></i>\r\n                  <small><b>INFORMAÇÕES</b></small>\r\n              </h5>\r\n                <ul class=\"nav nav-pills nav-stacked\">\r\n                    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\r\n                </ul>\r\n                <h5><i class=\"glyphicon glyphicon-home\"></i>\r\n                    <small><b>GESTÃO</b></small>\r\n                </h5>\r\n                <ul class=\"nav nav-pills nav-stacked\">\r\n                    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/federacao']\">Federação</a></li>\r\n                    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/clubesdelaco']\">Clubes de laço</a></li>\r\n                    <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/lacadores']\">Laçadores</a></li>\r\n\r\n                </ul>\r\n\r\n        </div>\r\n"
 
 /***/ }),
 
@@ -1041,8 +1307,6 @@ var AuthService = (function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         var ep = this.prepEndpoint('users/authenticate');
-        console.log('ep');
-        console.log(ep);
         return this.http.post(ep, user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
@@ -1090,6 +1354,72 @@ AuthService = __decorate([
 
 var _a;
 //# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/federacao.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FederacaoService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+// let federacoes = [
+//   { title: 'Federação 1', isActive: true },
+//   { title: 'Federação 2', isActive: true },
+//   { title: 'Federação 3', isActive: false },
+//   { title: 'Federação 4', isActive: false },
+// ];
+var FederacaoService = (function () {
+    function FederacaoService(authService, http) {
+        this.authService = authService;
+        this.http = http;
+    }
+    FederacaoService.prototype.getFederacoes = function () {
+        //return new Promise(resolve => resolve(federacoes));
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('federacao/list');
+        //console.log('service - getFederacoes()');
+        return this.http.get(ep, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    FederacaoService.prototype.addFederacao = function (federacao) {
+        //return new Promise(resolve => resolve(federacoes));
+        //console.log('passou aqui');
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('federacao/add');
+        return this.http.post(ep, federacao, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    return FederacaoService;
+}());
+FederacaoService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _b || Object])
+], FederacaoService);
+
+var _a, _b;
+//# sourceMappingURL=federacao.service.js.map
 
 /***/ }),
 
