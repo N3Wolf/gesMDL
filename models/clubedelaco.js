@@ -2,54 +2,78 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 
-// clubesdelaco Schema
-// const FederacaoSchema = mongoose.Schema({
-//   name: {
-//     type: String,
-//     required: true
-//   },
-//   email: {
-//     type: String,
-//     required: true
-//   },
-//   razaosocial: {
-//     type: String,
-//     required: true
-//   },
-//   cnpj: {
-//     type: String,
-//     required: true
-//   },
-//   status: {
-//     type: Boolean,
-//     required: true
-//   }
-// });
-//
-// const Federacao = module.exports = mongoose.model('Federacao', FederacaoSchema);
-// 
-// // Get
-// module.exports.getFederacaoById = function(id, callback){
-//   Federacao.findById(id, callback);
-// }
-//
-// module.exports.getFederacaoByUsername = function(name, callback){
-//   const query = {name: name}
-//   User.findOne(query, callback);
-// }
-//
-// module.exports.getFederacaoByCNPJ = function(name, callback){
-//   const query = {cnpj: cnpj}
-//   User.findOne(query, callback);
-// }
-//
-// module.exports.getFederacaoByEmail = function(name, callback){
-//   const query = {email: email}
-//   User.findOne(query, callback);
-// }
-//
-// // Add
-// module.exports.addFederacao = function(newFederacao, callback){
-//       newUser.save(callback);
-//   });
-// }
+// Clubedelaco Schema
+const ClubedelacoSchema = mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  sede: {
+    type: String,
+    required: true
+  },
+  status: {
+    type: Boolean,
+    required: true
+  }
+});
+
+const Clubedelaco = module.exports = mongoose.model('Clubedelaco', ClubedelacoSchema);
+
+// Get
+module.exports.getClubedelacoList = function(all,callback){
+  Clubedelaco.find(all, callback);
+}
+
+module.exports.getClubedelacoById = function(id, callback){
+  const query = {_id: id}
+  Clubedelaco.findOne(query, callback);
+}
+
+module.exports.getClubedelacoByName = function(name, callback){
+  const query = {name: name}
+  Clubedelaco.findOne(query, callback);
+}
+
+module.exports.getClubedelacoByCNPJ = function(cnpj, callback){
+  const query = {cnpj: cnpj}
+  Clubedelaco.findOne(query, callback);
+}
+
+module.exports.getClubedelacoByEmail = function(email, callback){
+  const query = {email: email}
+  Clubedelaco.findOne(query, callback);
+}
+
+// Add
+module.exports.addClubedelaco = function(newClubedelaco, callback){
+      newClubedelaco.save(callback);
+  };
+
+//remove
+
+module.exports.removeClubedelaco = function(idClubedelaco,callback){
+  console.log(6);
+  const query = {_id: idClubedelaco}
+  Clubedelaco.remove(query, callback);
+}
+
+//update
+module.exports.updateById = function(clubedelaco,callback){
+  const query = {_id: clubedelaco._id};
+  const sets = {
+    $set : {
+      "name": clubedelaco.name,
+      "email": clubedelaco.email,
+      "sede": clubedelaco.sede,
+      "status": clubedelaco.status
+    }
+  };
+  console.log(sets);
+  Clubedelaco.updateOne(query, sets, callback);
+  console.log(callback);
+}

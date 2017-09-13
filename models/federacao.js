@@ -33,14 +33,9 @@ module.exports.getFederacaoList = function(all,callback){
   Federacao.find(all, callback);
 }
 
-module.exports.getUserByUsername = function(username, callback){
-  const query = {username: username}
-  User.findOne(query, callback);
-}
-
-
 module.exports.getFederacaoById = function(id, callback){
-  Federacao.findById(id, callback);
+  const query = {_id: id}
+  Federacao.findOne(query, callback);
 }
 
 module.exports.getFederacaoByName = function(name, callback){
@@ -62,3 +57,28 @@ module.exports.getFederacaoByEmail = function(email, callback){
 module.exports.addFederacao = function(newFederacao, callback){
       newFederacao.save(callback);
   };
+
+//remove
+
+module.exports.removeFederacao = function(idFederacao,callback){
+  console.log(6);
+  const query = {_id: idFederacao}
+  Federacao.remove(query, callback);
+}
+
+//update
+module.exports.updateById = function(federacao,callback){
+  const query = {_id: federacao._id};
+  const sets = {
+    $set : {
+      "name": federacao.name,
+      "email": federacao.email,
+      "razaosocial": federacao.razaosocial,
+      "cnpj": federacao.cnpj,
+      "status": federacao.status
+    }
+  };
+  console.log(sets);
+  Federacao.updateOne(query, sets, callback);
+  console.log(callback);
+}

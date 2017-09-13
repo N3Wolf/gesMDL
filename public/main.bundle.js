@@ -91,22 +91,26 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_federacao_service__ = __webpack_require__("../../../../../src/app/services/federacao.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_clubesdelaco_clubesdelaco_component__ = __webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_federacao_federacao_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_lacadores_lacadores_component__ = __webpack_require__("../../../../../src/app/components/lacadores/lacadores.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_federacao_federacao_view_federacao_view_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao-view/federacao-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_add_federacao_add_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao-add/federacao-add.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_federacao_federacao_edit_federacao_edit_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_clubesdelaco_service__ = __webpack_require__("../../../../../src/app/services/clubesdelaco.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__ = __webpack_require__("../../../../../src/app/guards/auth.guard.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_clubesdelaco_clubesdelaco_component__ = __webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_federacao_federacao_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_lacadores_lacadores_component__ = __webpack_require__("../../../../../src/app/components/lacadores/lacadores.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_view_federacao_view_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao-view/federacao-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_federacao_federacao_add_federacao_add_component__ = __webpack_require__("../../../../../src/app/components/federacao/federacao-add/federacao-add.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_clubesdelaco_clubesdelaco_view_clubesdelaco_view_component__ = __webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco-view/clubesdelaco-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_lacadores_lacadores_view_lacadores_view_component__ = __webpack_require__("../../../../../src/app/components/lacadores/lacadores-view/lacadores-view.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -136,14 +140,13 @@ var appRoutes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_8__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_7__components_login_login_component__["a" /* LoginComponent */] },
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'clubesdelaco', component: __WEBPACK_IMPORTED_MODULE_19__components_clubesdelaco_clubesdelaco_component__["a" /* ClubesdelacoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'federacao', component: __WEBPACK_IMPORTED_MODULE_20__components_federacao_federacao_component__["a" /* FederacaoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'federacao-view', component: __WEBPACK_IMPORTED_MODULE_20__components_federacao_federacao_component__["a" /* FederacaoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'federacao-add', component: __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_add_federacao_add_component__["a" /* FederacaoAddComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'federacao-edit', component: __WEBPACK_IMPORTED_MODULE_24__components_federacao_federacao_edit_federacao_edit_component__["a" /* FederacaoEditComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] },
-    { path: 'lacadores', component: __WEBPACK_IMPORTED_MODULE_21__components_lacadores_lacadores_component__["a" /* LacadoresComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */]] }
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'federacao', component: __WEBPACK_IMPORTED_MODULE_21__components_federacao_federacao_component__["a" /* FederacaoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'federacao-view', component: __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_view_federacao_view_component__["a" /* FederacaoViewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'clubesdelaco', component: __WEBPACK_IMPORTED_MODULE_20__components_clubesdelaco_clubesdelaco_component__["a" /* ClubesdelacoComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'clubesdelaco-view', component: __WEBPACK_IMPORTED_MODULE_25__components_clubesdelaco_clubesdelaco_view_clubesdelaco_view_component__["a" /* ClubesdelacoViewComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'lacadores', component: __WEBPACK_IMPORTED_MODULE_22__components_lacadores_lacadores_component__["a" /* LacadoresComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */]] }
     //resto das routes aqui
 ];
 var AppModule = (function () {
@@ -162,27 +165,187 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
             __WEBPACK_IMPORTED_MODULE_11__components_profile_profile_component__["a" /* ProfileComponent */],
             __WEBPACK_IMPORTED_MODULE_12__components_sidenav_sidenav_component__["a" /* SidenavComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_clubesdelaco_clubesdelaco_component__["a" /* ClubesdelacoComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_federacao_federacao_component__["a" /* FederacaoComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__components_lacadores_lacadores_component__["a" /* LacadoresComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__components_federacao_federacao_view_federacao_view_component__["a" /* FederacaoViewComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_add_federacao_add_component__["a" /* FederacaoAddComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_federacao_federacao_edit_federacao_edit_component__["a" /* FederacaoEditComponent */]
+            __WEBPACK_IMPORTED_MODULE_19__components_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_clubesdelaco_clubesdelaco_component__["a" /* ClubesdelacoComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_federacao_federacao_component__["a" /* FederacaoComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_lacadores_lacadores_component__["a" /* LacadoresComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_federacao_federacao_view_federacao_view_component__["a" /* FederacaoViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_federacao_federacao_add_federacao_add_component__["a" /* FederacaoAddComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_clubesdelaco_clubesdelaco_view_clubesdelaco_view_component__["a" /* ClubesdelacoViewComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_lacadores_lacadores_view_lacadores_view_component__["a" /* LacadoresViewComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["HttpModule"],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(appRoutes),
-            __WEBPACK_IMPORTED_MODULE_16_angular2_flash_messages__["FlashMessagesModule"]
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["c" /* RouterModule */].forRoot(appRoutes),
+            __WEBPACK_IMPORTED_MODULE_17_angular2_flash_messages__["FlashMessagesModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_13__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_17__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_15__services_federacao_service__["a" /* FederacaoService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_13__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_14__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_18__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_15__services_federacao_service__["a" /* FederacaoService */], __WEBPACK_IMPORTED_MODULE_16__services_clubesdelaco_service__["a" /* ClubesdelacoService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/clubesdelaco/clubesdelaco-view/clubesdelaco-view.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/clubesdelaco/clubesdelaco-view/clubesdelaco-view.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<app-sidenav></app-sidenav>\r\n<div class=\"col-md-9\">\r\n  <div id=\"addboxClubeLaco\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\r\n    <div class=\"panel panel-info\">\r\n      <div class=\"panel-heading\">\r\n        <div class=\"panel-title\">Cadastro do Clube de Laço</div>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n\r\n          <form form id=\"clubedelacoForm\" class=\"form-horizontal\" role=\"form\" (submit)=\"onClubesdelacoSubmit()\">\r\n            <!-- Nome do clube -->\r\n            <div id=\"div_id_As\" class=\"form-group required\">\r\n              <div id=\"div_nomeclube\" class=\"form-group required\">\r\n                <label for=\"nomeclube\" class=\"control-label col-md-4  requiredField\"> Nome do clube: <span class=\"asteriskField\">*</span> </label>\r\n                <div *ngIf=\"isView\" class=\"controls col-md-8 \">\r\n                  <p style=\"margin-top: 10px\" type=\"text\">{{this.Clubedelaco.name}} </p>\r\n                </div>\r\n                <div *ngIf=\"!isView\" class=\"controls col-md-8 \">\r\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_name\" maxlength=\"30\" [(ngModel)]=\"Clubedelaco.name\" name=\"name\" placeholder=\"Escolha um nome para o Clube\" style=\"margin-bottom: 10px\" type=\"text\">\r\n                </div>\r\n              </div>\r\n\r\n\r\n              <div id=\"div_sede_localização\" class=\"form-group required\">\r\n                <label for=\"sede_localizacao\" class=\"control-label col-md-4  requiredField\"> Sede / Localizacao <span class=\"asteriskField\">*</span> </label>\r\n                <div *ngIf=\"isView\" class=\"controls col-md-8 \">\r\n                  <p style=\"margin-top: 10px\" type=\"text\">{{this.Clubedelaco.sede}} </p>\r\n                </div>\r\n                <div *ngIf=\"!isView\" class=\"controls col-md-8 \">\r\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_sede\" maxlength=\"30\" [(ngModel)]=\"Clubedelaco.sede\" name=\"sede\" placeholder=\"Sede ou localização do clube\" style=\"margin-bottom: 10px\" type=\"text\">\r\n                </div>\r\n              </div>\r\n\r\n              <div id=\"div_email\" class=\"form-group required\">\r\n                <label for=\"email\" class=\"control-label col-md-4  requiredField\"> E-mail <span class=\"asteriskField\">*</span> </label>\r\n                <div *ngIf=\"isView\" class=\"controls col-md-8 \">\r\n                  <p style=\"margin-top: 10px\" type=\"text\">{{this.Clubedelaco.email}} </p>\r\n                </div>\r\n                <div *ngIf=\"!isView\" class=\"controls col-md-8 \">\r\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_email\" maxlength=\"30\" [(ngModel)]=\"Clubedelaco.email\" name=\"email\" placeholder=\"Sede ou localização do clube\" style=\"margin-bottom: 10px\" type=\"text\">\r\n                </div>\r\n              </div>\r\n            </div>\r\n              <!-- <label for=\"id_As\" class=\"control-label col-md-4  requiredField\">Status<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\r\n                <label class=\"radio-inline\"> <input type=\"radio\"  checked name=\"As\" id=\"id_As_1\" value=\"I\"  style=\"margin-bottom: 10px\">Ativo </label>\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"As\" id=\"id_As_2\" value=\"CI\"  style=\"margin-bottom: 10px\">Inativo </label>\r\n              </div>\r\n            </div> -->\r\n\r\n<!--\r\n            <div id=\"div_id_password1\" class=\"form-group required\">\r\n              <label for=\"id_password1\" class=\"control-label col-md-4  requiredField\">Password<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password1\" name=\"password1\" placeholder=\"Create a password\" style=\"margin-bottom: 10px\" type=\"password\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_password2\" class=\"form-group required\">\r\n              <label for=\"id_password2\" class=\"control-label col-md-4  requiredField\"> Re:password<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password2\" name=\"password2\" placeholder=\"Confirm your password\" style=\"margin-bottom: 10px\" type=\"password\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_name\" class=\"form-group required\">\r\n              <label for=\"id_name\" class=\"control-label col-md-4  requiredField\"> full name<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_name\" name=\"name\" placeholder=\"Your Frist name and Last name\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_gender\" class=\"form-group required\">\r\n              <label for=\"id_gender\" class=\"control-label col-md-4  requiredField\"> Gender<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_1\" value=\"M\"  style=\"margin-bottom: 10px\">Male</label>\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_2\" value=\"F\"  style=\"margin-bottom: 10px\">Female </label>\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_company\" class=\"form-group required\">\r\n              <label for=\"id_company\" class=\"control-label col-md-4  requiredField\"> company name<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_company\" name=\"company\" placeholder=\"your company name\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_catagory\" class=\"form-group required\">\r\n              <label for=\"id_catagory\" class=\"control-label col-md-4  requiredField\"> catagory<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_catagory\" name=\"catagory\" placeholder=\"skills catagory\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_number\" class=\"form-group required\">\r\n              <label for=\"id_number\" class=\"control-label col-md-4  requiredField\"> contact number<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_number\" name=\"number\" placeholder=\"provide your number\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_location\" class=\"form-group required\">\r\n              <label for=\"id_location\" class=\"control-label col-md-4  requiredField\"> Your Location<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_location\" name=\"location\" placeholder=\"Your Pincode and City\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <div class=\"controls col-md-offset-4 col-md-8 \">\r\n                <div id=\"div_id_terms\" class=\"checkbox required\">\r\n                  <label for=\"id_terms\" class=\" requiredField\">\r\n                                         <input class=\"input-ms checkboxinput\" id=\"id_terms\" name=\"terms\" style=\"margin-bottom: 10px\" type=\"checkbox\" />\r\n                                         Agree with the terms and conditions\r\n                                    </label>\r\n                </div>\r\n\r\n              </div>\r\n            </div>  -->\r\n            <div class=\"form-group\">\r\n              <div class=\"aab controls col-md-4 \"></div>\r\n              <div class=\"controls col-md-8 \">\r\n                <button *ngIf=\"!isView\" id=\"submit-id-save\" type=\"submit\" class=\"btn btn-primary btn btn-confirm\"><i class=\"icon-hand-right\">Salvar</i></button>\r\n                <input type=\"button\" [routerLink]=\"['/clubesdelaco']\"  name=\"BtnCancel\" value=\"Voltar\" class=\"btn btn btn-cancel\" id=\"button-id-cancelar\" >\r\n\r\n\r\n              </div>\r\n            </div>\r\n\r\n          </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/clubesdelaco/clubesdelaco-view/clubesdelaco-view.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubesdelacoViewComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__ = __webpack_require__("../../../../../src/app/services/federacao.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_clubesdelaco_service__ = __webpack_require__("../../../../../src/app/services/clubesdelaco.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var ClubesdelacoViewComponent = (function () {
+    function ClubesdelacoViewComponent(validateService, flashMessage, federacaoService, router, route, clubesdelacoService) {
+        this.validateService = validateService;
+        this.flashMessage = flashMessage;
+        this.federacaoService = federacaoService;
+        this.router = router;
+        this.route = route;
+        this.clubesdelacoService = clubesdelacoService;
+        this.Clubedelaco = {
+            _id: String,
+            name: String,
+            sede: String,
+            email: String,
+            status: Boolean,
+        };
+    }
+    ClubesdelacoViewComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params.id) {
+                _this.idRecord = params.id;
+            }
+            _this.isInsert = true ? params.isInsert : true;
+            _this.isEdit = true ? params.isEdit : true;
+            _this.isView = true ? params.isView : true;
+        });
+        if (!this.isInsert) {
+            this.clubesdelacoService.getClubedelacoById(this.idRecord).subscribe(function (result) {
+                _this.Clubedelaco = result.clubedelaco;
+            });
+        }
+        else {
+            this.Clubedelaco.name = null;
+            this.Clubedelaco.sede = null;
+            this.Clubedelaco.email = null;
+            this.Clubedelaco.status = null;
+        }
+    };
+    ClubesdelacoViewComponent.prototype.onClubesdelacoSubmit = function () {
+        var _this = this;
+        var newClubedelaco = {
+            name: this.Clubedelaco.name,
+            sede: this.Clubedelaco.sede,
+            email: this.Clubedelaco.email,
+            status: true,
+        };
+        console.log(newClubedelaco);
+        console.log('newClubedelaco');
+        // Required Fields
+        //  if(!this.validateService.validateFederacao(federacao)){
+        //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
+        //    return false;
+        //  }
+        //
+        //   // Validar o email
+        //   if(!this.validateService.validateEmail(user.email)){
+        //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
+        //     return false;
+        //   }
+        //
+        // Register user
+        if (this.isInsert) {
+            console.log(newClubedelaco);
+            this.clubesdelacoService.addClubedelaco(newClubedelaco).subscribe(function (data) {
+                if (data.success) {
+                    //console.log(data);
+                    _this.router.navigate(['clubedelaco-view', { id: data.id, isView: true }]);
+                    _this.flashMessage.show('Clube de Laço registrado com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
+                }
+                else {
+                    _this.flashMessage.show('Ocorreu um erro ao tentar inserir este Clube de laço. Favor entre em contato com o suporte técnico do sistema.', { cssClass: 'alert-danger', timeout: 3000 });
+                }
+            });
+        }
+        else {
+            //isEdit
+            this.clubesdelacoService.updateClubedelaco(this.Clubedelaco).subscribe(function (data) {
+                console.log('data');
+                console.log(data);
+                if (data.success) {
+                    //console.log(data);
+                    _this.router.navigate(['clubedelaco-view', { id: _this.Clubedelaco._id, isEdit: true }]);
+                    _this.flashMessage.show('Clube de Laço atualizado com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
+                }
+                else {
+                    _this.flashMessage.show('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                }
+            });
+        }
+    };
+    return ClubesdelacoViewComponent;
+}());
+ClubesdelacoViewComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-clubesdelaco-view',
+        template: __webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco-view/clubesdelaco-view.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco-view/clubesdelaco-view.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* ActivatedRoute */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__services_clubesdelaco_service__["a" /* ClubesdelacoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_clubesdelaco_service__["a" /* ClubesdelacoService */]) === "function" && _f || Object])
+], ClubesdelacoViewComponent);
+
+var _a, _b, _c, _d, _e, _f;
+//# sourceMappingURL=clubesdelaco-view.component.js.map
 
 /***/ }),
 
@@ -207,7 +370,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/clubesdelaco/clubesdelaco.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-sidenav></app-sidenav>\r\n<div class=\"col-md-9\">\r\n  <div id=\"addboxClubeLaco\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\r\n    <div class=\"panel panel-info\">\r\n      <div class=\"panel-heading\">\r\n        <div class=\"panel-title\">Registro do Clube de Laço</div>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n        <form method=\"post\" action=\".\">\r\n          <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />\r\n\r\n\r\n          <form class=\"form-horizontal\" method=\"post\" (submit)=\"onClubesdelacoSubmit()\">\r\n            <!-- Nome do clube -->\r\n            <div id=\"div_id_As\" class=\"form-group required\">\r\n              <div id=\"div_nomeclube\" class=\"form-group required\">\r\n                <label for=\"nomeclube\" class=\"control-label col-md-4  requiredField\"> Nome do clube: <span class=\"asteriskField\">*</span> </label>\r\n                <div class=\"controls col-md-8 \">\r\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_nomeclube\" maxlength=\"30\" [(ngModel)]=\"nomeclube\" name=\"nomeclube\" placeholder=\"Escolha um nome para o Clube\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n                </div>\r\n              </div>\r\n\r\n              <div id=\"div_sede_localização\" class=\"form-group required\">\r\n                <label for=\"sede_localizacao\" class=\"control-label col-md-4  requiredField\"> Sede / Localizacao <span class=\"asteriskField\">*</span> </label>\r\n                <div class=\"controls col-md-8 \">\r\n                  <input class=\"input-md textinput form-control\" id=\"id_sede_localizacao\" name=\"sede_localizacao\" placeholder=\"Sede ou localização do clube\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n                </div>\r\n              </div>\r\n\r\n              <label for=\"id_As\" class=\"control-label col-md-4  requiredField\">Status<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\r\n                <label class=\"radio-inline\"> <input type=\"radio\"  checked name=\"As\" id=\"id_As_1\" value=\"I\"  style=\"margin-bottom: 10px\">Ativo </label>\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"As\" id=\"id_As_2\" value=\"CI\"  style=\"margin-bottom: 10px\">Inativo </label>\r\n              </div>\r\n            </div>\r\n\r\n<!--\r\n            <div id=\"div_id_password1\" class=\"form-group required\">\r\n              <label for=\"id_password1\" class=\"control-label col-md-4  requiredField\">Password<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password1\" name=\"password1\" placeholder=\"Create a password\" style=\"margin-bottom: 10px\" type=\"password\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_password2\" class=\"form-group required\">\r\n              <label for=\"id_password2\" class=\"control-label col-md-4  requiredField\"> Re:password<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password2\" name=\"password2\" placeholder=\"Confirm your password\" style=\"margin-bottom: 10px\" type=\"password\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_name\" class=\"form-group required\">\r\n              <label for=\"id_name\" class=\"control-label col-md-4  requiredField\"> full name<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_name\" name=\"name\" placeholder=\"Your Frist name and Last name\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_gender\" class=\"form-group required\">\r\n              <label for=\"id_gender\" class=\"control-label col-md-4  requiredField\"> Gender<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_1\" value=\"M\"  style=\"margin-bottom: 10px\">Male</label>\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_2\" value=\"F\"  style=\"margin-bottom: 10px\">Female </label>\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_company\" class=\"form-group required\">\r\n              <label for=\"id_company\" class=\"control-label col-md-4  requiredField\"> company name<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_company\" name=\"company\" placeholder=\"your company name\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_catagory\" class=\"form-group required\">\r\n              <label for=\"id_catagory\" class=\"control-label col-md-4  requiredField\"> catagory<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_catagory\" name=\"catagory\" placeholder=\"skills catagory\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_number\" class=\"form-group required\">\r\n              <label for=\"id_number\" class=\"control-label col-md-4  requiredField\"> contact number<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_number\" name=\"number\" placeholder=\"provide your number\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_location\" class=\"form-group required\">\r\n              <label for=\"id_location\" class=\"control-label col-md-4  requiredField\"> Your Location<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_location\" name=\"location\" placeholder=\"Your Pincode and City\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <div class=\"controls col-md-offset-4 col-md-8 \">\r\n                <div id=\"div_id_terms\" class=\"checkbox required\">\r\n                  <label for=\"id_terms\" class=\" requiredField\">\r\n                                         <input class=\"input-ms checkboxinput\" id=\"id_terms\" name=\"terms\" style=\"margin-bottom: 10px\" type=\"checkbox\" />\r\n                                         Agree with the terms and conditions\r\n                                    </label>\r\n                </div>\r\n\r\n              </div>\r\n            </div>  -->\r\n            <div class=\"form-group\">\r\n              <div class=\"aab controls col-md-4 \"></div>\r\n              <div class=\"controls col-md-8 \">\r\n                <input type=\"submit\" name=\"btnSAlvar\" value=\"Salvar\" class=\"btn btn-primary btn btn-confirm\" id=\"submit-id-save\" />\r\n                <input type=\"button\" name=\"BtnCancel\" value=\"Cancelar\" class=\"btn btn btn-cancel\" id=\"button-id-cancelar\" />\r\n              </div>\r\n            </div>\r\n\r\n          </form>\r\n\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<app-sidenav></app-sidenav>\r\n\r\n<div class=\"col-md-9\">\r\n  <div id=\"addboxFederacao\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\r\n    <div class=\"panel panel-info\">\r\n      <div class=\"panel-heading\">\r\n        <div class=\"panel-title\">Clubes de laço cadastrados                         <a [routerLink]=\"['/clubesdelaco-view', {isInsert: true}]\" style=\"float: right; font-size: 16px; border-style='solid'\"><span class=\"fa fa-plus\" > Adicionar </span></a></div>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n  <!-- <div class=\"panel-body col-md-12 col-md-offset-0 col-sm-0\" style=\"margin-top:30px\">\r\n\r\n  <div id=\"DataTables_Table_0_wrapper\" class=\"dataTables_wrapper no-footer\">\r\n    <div class=\"dataTables_length\" id=\"DataTables_Table_0_length\">\r\n      <label>Show <select name=\"DataTables_Table_0_length\" aria-controls=\"DataTables_Table_0\" class=\"form-control\">\r\n        <option value=\"10\">10</option><option value=\"25\">25</option>\r\n        <option value=\"50\">50</option><option value=\"100\">100</option>\r\n      </select> entries</label></div>\r\n    <div id=\"DataTables_Table_0_filter\" class=\"dataTables_filter\">\r\n      <label>Search:<input type=\"search\" class=\"form-control \" placeholder=\"\" aria-controls=\"DataTables_Table_0\"></label></div> -->\r\n\r\n  <table *ngFor=\"let obj of objclube\" class=\"table datatable dataTable no-footer\" id=\"DataTables_Table_0\" role=\"grid\" aria-describedby=\"DataTables_Table_0_info\">\r\n    <thead>\r\n      <tr role=\"row\">\r\n        <th class=\"sorting_asc\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-sort=\"ascending\" aria-label=\"\" style=\"width: 307px;\">Nome</th>\r\n        <!-- <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Position: activate to sort column ascending\" style=\"width: 476px;\">Razão Social</th> -->\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Age: activate to sort column ascending\" style=\"width: 115px;\">E-mail</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Office: activate to sort column ascending\" style=\"width: 233px;\">Sede/Localização</th>\r\n        <!-- <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Start date: activate to sort column ascending\" style=\"width: 215px;\">Status</th> -->\r\n        <!-- <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Start date: activate to sort column ascending\" style=\"width: 215px;\">Ações</th> -->\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr role=\"row\" >\r\n          <tr role=\"row\" *ngFor=\"let registro of obj\">\r\n            <td class=\"sorting_1\"><a [routerLink]=\"['/clubesdelaco-view', { id : registro._id , isView: true}]\" >{{registro.name}}</a></td>\r\n            <!-- <td>{{registro.razaosocial}}</td> -->\r\n            <td>{{registro.email}}</td>\r\n            <td>{{registro.sede}}</td>\r\n            <!-- <td>{{registro.status ? 'Ativo': 'Inativo'}}</td> -->\r\n            <td><span (click)=\"onEditRequest(registro._id)\" class=\"fa fa-edit\"></span></td>\r\n            <td><span  (click)=\"onDeleteRequest(registro._id)\" class=\"glyphicon glyphicon-remove\"></span></td>\r\n\r\n          </tr>\r\n    </tbody>\r\n  </table>\r\n  <div class=\"panel-footer\" id=\"DataTables_Table_0_info\" role=\"status\" aria-live=\"polite\">\r\n    <label style=\"float:right\" > {{this.registros}} <small>registros encontrados</small> </label>\r\n  </div>\r\n  <!-- <div class=\"dataTables_paginate paging_simple_numbers\" id=\"DataTables_Table_0_paginate\"><a class=\"paginate_button previous disabled\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\">Previous</a><span><a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"1\" tabindex=\"0\">1</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"2\" tabindex=\"0\">2</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"3\" tabindex=\"0\">3</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"4\" tabindex=\"0\">4</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"5\" tabindex=\"0\">5</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"6\" tabindex=\"0\">6</a></span> -->\r\n    <!-- <a class=\"paginate_button next\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"7\" tabindex=\"0\" id=\"DataTables_Table_0_next\">Next</a> -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -217,6 +380,12 @@ module.exports = "<app-sidenav></app-sidenav>\r\n<div class=\"col-md-9\">\r\n  <
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubesdelacoComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__ = __webpack_require__("../../../../../src/app/services/federacao.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_clubesdelaco_service__ = __webpack_require__("../../../../../src/app/services/clubesdelaco.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -227,10 +396,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
 var ClubesdelacoComponent = (function () {
-    function ClubesdelacoComponent() {
+    function ClubesdelacoComponent(validateService, flashMessage, federacaoService, router, clubesdelacoService) {
+        this.validateService = validateService;
+        this.flashMessage = flashMessage;
+        this.federacaoService = federacaoService;
+        this.router = router;
+        this.clubesdelacoService = clubesdelacoService;
     }
     ClubesdelacoComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.clubesdelacoService.getClubesdelaco().subscribe(function (clubesdelaco) {
+            console.log(clubesdelaco);
+            _this.registros = 0;
+            var clubesdelacoList = Object.keys(clubesdelaco).map(function (key) { return clubesdelaco[key]; });
+            _this.objclube = clubesdelacoList;
+            //conta os registros
+            for (var key in clubesdelaco) {
+                if (!clubesdelaco.hasOwnProperty(key))
+                    continue;
+                var obj = clubesdelaco[key];
+                for (var prop in obj) {
+                    // skip loop if the property is from prototype
+                    _this.registros++;
+                    if (!obj.hasOwnProperty(prop))
+                        continue;
+                }
+            }
+        });
+        //this.federacoes.count = 1 ;// = this.federacoes.length;
+    };
+    ClubesdelacoComponent.prototype.onEditRequest = function (idClubesdelaco) {
+        this.router.navigate(['/clubesdelaco-view', { id: idClubesdelaco, isEdit: true }]);
+    };
+    ClubesdelacoComponent.prototype.onDeleteRequest = function (idClubesdelaco) {
+        var _this = this;
+        this.clubesdelacoService.removeClubedelaco(idClubesdelaco).subscribe(function (data) {
+            if (data.success) {
+                location.reload();
+                _this.flashMessage.show('Registro removido com sucesso.', { cssClass: 'alert-success', timeout: 5000 });
+                //this.router.navigate(['/federacao']);
+            }
+        });
     };
     return ClubesdelacoComponent;
 }());
@@ -240,9 +452,10 @@ ClubesdelacoComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/clubesdelaco/clubesdelaco.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__services_clubesdelaco_service__["a" /* ClubesdelacoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_clubesdelaco_service__["a" /* ClubesdelacoService */]) === "function" && _e || Object])
 ], ClubesdelacoComponent);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=clubesdelaco.component.js.map
 
 /***/ }),
@@ -367,39 +580,6 @@ var FederacaoAddComponent = (function () {
     }
     FederacaoAddComponent.prototype.ngOnInit = function () {
     };
-    FederacaoAddComponent.prototype.onFederacaoSubmit = function () {
-        var _this = this;
-        var federacao = {
-            name: this.name,
-            cnpj: this.cnpj,
-            razaosocial: this.razaosocial,
-            status: this.status,
-            email: this.email
-        };
-        // Required Fields
-        //  if(!this.validateService.validateFederacao(federacao)){
-        //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
-        //    return false;
-        //  }
-        //
-        //   // Validar o email
-        //   if(!this.validateService.validateEmail(user.email)){
-        //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
-        //     return false;
-        //   }
-        //
-        // Register user
-        this.federacaoService.addFederacao(federacao).subscribe(function (data) {
-            if (data.success) {
-                //console.log(data);
-                _this.router.navigate(['federacao-view'], { queryParams: { id: data.id } });
-                _this.flashMessage.show('Federação registrada com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
-            }
-            else {
-                _this.flashMessage.show('Ocorreu um erro ao tentar registrar seu usuário. Favor entre em contato com o suporte técnico do sistema.', { cssClass: 'alert-danger', timeout: 3000 });
-            }
-        });
-    };
     return FederacaoAddComponent;
 }());
 FederacaoAddComponent = __decorate([
@@ -408,73 +588,12 @@ FederacaoAddComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/federacao/federacao-add/federacao-add.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/federacao/federacao-add/federacao-add.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _d || Object])
 ], FederacaoAddComponent);
 
 ;
 var _a, _b, _c, _d;
 //# sourceMappingURL=federacao-add.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  federacao-edit works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FederacaoEditComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var FederacaoEditComponent = (function () {
-    function FederacaoEditComponent() {
-    }
-    FederacaoEditComponent.prototype.ngOnInit = function () {
-    };
-    return FederacaoEditComponent;
-}());
-FederacaoEditComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-federacao-edit',
-        template: __webpack_require__("../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/federacao/federacao-edit/federacao-edit.component.css")]
-    }),
-    __metadata("design:paramtypes", [])
-], FederacaoEditComponent);
-
-//# sourceMappingURL=federacao-edit.component.js.map
 
 /***/ }),
 
@@ -499,7 +618,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/federacao/federacao-view/federacao-view.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  federacao-view works!\n</p>\n"
+module.exports = "<app-sidenav></app-sidenav>\n<div class=\"col-md-9\">\n  <div id=\"addboxFederacao\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\n    <div class=\"panel panel-info\">\n      <div class=\"panel-heading\">\n        <div class=\"panel-title\">Cadastro de Federação</div>\n      </div>\n      <div class=\"panel-body\">\n\n\n\n          <form id=\"federacaoForm\" class=\"form-horizontal\" role=\"form\" (submit)=\"onFederacaoSubmit()\">\n            <!-- Nome do clube -->\n            <div id=\"div_id_As\" class=\"form-group required\">\n              <div id=\"div_nomeclube\" class=\"form-group required\">\n                <label for=\"nomefederacao\" class=\"control-label col-md-4  requiredField\"> Nome da Federação: <span class=\"asteriskField\">*</span> </label>\n                <!-- exibe label se for isView.\n                    exibe input se for isEdit ou isInsert-->\n                <div *ngIf=\"isView\" class=\"controls col-md-8 \">\n                  <p style=\"margin-top: 10px\" type=\"text\">{{this.Federacao.name}} </p>\n                </div>\n                <div *ngIf=\"!isView\" class=\"controls col-md-8 \">\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_nome\" maxlength=\"30\" [(ngModel)]=\"Federacao.name\" name=\"name\" placeholder=\"Digite o nome da Federação\" style=\"margin-bottom: 10px\" type=\"text\">\n                </div>\n              </div>\n              <!-- Razão Social -->\n              <div id=\"div_razaosocial\" class=\"form-group required\">\n                <label for=\"razaosocial\" class=\"control-label col-md-4  requiredField\"> Razão social <span class=\"asteriskField\">*</span> </label>\n                <div *ngIf=\"isView\" class=\"controls col-md-8 \">\n                  <p style=\"margin-top: 10px\" type=\"text\">{{this.Federacao.razaosocial}} </p>\n                </div>\n                <div *ngIf=\"!isView\" class=\"controls col-md-8 \">\n                  <input class=\"input-md textinput form-control\" id=\"id_razaosocial\" [(ngModel)]=\"Federacao.razaosocial\" name=\"razaosocial\" placeholder=\"Digite a razão social\" style=\"margin-bottom: 10px\" type=\"text\" >\n                </div>\n              </div>\n              <!-- CNPJ -->\n              <div id=\"div_razaosocial\" class=\"form-group required\">\n                <label for=\"razaosocial\" class=\"control-label col-md-4  requiredField\"> CNPJ <span class=\"asteriskField\">*</span> </label>\n                <!-- exibe label se for isView.\n                    exibe input se for isEdit ou isInsert-->\n                <div *ngIf=\"isView\" class=\"controls col-md-8 \">\n                  <p style=\"margin-top: 10px\" type=\"text\">{{this.Federacao.cnpj}} </p>\n                </div>\n                <div *ngIf=\"!isView\" class=\"controls col-md-8 \">\n                  <input class=\"input-md textinput form-control\" id=\"id_CNPJ\" [(ngModel)]=\"Federacao.cnpj\" name=\"cnpj\" placeholder=\"Digite o CNPJ\" style=\"margin-bottom: 10px\" type=\"text\" >\n                </div>\n              </div>\n              <!-- email -->\n              <div id=\"div_email\" class=\"form-group required\">\n                <label for=\"email\" class=\"control-label col-md-4  requiredField\"> E-mail <span class=\"asteriskField\">*</span> </label>\n                <!-- exibe label se for isView.\n                    exibe input se for isEdit ou isInsert-->\n                <div *ngIf=\"isView\" class=\"controls col-md-8 \">\n                  <p style=\"margin-top: 10px\" type=\"text\">{{this.Federacao.email}} </p>\n                </div>\n                <div *ngIf=\"!isView\" class=\"controls col-md-8 \">\n                  <input class=\"input-md textinput form-control\" id=\"id_email\" [(ngModel)]=\"Federacao.email\" name=\"email\" placeholder=\"Digite um e-mail de contato\" style=\"margin-bottom: 10px\" type=\"email\">\n                </div>\n              </div>\n              <!-- STATUS -->\n              <!-- <label for=\"id_As\" class=\"control-label col-md-4  requiredField\">Status<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\n                <label class=\"radio-inline\"> <input type=\"radio\" id=\"\" name=\"\" ng-value=\"true\"  ng-Model=\"Federacao.status\"  style=\"margin-bottom: 10px\">Ativa </label>\n                <label class=\"radio-inline\"> <input type=\"radio\" id=\"\" name=\"\" ng-value=\"false\" ng-Model=\"Federecao.status\" style=\"margin-bottom: 10px\">Inativa</label>\n              </div> -->\n            </div>\n\n<!--\n            <div id=\"div_id_password1\" class=\"form-group required\">\n              <label for=\"id_password1\" class=\"control-label col-md-4  requiredField\">Password<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password1\" name=\"password1\" placeholder=\"Create a password\" style=\"margin-bottom: 10px\" type=\"password\" />\n              </div>\n            </div>\n            <div id=\"div_id_password2\" class=\"form-group required\">\n              <label for=\"id_password2\" class=\"control-label col-md-4  requiredField\"> Re:password<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password2\" name=\"password2\" placeholder=\"Confirm your password\" style=\"margin-bottom: 10px\" type=\"password\" />\n              </div>\n            </div>\n            <div id=\"div_id_name\" class=\"form-group required\">\n              <label for=\"id_name\" class=\"control-label col-md-4  requiredField\"> full name<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_name\" name=\"name\" placeholder=\"Your Frist name and Last name\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_gender\" class=\"form-group required\">\n              <label for=\"id_gender\" class=\"control-label col-md-4  requiredField\"> Gender<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_1\" value=\"M\"  style=\"margin-bottom: 10px\">Male</label>\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_2\" value=\"F\"  style=\"margin-bottom: 10px\">Female </label>\n              </div>\n            </div>\n            <div id=\"div_id_company\" class=\"form-group required\">\n              <label for=\"id_company\" class=\"control-label col-md-4  requiredField\"> company name<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_company\" name=\"company\" placeholder=\"your company name\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_catagory\" class=\"form-group required\">\n              <label for=\"id_catagory\" class=\"control-label col-md-4  requiredField\"> catagory<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_catagory\" name=\"catagory\" placeholder=\"skills catagory\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_number\" class=\"form-group required\">\n              <label for=\"id_number\" class=\"control-label col-md-4  requiredField\"> contact number<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_number\" name=\"number\" placeholder=\"provide your number\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div id=\"div_id_location\" class=\"form-group required\">\n              <label for=\"id_location\" class=\"control-label col-md-4  requiredField\"> Your Location<span class=\"asteriskField\">*</span> </label>\n              <div class=\"controls col-md-8 \">\n                <input class=\"input-md textinput textInput form-control\" id=\"id_location\" name=\"location\" placeholder=\"Your Pincode and City\" style=\"margin-bottom: 10px\" type=\"text\" />\n              </div>\n            </div>\n            <div class=\"form-group\">\n              <div class=\"controls col-md-offset-4 col-md-8 \">\n                <div id=\"div_id_terms\" class=\"checkbox required\">\n                  <label for=\"id_terms\" class=\" requiredField\">\n                                         <input class=\"input-ms checkboxinput\" id=\"id_terms\" name=\"terms\" style=\"margin-bottom: 10px\" type=\"checkbox\" />\n                                         Agree with the terms and conditions\n                                    </label>\n                </div>\n\n              </div>\n            </div>  -->\n            <div class=\"form-group\">\n              <div class=\"aab controls col-md-4 \"></div>\n              <div class=\"controls col-md-8 \">\n                <button *ngIf=\"!isView\" id=\"submit-id-save\" type=\"submit\" class=\"btn btn-primary btn btn-confirm\"><i class=\"icon-hand-right\">Salvar</i></button>\n                <input type=\"button\" [routerLink]=\"['/federacao']\"  name=\"BtnCancel\" value=\"Voltar\" class=\"btn btn btn-cancel\" id=\"button-id-cancelar\" >\n              </div>\n            </div>\n\n          </form>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -509,6 +628,11 @@ module.exports = "<p>\n  federacao-view works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FederacaoViewComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__ = __webpack_require__("../../../../../src/app/services/federacao.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_validate_service__ = __webpack_require__("../../../../../src/app/services/validate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__("../../../../angular2-flash-messages/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -519,10 +643,101 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
 var FederacaoViewComponent = (function () {
-    function FederacaoViewComponent() {
+    function FederacaoViewComponent(validateService, flashMessage, federacaoService, router, route) {
+        this.validateService = validateService;
+        this.flashMessage = flashMessage;
+        this.federacaoService = federacaoService;
+        this.router = router;
+        this.route = route;
+        this.Federacao = {
+            _id: String,
+            name: String,
+            razaosocial: String,
+            cnpj: String,
+            status: Boolean,
+            email: String
+        };
     }
     FederacaoViewComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params.id) {
+                _this.idRecord = params.id;
+            }
+            _this.isInsert = true ? params.isInsert : true;
+            _this.isEdit = true ? params.isEdit : true;
+            _this.isView = true ? params.isView : true;
+        });
+        if (!this.isInsert) {
+            this.federacaoService.getFederacaoById(this.idRecord).subscribe(function (result) {
+                _this.Federacao = result.federacao;
+            });
+        }
+        else {
+            this.Federacao.name = null;
+            this.Federacao.razaosocial = null;
+            this.Federacao.status = null;
+            this.Federacao.cnpj = null;
+            this.Federacao.email = null;
+        }
+    };
+    FederacaoViewComponent.prototype.onFederacaoSubmit = function () {
+        var _this = this;
+        var newFederacao = {
+            name: this.Federacao.name,
+            cnpj: this.Federacao.cnpj,
+            razaosocial: this.Federacao.razaosocial,
+            status: true,
+            email: this.Federacao.email
+        };
+        console.log(newFederacao);
+        console.log('newFederacao');
+        // Required Fields
+        //  if(!this.validateService.validateFederacao(federacao)){
+        //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
+        //    return false;
+        //  }
+        //
+        //   // Validar o email
+        //   if(!this.validateService.validateEmail(user.email)){
+        //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
+        //     return false;
+        //   }
+        //
+        // Register user
+        if (this.isInsert) {
+            this.federacaoService.addFederacao(newFederacao).subscribe(function (data) {
+                if (data.success) {
+                    //console.log(data);
+                    _this.router.navigate(['federacao-view', { id: data.id, isView: true }]);
+                    _this.flashMessage.show('Federação registrada com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
+                }
+                else {
+                    _this.flashMessage.show('Ocorreu um erro ao tentar inserir este registro. Favor entre em contato com o suporte técnico do sistema.', { cssClass: 'alert-danger', timeout: 3000 });
+                }
+            });
+        }
+        else {
+            //isEdit
+            this.federacaoService.updateFederacao(this.Federacao).subscribe(function (data) {
+                console.log('data');
+                console.log(data);
+                if (data.success) {
+                    //console.log(data);
+                    _this.router.navigate(['federacao-view', { id: _this.Federacao._id, isEdit: true }]);
+                    _this.flashMessage.show('Federação atualizada com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
+                }
+                else {
+                    _this.flashMessage.show('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+                }
+            });
+        }
     };
     return FederacaoViewComponent;
 }());
@@ -532,9 +747,10 @@ FederacaoViewComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/federacao/federacao-view/federacao-view.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/federacao/federacao-view/federacao-view.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* ActivatedRoute */]) === "function" && _e || Object])
 ], FederacaoViewComponent);
 
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=federacao-view.component.js.map
 
 /***/ }),
@@ -560,7 +776,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/federacao/federacao.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-sidenav></app-sidenav>\r\n\r\n<div class=\"col-md-9\">\r\n  <div id=\"addboxFederacao\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\r\n    <div class=\"panel panel-info\">\r\n      <div class=\"panel-heading\">\r\n        <div class=\"panel-title\">Federações Cadastradas                         <a [routerLink]=\"['/federacao-add']\" style=\"float: right; font-size: 16px; border-style='solid'\"><span class=\"fa fa-plus\" > Adicionar </span></a></div>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n  <!-- <div class=\"panel-body col-md-12 col-md-offset-0 col-sm-0\" style=\"margin-top:30px\">\r\n\r\n  <div id=\"DataTables_Table_0_wrapper\" class=\"dataTables_wrapper no-footer\">\r\n    <div class=\"dataTables_length\" id=\"DataTables_Table_0_length\">\r\n      <label>Show <select name=\"DataTables_Table_0_length\" aria-controls=\"DataTables_Table_0\" class=\"form-control\">\r\n        <option value=\"10\">10</option><option value=\"25\">25</option>\r\n        <option value=\"50\">50</option><option value=\"100\">100</option>\r\n      </select> entries</label></div>\r\n    <div id=\"DataTables_Table_0_filter\" class=\"dataTables_filter\">\r\n      <label>Search:<input type=\"search\" class=\"form-control \" placeholder=\"\" aria-controls=\"DataTables_Table_0\"></label></div> -->\r\n\r\n  <table *ngFor=\"let obj of objfed\" class=\"table datatable dataTable no-footer\" id=\"DataTables_Table_0\" role=\"grid\" aria-describedby=\"DataTables_Table_0_info\">\r\n    <thead>\r\n      <tr role=\"row\">\r\n        <th class=\"sorting_asc\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-sort=\"ascending\" aria-label=\"\" style=\"width: 307px;\">Nome</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Position: activate to sort column ascending\" style=\"width: 476px;\">Razão Social</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Office: activate to sort column ascending\" style=\"width: 233px;\">CNPJ</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Age: activate to sort column ascending\" style=\"width: 115px;\">E-mail</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Start date: activate to sort column ascending\" style=\"width: 215px;\">Status</th>\r\n        <!-- <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Start date: activate to sort column ascending\" style=\"width: 215px;\">Ações</th> -->\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr role=\"row\" >\r\n          <tr role=\"row\" *ngFor=\"let registro of obj\">\r\n            <td class=\"sorting_1\">{{registro.name}}</td>\r\n            <td>{{registro.razaosocial}}</td>\r\n            <td>{{registro.cnpj}}</td>\r\n            <td>{{registro.email}}</td>\r\n            <td>{{registro.status ? 'Ativo': 'Inativo'}}</td>\r\n            <td><span class=\"fa fa-edit\"></span></td>\r\n            <td><span class=\"glyphicon glyphicon-remove\"></span></td>\r\n\r\n          </tr>\r\n    </tbody>\r\n  </table>\r\n  <!-- <div class=\"dataTables_info\" id=\"DataTables_Table_0_info\" role=\"status\" aria-live=\"polite\">Showing 1 to 10 of 57 entries</div> -->\r\n  <!-- <div class=\"dataTables_paginate paging_simple_numbers\" id=\"DataTables_Table_0_paginate\"><a class=\"paginate_button previous disabled\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\">Previous</a><span><a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"1\" tabindex=\"0\">1</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"2\" tabindex=\"0\">2</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"3\" tabindex=\"0\">3</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"4\" tabindex=\"0\">4</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"5\" tabindex=\"0\">5</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"6\" tabindex=\"0\">6</a></span> -->\r\n    <!-- <a class=\"paginate_button next\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"7\" tabindex=\"0\" id=\"DataTables_Table_0_next\">Next</a> -->\r\n</div>\r\n"
+module.exports = "<app-sidenav></app-sidenav>\r\n\r\n<div class=\"col-md-9\">\r\n  <div id=\"addboxFederacao\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\r\n    <div class=\"panel panel-info\">\r\n      <div class=\"panel-heading\">\r\n        <div class=\"panel-title\">Federações Cadastradas                         <a [routerLink]=\"['/federacao-view', {isInsert: true}]\" style=\"float: right; font-size: 16px; border-style='solid'\"><span class=\"fa fa-plus\" > Adicionar </span></a></div>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n  <!-- <div class=\"panel-body col-md-12 col-md-offset-0 col-sm-0\" style=\"margin-top:30px\">\r\n\r\n  <div id=\"DataTables_Table_0_wrapper\" class=\"dataTables_wrapper no-footer\">\r\n    <div class=\"dataTables_length\" id=\"DataTables_Table_0_length\">\r\n      <label>Show <select name=\"DataTables_Table_0_length\" aria-controls=\"DataTables_Table_0\" class=\"form-control\">\r\n        <option value=\"10\">10</option><option value=\"25\">25</option>\r\n        <option value=\"50\">50</option><option value=\"100\">100</option>\r\n      </select> entries</label></div>\r\n    <div id=\"DataTables_Table_0_filter\" class=\"dataTables_filter\">\r\n      <label>Search:<input type=\"search\" class=\"form-control \" placeholder=\"\" aria-controls=\"DataTables_Table_0\"></label></div> -->\r\n\r\n  <table *ngFor=\"let obj of objfed\" class=\"table datatable dataTable no-footer\" id=\"DataTables_Table_0\" role=\"grid\" aria-describedby=\"DataTables_Table_0_info\">\r\n    <thead>\r\n      <tr role=\"row\">\r\n        <th class=\"sorting_asc\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-sort=\"ascending\" aria-label=\"\" style=\"width: 307px;\">Nome</th>\r\n        <!-- <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Position: activate to sort column ascending\" style=\"width: 476px;\">Razão Social</th> -->\r\n         <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Office: activate to sort column ascending\" style=\"width: 233px;\">CNPJ</th>\r\n        <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Age: activate to sort column ascending\" style=\"width: 115px;\">E-mail</th>\r\n        <!-- <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Start date: activate to sort column ascending\" style=\"width: 215px;\">Status</th> -->\r\n        <!-- <th class=\"sorting\" tabindex=\"0\" aria-controls=\"DataTables_Table_0\" rowspan=\"1\" colspan=\"1\" aria-label=\"Start date: activate to sort column ascending\" style=\"width: 215px;\">Ações</th> -->\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr role=\"row\" >\r\n          <tr role=\"row\" *ngFor=\"let registro of obj\">\r\n            <td class=\"sorting_1\"><a [routerLink]=\"['/federacao-view', { id : registro._id , isView: true}]\" >{{registro.name}}</a></td>\r\n            <!-- <td>{{registro.razaosocial}}</td> -->\r\n            <td>{{registro.cnpj}}</td>\r\n            <td>{{registro.email}}</td>\r\n            <!-- <td>{{registro.status ? 'Ativo': 'Inativo'}}</td> -->\r\n            <td><span (click)=\"onEditRequest(registro._id)\" class=\"fa fa-edit\"></span></td>\r\n            <td><span  (click)=\"onDeleteRequest(registro._id)\" class=\"glyphicon glyphicon-remove\"></span></td>\r\n\r\n          </tr>\r\n    </tbody>\r\n  </table>\r\n  <div class=\"panel-footer\" id=\"DataTables_Table_0_info\" role=\"status\" aria-live=\"polite\">\r\n    <label style=\"float:right\" > {{this.registros}} <small>registros encontrados</small> </label>\r\n  </div>\r\n  <!-- <div class=\"dataTables_paginate paging_simple_numbers\" id=\"DataTables_Table_0_paginate\"><a class=\"paginate_button previous disabled\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\">Previous</a><span><a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"1\" tabindex=\"0\">1</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"2\" tabindex=\"0\">2</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"3\" tabindex=\"0\">3</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"4\" tabindex=\"0\">4</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"5\" tabindex=\"0\">5</a><a class=\"paginate_button \" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"6\" tabindex=\"0\">6</a></span> -->\r\n    <!-- <a class=\"paginate_button next\" aria-controls=\"DataTables_Table_0\" data-dt-idx=\"7\" tabindex=\"0\" id=\"DataTables_Table_0_next\">Next</a> -->\r\n</div>\r\n"
 
 /***/ }),
 
@@ -599,11 +815,36 @@ var FederacaoComponent = (function () {
     FederacaoComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.federacaoService.getFederacoes().subscribe(function (federacoes) {
-            var registros = 0;
-            var teste = Object.keys(federacoes).map(function (key) { return federacoes[key]; });
-            _this.objfed = teste;
+            _this.registros = 0;
+            var federacaoList = Object.keys(federacoes).map(function (key) { return federacoes[key]; });
+            _this.objfed = federacaoList;
+            //conta os registros
+            for (var key in federacoes) {
+                if (!federacoes.hasOwnProperty(key))
+                    continue;
+                var obj = federacoes[key];
+                for (var prop in obj) {
+                    // skip loop if the property is from prototype
+                    _this.registros++;
+                    if (!obj.hasOwnProperty(prop))
+                        continue;
+                }
+            }
         });
         //this.federacoes.count = 1 ;// = this.federacoes.length;
+    };
+    FederacaoComponent.prototype.onEditRequest = function (idFederacao) {
+        this.router.navigate(['/federacao-view', { id: idFederacao, isEdit: true }]);
+    };
+    FederacaoComponent.prototype.onDeleteRequest = function (idFederacao) {
+        var _this = this;
+        this.federacaoService.removeFederacao(idFederacao).subscribe(function (data) {
+            if (data.success) {
+                location.reload();
+                _this.flashMessage.show('Registro removido com sucesso.', { cssClass: 'alert-success', timeout: 5000 });
+                //this.router.navigate(['/federacao']);
+            }
+        });
     };
     return FederacaoComponent;
 }());
@@ -613,7 +854,7 @@ FederacaoComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/federacao/federacao.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/federacao/federacao.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_federacao_service__["a" /* FederacaoService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _d || Object])
 ], FederacaoComponent);
 
 var _a, _b, _c, _d;
@@ -743,6 +984,67 @@ HomeComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/components/lacadores/lacadores-view/lacadores-view.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/lacadores/lacadores-view/lacadores-view.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  lacadores-view works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/lacadores/lacadores-view/lacadores-view.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LacadoresViewComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LacadoresViewComponent = (function () {
+    function LacadoresViewComponent() {
+    }
+    LacadoresViewComponent.prototype.ngOnInit = function () {
+    };
+    return LacadoresViewComponent;
+}());
+LacadoresViewComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-lacadores-view',
+        template: __webpack_require__("../../../../../src/app/components/lacadores/lacadores-view/lacadores-view.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/lacadores/lacadores-view/lacadores-view.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], LacadoresViewComponent);
+
+//# sourceMappingURL=lacadores-view.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/components/lacadores/lacadores.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -764,7 +1066,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/lacadores/lacadores.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-sidenav></app-sidenav>\r\n<div class=\"col-md-9\">\r\n  <div id=\"addboxLacador\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\r\n    <div class=\"panel panel-info\">\r\n      <div class=\"panel-heading\">\r\n        <div class=\"panel-title\">Registro do Laçador</div>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n        <form method=\"post\" action=\".\">\r\n          <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />\r\n\r\n\r\n          <form class=\"form-horizontal\" method=\"post\" (submit)=\"onLacadorSubmit()\">\r\n            <!-- Nome do clube -->\r\n            <div id=\"div_id_As\" class=\"form-group required\">\r\n              <div id=\"div_nomeclube\" class=\"form-group required\">\r\n                <label for=\"nomeclube\" class=\"control-label col-md-4  requiredField\"> Laçador: <span class=\"asteriskField\">*</span> </label>\r\n                <div class=\"controls col-md-8 \">\r\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_nome\" maxlength=\"30\" [(ngModel)]=\"nome\" name=\"nome\" placeholder=\"Digite o nome do laçador\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n                </div>\r\n              </div>\r\n              <!-- CPF -->\r\n              <div id=\"div_cpf\" class=\"form-group required\">\r\n                <label for=\"cpf\" class=\"control-label col-md-4  requiredField\"> CPF <span class=\"asteriskField\">*</span> </label>\r\n                <div class=\"controls col-md-8 \">\r\n                  <input class=\"input-md textinput form-control\" id=\"id_cpf\" [(ngModel)]=\"cpf\" name=\"cpf\" placeholder=\"Digite o cpf\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n                </div>\r\n              </div>\r\n              <!-- Endereco -->\r\n              <div id=\"div_endereco\" class=\"form-group required\">\r\n                <label for=\"endereco\" class=\"control-label col-md-4  requiredField\"> Endereço <span class=\"asteriskField\">*</span> </label>\r\n                <div class=\"controls col-md-8 \">\r\n                  <input class=\"input-md textinput form-control\" id=\"id_CNPJ\" [(ngModel)]=\"endereco\" name=\"endereco\" placeholder=\"Digite o endereco\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n                </div>\r\n              </div>\r\n              <!-- STATUS -->\r\n              <label for=\"id_As\" class=\"control-label col-md-4  requiredField\">Status<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\r\n                <label class=\"radio-inline\"> <input type=\"radio\" checked name=\"status\" id=\"id_status_1\" value=\"true\"  style=\"margin-bottom: 10px\">Ativo </label>\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"status\" id=\"id_status_2\" value=\"false\"  style=\"margin-bottom: 10px\">Inativo</label>\r\n              </div>\r\n            </div>\r\n\r\n<!--\r\n            <div id=\"div_id_password1\" class=\"form-group required\">\r\n              <label for=\"id_password1\" class=\"control-label col-md-4  requiredField\">Password<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password1\" name=\"password1\" placeholder=\"Create a password\" style=\"margin-bottom: 10px\" type=\"password\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_password2\" class=\"form-group required\">\r\n              <label for=\"id_password2\" class=\"control-label col-md-4  requiredField\"> Re:password<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password2\" name=\"password2\" placeholder=\"Confirm your password\" style=\"margin-bottom: 10px\" type=\"password\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_name\" class=\"form-group required\">\r\n              <label for=\"id_name\" class=\"control-label col-md-4  requiredField\"> full name<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_name\" name=\"name\" placeholder=\"Your Frist name and Last name\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_gender\" class=\"form-group required\">\r\n              <label for=\"id_gender\" class=\"control-label col-md-4  requiredField\"> Gender<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_1\" value=\"M\"  style=\"margin-bottom: 10px\">Male</label>\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_2\" value=\"F\"  style=\"margin-bottom: 10px\">Female </label>\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_company\" class=\"form-group required\">\r\n              <label for=\"id_company\" class=\"control-label col-md-4  requiredField\"> company name<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_company\" name=\"company\" placeholder=\"your company name\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_catagory\" class=\"form-group required\">\r\n              <label for=\"id_catagory\" class=\"control-label col-md-4  requiredField\"> catagory<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_catagory\" name=\"catagory\" placeholder=\"skills catagory\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_number\" class=\"form-group required\">\r\n              <label for=\"id_number\" class=\"control-label col-md-4  requiredField\"> contact number<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_number\" name=\"number\" placeholder=\"provide your number\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_location\" class=\"form-group required\">\r\n              <label for=\"id_location\" class=\"control-label col-md-4  requiredField\"> Your Location<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_location\" name=\"location\" placeholder=\"Your Pincode and City\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <div class=\"controls col-md-offset-4 col-md-8 \">\r\n                <div id=\"div_id_terms\" class=\"checkbox required\">\r\n                  <label for=\"id_terms\" class=\" requiredField\">\r\n                                         <input class=\"input-ms checkboxinput\" id=\"id_terms\" name=\"terms\" style=\"margin-bottom: 10px\" type=\"checkbox\" />\r\n                                         Agree with the terms and conditions\r\n                                    </label>\r\n                </div>\r\n\r\n              </div>\r\n            </div>  -->\r\n            <div class=\"form-group\">\r\n              <div class=\"aab controls col-md-4 \"></div>\r\n              <div class=\"controls col-md-8 \">\r\n                <input type=\"submit\" name=\"btnSAlvar\" value=\"Salvar\" class=\"btn btn-primary btn btn-confirm\" id=\"submit-id-save\" />\r\n                <input type=\"button\" name=\"BtnCancel\" value=\"Cancelar\" class=\"btn btn btn-cancel\" id=\"button-id-cancelar\" />\r\n              </div>\r\n            </div>\r\n\r\n          </form>\r\n\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<app-sidenav></app-sidenav>\r\n<div class=\"col-md-9\">\r\n  <div id=\"addboxLacador\" style=\"margin-top:30px\" class=\"mainbox col-md-12 col-md-offset-0 col-sm-0 \">\r\n    <h2> Ainda em desenvolvimento </h2>\r\n    <div class=\"panel panel-info\">\r\n      <div class=\"panel-heading\">\r\n        <div class=\"panel-title\">Registro do Laçador</div>\r\n      </div>\r\n      <div class=\"panel-body\">\r\n        <form method=\"post\" action=\".\">\r\n          <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />\r\n\r\n\r\n          <form class=\"form-horizontal\" method=\"post\" (submit)=\"onLacadorSubmit()\">\r\n            <!-- Nome do clube -->\r\n            <div id=\"div_id_As\" class=\"form-group required\">\r\n              <div id=\"div_nomeclube\" class=\"form-group required\">\r\n                <label for=\"nomeclube\" class=\"control-label col-md-4  requiredField\"> Laçador: <span class=\"asteriskField\">*</span> </label>\r\n                <div class=\"controls col-md-8 \">\r\n                  <input class=\"input-md  textinput textInput form-control\" id=\"id_nome\" maxlength=\"30\" [(ngModel)]=\"nome\" name=\"nome\" placeholder=\"Digite o nome do laçador\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n                </div>\r\n              </div>\r\n              <!-- CPF -->\r\n              <div id=\"div_cpf\" class=\"form-group required\">\r\n                <label for=\"cpf\" class=\"control-label col-md-4  requiredField\"> CPF <span class=\"asteriskField\">*</span> </label>\r\n                <div class=\"controls col-md-8 \">\r\n                  <input class=\"input-md textinput form-control\" id=\"id_cpf\" [(ngModel)]=\"cpf\" name=\"cpf\" placeholder=\"Digite o cpf\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n                </div>\r\n              </div>\r\n              <!-- Endereco -->\r\n              <div id=\"div_endereco\" class=\"form-group required\">\r\n                <label for=\"endereco\" class=\"control-label col-md-4  requiredField\"> Endereço <span class=\"asteriskField\">*</span> </label>\r\n                <div class=\"controls col-md-8 \">\r\n                  <input class=\"input-md textinput form-control\" id=\"id_CNPJ\" [(ngModel)]=\"endereco\" name=\"endereco\" placeholder=\"Digite o endereco\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n                </div>\r\n              </div>\r\n              <!-- STATUS -->\r\n              <label for=\"id_As\" class=\"control-label col-md-4  requiredField\">Status<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\r\n                <label class=\"radio-inline\"> <input type=\"radio\" checked name=\"status\" id=\"id_status_1\" value=\"true\"  style=\"margin-bottom: 10px\">Ativo </label>\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"status\" id=\"id_status_2\" value=\"false\"  style=\"margin-bottom: 10px\">Inativo</label>\r\n              </div>\r\n            </div>\r\n\r\n<!--\r\n            <div id=\"div_id_password1\" class=\"form-group required\">\r\n              <label for=\"id_password1\" class=\"control-label col-md-4  requiredField\">Password<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password1\" name=\"password1\" placeholder=\"Create a password\" style=\"margin-bottom: 10px\" type=\"password\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_password2\" class=\"form-group required\">\r\n              <label for=\"id_password2\" class=\"control-label col-md-4  requiredField\"> Re:password<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_password2\" name=\"password2\" placeholder=\"Confirm your password\" style=\"margin-bottom: 10px\" type=\"password\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_name\" class=\"form-group required\">\r\n              <label for=\"id_name\" class=\"control-label col-md-4  requiredField\"> full name<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_name\" name=\"name\" placeholder=\"Your Frist name and Last name\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_gender\" class=\"form-group required\">\r\n              <label for=\"id_gender\" class=\"control-label col-md-4  requiredField\"> Gender<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \" style=\"margin-bottom: 10px\">\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_1\" value=\"M\"  style=\"margin-bottom: 10px\">Male</label>\r\n                <label class=\"radio-inline\"> <input type=\"radio\" name=\"gender\" id=\"id_gender_2\" value=\"F\"  style=\"margin-bottom: 10px\">Female </label>\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_company\" class=\"form-group required\">\r\n              <label for=\"id_company\" class=\"control-label col-md-4  requiredField\"> company name<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_company\" name=\"company\" placeholder=\"your company name\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_catagory\" class=\"form-group required\">\r\n              <label for=\"id_catagory\" class=\"control-label col-md-4  requiredField\"> catagory<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_catagory\" name=\"catagory\" placeholder=\"skills catagory\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_number\" class=\"form-group required\">\r\n              <label for=\"id_number\" class=\"control-label col-md-4  requiredField\"> contact number<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_number\" name=\"number\" placeholder=\"provide your number\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div id=\"div_id_location\" class=\"form-group required\">\r\n              <label for=\"id_location\" class=\"control-label col-md-4  requiredField\"> Your Location<span class=\"asteriskField\">*</span> </label>\r\n              <div class=\"controls col-md-8 \">\r\n                <input class=\"input-md textinput textInput form-control\" id=\"id_location\" name=\"location\" placeholder=\"Your Pincode and City\" style=\"margin-bottom: 10px\" type=\"text\" />\r\n              </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <div class=\"controls col-md-offset-4 col-md-8 \">\r\n                <div id=\"div_id_terms\" class=\"checkbox required\">\r\n                  <label for=\"id_terms\" class=\" requiredField\">\r\n                                         <input class=\"input-ms checkboxinput\" id=\"id_terms\" name=\"terms\" style=\"margin-bottom: 10px\" type=\"checkbox\" />\r\n                                         Agree with the terms and conditions\r\n                                    </label>\r\n                </div>\r\n\r\n              </div>\r\n            </div>  -->\r\n            <div class=\"form-group\">\r\n              <div class=\"aab controls col-md-4 \"></div>\r\n              <div class=\"controls col-md-8 \">\r\n                <input type=\"submit\" name=\"btnSAlvar\" value=\"Salvar\" class=\"btn btn-primary btn btn-confirm\" id=\"submit-id-save\" />\r\n                <input type=\"button\" name=\"BtnCancel\" value=\"Cancelar\" class=\"btn btn btn-cancel\" id=\"button-id-cancelar\" />\r\n              </div>\r\n            </div>\r\n\r\n          </form>\r\n\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -866,10 +1168,11 @@ var LoginComponent = (function () {
             username: this.username,
             password: this.password
         };
+        //console.log(user);
         this.authService.authenticateUser(user).subscribe(function (data) {
             if (data.success) {
                 _this.authService.storeUserData(data.token, data.user);
-                _this.flashMessage.show('You are now logged in', {
+                _this.flashMessage.show('Você agora está logado', {
                     cssClass: 'alert-success',
                     timeout: 5000
                 });
@@ -892,7 +1195,7 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/login/login.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], LoginComponent);
 
 var _a, _b, _c;
@@ -921,7 +1224,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n      <div class=\"container\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" [routerLink]=\"['/']\" >gesMDL</a>\n        </div>\n        <div id=\"navbar\" class=\"collapse navbar-collapse\">\n          <ul class=\"nav navbar-nav navbar-left\">\n            <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Home</a></li>\n          </ul>\n\n          <ul class=\"nav navbar-nav navbar-right\">\n            <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\n            <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/profile']\">Perfil</a></li>\n\n            <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\n            <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/register']\">Register</a></li>\n            <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\n          </ul>\n        </div><!--/.nav-collapse -->\n      </div>\n    </nav>\n"
+module.exports = "<nav class=\"navbar navbar-default\">\n      <div class=\"container\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n            <span class=\"sr-only\">Toggle navigation</span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n          </button>\n          <a class=\"navbar-brand\" [routerLink]=\"['/']\" >gesMDL</a>\n        </div>\n        <div id=\"navbar\" class=\"collapse navbar-collapse\">\n          <ul class=\"nav navbar-nav navbar-left\">\n            <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Home</a></li>\n            <!-- <li *ngIf=\"!authService.loggedIn()\"[routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/']\">Home</a></li> -->\n          </ul>\n\n          <ul class=\"nav navbar-nav navbar-right\">\n            <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\n            <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/profile']\">Perfil</a></li>\n\n            <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\n            <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"><a [routerLink]=\"['/register']\">Register</a></li>\n            <li *ngIf=\"authService.loggedIn()\"><a (click)=\"onLogoutClick()\" href=\"#\">Logout</a></li>\n          </ul>\n        </div><!--/.nav-collapse -->\n      </div>\n    </nav>\n"
 
 /***/ }),
 
@@ -973,7 +1276,7 @@ NavbarComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/navbar/navbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/navbar/navbar.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
 ], NavbarComponent);
 
 var _a, _b, _c;
@@ -1002,7 +1305,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/profile/profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"contaner\">\n  <app-sidenav></app-sidenav>\n</div>\n<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n  </ul>\n</div>\n"
+module.exports = "<app-sidenav></app-sidenav>\n<div class=\"col-md-8\">\n  <h2 class=\"page-header\">Perfil</h2>\n  <p>Aqui será o painel de informações do usuário.</p>\n  <p>Onde pode preencher mais informações, alterar foto, trocar de senha, etc.</p>\n</div>\n"
 
 /***/ }),
 
@@ -1048,7 +1351,7 @@ ProfileComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/profile/profile.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/profile/profile.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], ProfileComponent);
 
 var _a, _b;
@@ -1153,7 +1456,7 @@ RegisterComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/register/register.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/register/register.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_validate_service__["a" /* ValidateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]) === "function" && _d || Object])
 ], RegisterComponent);
 
 var _a, _b, _c, _d;
@@ -1248,18 +1551,19 @@ var AuthGuard = (function () {
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function () {
-        //  if(this.authService.loggedIn()){
-        return true;
-        //} else {
-        //  this.router.navigate(['/login']);
-        //    return false;
-        //}
+        if (this.authService.loggedIn()) {
+            return true;
+        }
+        else {
+            this.router.navigate(['/login']);
+            return false;
+        }
     };
     return AuthGuard;
 }());
 AuthGuard = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], AuthGuard);
 
 var _a, _b;
@@ -1299,14 +1603,14 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('users/register');
+        var ep = this.prepEndpoint('user/register');
         return this.http.post(ep, user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('users/authenticate');
+        var ep = this.prepEndpoint('user/authenticate');
         return this.http.post(ep, user, { headers: headers })
             .map(function (res) { return res.json(); });
     };
@@ -1315,8 +1619,9 @@ var AuthService = (function () {
         this.loadToken();
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
-        var ep = this.prepEndpoint('users/profile');
-        return this.http.get(ep, { headers: headers })
+        var ep = this.prepEndpoint('user/profile');
+        var user = localStorage.getItem('user');
+        return this.http.get(ep, { headers: headers, params: { user: user } })
             .map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -1330,7 +1635,7 @@ var AuthService = (function () {
         this.authToken = token;
     };
     AuthService.prototype.loggedIn = function () {
-        return Object(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__["tokenNotExpired"])();
+        return Object(__WEBPACK_IMPORTED_MODULE_3_angular2_jwt__["tokenNotExpired"])('id_token');
     };
     AuthService.prototype.logout = function () {
         this.authToken = null;
@@ -1354,6 +1659,93 @@ AuthService = __decorate([
 
 var _a;
 //# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/clubesdelaco.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClubesdelacoService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var ClubesdelacoService = (function () {
+    function ClubesdelacoService(authService, http) {
+        this.authService = authService;
+        this.http = http;
+    }
+    ClubesdelacoService.prototype.getClubesdelaco = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('clubedelaco/list');
+        //console.log('service - getClubedelaco()');
+        return this.http.get(ep, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ClubesdelacoService.prototype.getClubedelacoById = function (idClubedelaco) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('clubedelaco/view');
+        //console.log('service - getClubedelaco()');
+        return this.http.get(ep, { headers: headers, params: { idClubedelaco: idClubedelaco } })
+            .map(function (res) { return res.json(); });
+    };
+    ClubesdelacoService.prototype.addClubedelaco = function (clubedelaco) {
+        //return new Promise(resolve => resolve(clubedelaco));
+        //console.log('passou aqui');
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('clubedelaco/add');
+        return this.http.post(ep, clubedelaco, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ClubesdelacoService.prototype.removeClubedelaco = function (idClubedelaco) {
+        //console.log(2);
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('clubedelaco/remove');
+        //console.log(3);
+        return this.http.post(ep, { idClubedelaco: idClubedelaco }, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    ClubesdelacoService.prototype.updateClubedelaco = function (clubedelaco) {
+        //console.log(2);
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('clubedelaco/update');
+        return this.http.post(ep, clubedelaco, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    return ClubesdelacoService;
+}());
+ClubesdelacoService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _b || Object])
+], ClubesdelacoService);
+
+var _a, _b;
+//# sourceMappingURL=clubesdelaco.service.js.map
 
 /***/ }),
 
@@ -1392,13 +1784,21 @@ var FederacaoService = (function () {
         this.http = http;
     }
     FederacaoService.prototype.getFederacoes = function () {
-        //return new Promise(resolve => resolve(federacoes));
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
         //headers.append('Authorization', this.authService.authToken);
         headers.append('Content-Type', 'application/json');
         var ep = this.authService.prepEndpoint('federacao/list');
         //console.log('service - getFederacoes()');
         return this.http.get(ep, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    FederacaoService.prototype.getFederacaoById = function (idFederacao) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('federacao/view');
+        //console.log('service - getFederacoes()');
+        return this.http.get(ep, { headers: headers, params: { idFederacao: idFederacao } })
             .map(function (res) { return res.json(); });
     };
     FederacaoService.prototype.addFederacao = function (federacao) {
@@ -1408,6 +1808,25 @@ var FederacaoService = (function () {
         //headers.append('Authorization', this.authService.authToken);
         headers.append('Content-Type', 'application/json');
         var ep = this.authService.prepEndpoint('federacao/add');
+        return this.http.post(ep, federacao, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    FederacaoService.prototype.removeFederacao = function (idFederacao) {
+        //console.log(2);
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('federacao/remove');
+        //console.log(3);
+        return this.http.post(ep, { idFederacao: idFederacao }, { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    FederacaoService.prototype.updateFederacao = function (federacao) {
+        //console.log(2);
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["Headers"]();
+        //headers.append('Authorization', this.authService.authToken);
+        headers.append('Content-Type', 'application/json');
+        var ep = this.authService.prepEndpoint('federacao/update');
         return this.http.post(ep, federacao, { headers: headers })
             .map(function (res) { return res.json(); });
     };

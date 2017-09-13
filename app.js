@@ -26,7 +26,7 @@ const app = express();
 // Declaração de rotas
 const users = require('./routes/users');
 const federacoes = require('./routes/federacoes');
-//const clubesdelaco = require('./routes/clubesdelaco');
+const clubesdelaco = require('./routes/clubesdelaco');
 //const lacadores = require('./routes/lacadores');
 
 // Port number
@@ -52,7 +52,7 @@ require('./config/passport')(passport);
 
 app.use('/user', users);
 app.use('/federacao', federacoes);
-//app.use('/clubedelaco', clubesdelaco);
+app.use('/clubedelaco', clubesdelaco);
 //app.use('/lacador', lacadores);
 
 

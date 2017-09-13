@@ -1,5 +1,5 @@
 module.exports = {
   database: 'mongod://localhost:27017/gesMDL',
   useMongoClient: true,
-  secret: 'mundodolacosecret'
+  secret: 'mundodelacosecret'
 };

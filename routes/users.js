@@ -25,6 +25,7 @@ router.post('/register', (req, res, next) => {
 
 // Authenticate
 router.post('/authenticate', (req, res, next) => {
+  console.log('chegou em /authenticate')
   const username = req.body.username;
   const password = req.body.password;
 
@@ -59,8 +60,18 @@ router.post('/authenticate', (req, res, next) => {
 });
 
 // Profile
-router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
-  res.json({user: req.user});
+//router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
+router.get('/profile', (req, res, next) => {
+  //console.log(req.query.user.name);
+  User.getUserById(req.query.user.id, (err, user) => {
+    if(err) throw err;
+
+    if(!user){
+      return res.json({success: false, msg:'Usuário não encontrado'});
+    } else {
+        res.json({user: user});
+    }
+  })
 });
 
 module.exports = router;
