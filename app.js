@@ -27,10 +27,10 @@ const app = express();
 const users = require('./routes/users');
 const federacoes = require('./routes/federacoes');
 const clubesdelaco = require('./routes/clubesdelaco');
-//const lacadores = require('./routes/lacadores');
+const lacadores = require('./routes/lacadores');
 
 // Port number
-//const port = 3000;
+const port = 3000;
 const port = process.env.PORT || 8080;
 
 // CORS middleware
@@ -53,7 +53,7 @@ require('./config/passport')(passport);
 app.use('/user', users);
 app.use('/federacao', federacoes);
 app.use('/clubedelaco', clubesdelaco);
-//app.use('/lacador', lacadores);
+app.use('/lacador', lacadores);
 
 
 // Index route

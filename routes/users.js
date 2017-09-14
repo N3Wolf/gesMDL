@@ -25,7 +25,7 @@ router.post('/register', (req, res, next) => {
 
 // Authenticate
 router.post('/authenticate', (req, res, next) => {
-  console.log('chegou em /authenticate')
+  //console.log('chegou em /authenticate')
   const username = req.body.username;
   const password = req.body.password;
 

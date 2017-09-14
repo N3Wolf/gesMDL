@@ -44,11 +44,7 @@ router.get('/view', (req, res, next) => {
 
 // Edit
 router.post('/update', (req, res, next) => {
-  console.log(4);
-  console.log(req.body);
   Clubedelaco.updateById(req.body, (err, callback) => {
-    // console.log(err);
-    // console.log('err');
     if (err) {
       res.json({
         success: false,
@@ -66,7 +62,6 @@ router.post('/update', (req, res, next) => {
 
 // Delete
 router.post('/remove', (req, res, next) => {
-  console.log(4);
   Clubedelaco.removeClubedelaco(req.body.idClubedelaco, (err, callback) => {
     if (err) {
       res.json({
@@ -85,7 +80,6 @@ router.post('/remove', (req, res, next) => {
 
 //Register
 router.post('/add', (req, res, next) => {
-  console.log(req.body);
   let newClubedelaco = new Clubedelaco({
     name: req.body.name,
     sede: req.body.sede,
@@ -102,7 +96,6 @@ router.post('/add', (req, res, next) => {
   //   //  else {
   Clubedelaco.addClubedelaco(newClubedelaco, (err, clubedelaco) => {
     if (err) {
-      console.log(err);
       res.json({
         success: false,
         msg: "Erro ao registrar o Clube de laço."

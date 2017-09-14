@@ -57,7 +57,7 @@ module.exports.addClubedelaco = function(newClubedelaco, callback){
 //remove
 
 module.exports.removeClubedelaco = function(idClubedelaco,callback){
-  console.log(6);
+  //console.log(6);
   const query = {_id: idClubedelaco}
   Clubedelaco.remove(query, callback);
 }

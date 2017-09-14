@@ -61,7 +61,6 @@ module.exports.addFederacao = function(newFederacao, callback){
 //remove
 
 module.exports.removeFederacao = function(idFederacao,callback){
-  console.log(6);
   const query = {_id: idFederacao}
   Federacao.remove(query, callback);
 }
@@ -78,7 +77,5 @@ module.exports.updateById = function(federacao,callback){
       "status": federacao.status
     }
   };
-  console.log(sets);
   Federacao.updateOne(query, sets, callback);
-  console.log(callback);
 }

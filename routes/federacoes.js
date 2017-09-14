@@ -44,11 +44,7 @@ router.get('/view', (req, res, next) => {
 
 // Edit
 router.post('/update', (req, res, next) => {
-  console.log(4);
-  console.log(req.body);
   Federacao.updateById(req.body, (err, callback) => {
-    // console.log(err);
-    // console.log('err');
     if (err) {
       res.json({
         success: false,
@@ -66,7 +62,6 @@ router.post('/update', (req, res, next) => {
 
 // Delete
 router.post('/remove', (req, res, next) => {
-  console.log(4);
   Federacao.removeFederacao(req.body.idFederacao, (err, callback) => {
     if (err) {
       res.json({
