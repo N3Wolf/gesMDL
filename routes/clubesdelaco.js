@@ -9,16 +9,16 @@ const Clubedelaco = require('../models/clubedelaco');
 // List
 router.get('/list', (req, res, next) => {
   //console.log('routes - before /list');
-  Clubedelaco.getClubedelacoList({}, (err, clubesdelacoList) => {
+  Clubedelaco.getClubedelacoList({}, (err, clubedelacoList) => {
     if (err) throw err;
-    if (!clubesdelacoList) {
+    if (!clubedelacoList) {
       return res.json({
         success: false,
         msg: 'Tabela vazia'
       });
     } else {
       return res.json({
-        clubesdelacoList: clubesdelacoList
+        clubedelacoList: clubedelacoList
       });
     }
   })
@@ -26,9 +26,11 @@ router.get('/list', (req, res, next) => {
 
 // View
 router.get('/view', (req, res, next) => {
-  //console.log('req.params.idClubedelaco');
-  //console.log(req.query.idClubedelaco);
-  Clubedelaco.getClubedelacoById(req.query.idClubedelaco, (err, clubedelaco) => {
+  console.log('req.params.id');
+  console.log(req.query.id);
+  Clubedelaco.getClubedelacoById(req.query.id, (err, clubedelaco) => {
+    //console.log('retorno model clubedelaco');
+    //console.log(clubedelaco);
     if (!clubedelaco) {
       return res.json({
         success: false,

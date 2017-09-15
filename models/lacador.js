@@ -51,6 +51,8 @@ module.exports.getLacadorById = function(id, callback) {
     _id: id
   }
   Lacador.findOne(query, callback);
+  console.log('callback');
+  console.log(callback);
 }
 
 module.exports.getLacadorByName = function(name, callback) {
@@ -100,10 +102,15 @@ module.exports.updateById = function(lacador, callback) {
       "cpf": lacador.cpf,
       "endereco": lacador.endereco,
       "status": lacador.status,
-      "picture": lacador.picture
+      "picture": lacador.picture,
+      "idClube": lacador.idClube
     }
   };
 
+   console.log('lacador');
+   console.log(lacador);
+   console.log('newSet');
+   console.log(newSet);
   Lacador.updateOne(query, newSet, callback);
 
 }

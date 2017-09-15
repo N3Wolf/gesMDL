@@ -31,6 +31,8 @@ router.get('/listByClubeId', (req, res, next) => {
         msg: 'Tabela vazia'
       });
     } else {
+      // console.log('lacadorList');
+      // console.log(lacadorList);
       return res.json({ lacadorList });
     }
   })
@@ -47,6 +49,8 @@ router.get('/view', (req, res, next) => {
         msg: 'Erro ao buscar o Laçador de laço desejado. Entre em contato com o suporte técnico do sistema.'
       });
     } else {
+      //console.log('lacador(routes)');
+      //console.log(lacador);
       res.json({
         lacador: lacador
       });
@@ -56,8 +60,13 @@ router.get('/view', (req, res, next) => {
 
 // Edit
 router.post('/update', (req, res, next) => {
+   console.log('chegou aqui');
+   console.log('req.body');
+   console.log(req.body);
   Lacador.updateById(req.body, (err, callback) => {
+
     if (err) {
+      console.log(err);
       res.json({
         success: false,
         msg: "Erro ao atualizar o registro do Laçador:",
@@ -76,6 +85,7 @@ router.post('/update', (req, res, next) => {
 router.post('/remove', (req, res, next) => {
   Lacador.removeLacador(req.body.idLacador, (err, callback) => {
     if (err) {
+      console.log(err);
       res.json({
         success: false,
         msg: "Erro ao remover o registro do Laçador de laço."
@@ -97,7 +107,9 @@ router.post('/add', (req, res, next) => {
     cpf: req.body.cpf,
     endereco: req.body.endereco,
     email: req.body.email,
-    status: req.body.status
+    status: req.body.status,
+    idClube: req.body.idClube,
+    picture: req.body.picture ? true: null
   })
 
   //valida unique keys: CNPJ
@@ -109,6 +121,7 @@ router.post('/add', (req, res, next) => {
   //   //  else {
   Lacador.addLacador(newLacador, (err, lacador) => {
     if (err) {
+      console.log(err);
       res.json({
         success: false,
         msg: "Erro ao registrar o Laçador."

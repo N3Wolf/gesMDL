@@ -32,6 +32,9 @@ module.exports.getClubedelacoList = function(all,callback){
 module.exports.getClubedelacoById = function(id, callback){
   const query = {_id: id}
   Clubedelaco.findOne(query, callback);
+  console.log('getClubedelacoById');
+  console.log(callback);
+  console.log(query);
 }
 
 module.exports.getClubedelacoByName = function(name, callback){
