@@ -19,17 +19,17 @@ const LacadorSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  status: {
-    type: Boolean,
-    required: true
-  },
-  picture: {
-    Type: Buffer,
-    contentType: String
-  },
-  idClube: {
-    type: String
-  }
+  status: { type: Boolean, required: true },
+  picture: {  type: Buffer, contentType: String},
+  idClube: { type: String },
+  flgIndepentente: { type: Boolean },
+  apelido: { type: String },
+  foneDDD1: { type: String },
+  fone1: { type: String },
+  foneDDD2: { type: String },
+  fone2: { type: String },
+  dataAssociacao: { type: Date }
+
 
   //http://localhost:4200/clubesdelaco-view;id=59b8d3ccc45a52357ca1cf99;isEdit=true;isDetail=true;idClube=59b8d3ccc45a52357ca1cf99
 });
@@ -113,4 +113,47 @@ module.exports.updateById = function(lacador, callback) {
    console.log(newSet);
   Lacador.updateOne(query, newSet, callback);
 
+}
+
+//Torna todos os laçadores de um clube como Indepententes
+module.exports.setLacadorIndependenteByClube = function(idClubedelaco, callback) {
+  const query = {
+    idClube: idClubedelaco
+  };
+  const newSet = {
+    $set: {
+      "flgIndepentente": true,
+      "idClube": null
+    }
+  };
+
+  //  console.log('lacador');
+  //  console.log(lacador);
+  //  console.log('newSet');
+  //  console.log(newSet);
+  if(idClubedelaco){
+    Lacador.update(query, newSet, callback);
+  }
+}
+
+
+//Torna um laçador Indepentente
+module.exports.setLacadorIndependenteById = function(idLacador, callback) {
+  const query = {
+    _id: idLacador
+  };
+  const newSet = {
+    $set: {
+      "flgIndepentente": true,
+      "idClube": null
+    }
+  };
+
+  //  console.log('lacador');
+  //  console.log(lacador);
+  //  console.log('newSet');
+  //  console.log(newSet);
+  if(idClubedelaco){
+    Lacador.update(query, newSet, callback);
+  }
 }

@@ -4,6 +4,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const Clubedelaco = require('../models/clubedelaco');
+const Lacador = require('../models/lacador');
 
 
 // List
@@ -64,21 +65,35 @@ router.post('/update', (req, res, next) => {
 
 // Delete
 router.post('/remove', (req, res, next) => {
-  Clubedelaco.removeClubedelaco(req.body.idClubedelaco, (err, callback) => {
+  //Remove os vínculos entre laçadores e este clube
+  Lacador.setLacadorIndependenteByClube(req.body.idClubedelaco, (err, callback) => {
     if (err) {
+      console.log(err);
       res.json({
         success: false,
-        msg: "Erro ao remover o registro do Clube de laço."
+        msg: "Erro ao remover o vinculo entre Clube de laco e seus Laçadores",
+        erro: err
       });
-    } else {
-      res.json({
-        success: true,
-        msg: "Clube de laço removido do sistema com sucesso."
-      });
-    }
-  });
-});
 
+    } else {
+    //remove o clube do sistema
+      Clubedelaco.removeClubedelaco(req.body.idClubedelaco, (err, callback) => {
+        if (err) {
+          console.log(err);
+          res.json({
+            success: false,
+            msg: "Erro ao remover o registro do Clube de laço."
+          });
+        } else {
+          res.json({
+            success: true,
+            msg: "Clube de laço removido do sistema com sucesso. Atenção: Quaisquer Laçadores presentes no clube se tornaram do tipo Independente."
+          });
+        }
+      })
+    }
+  })
+})
 
 //Register
 router.post('/add', (req, res, next) => {

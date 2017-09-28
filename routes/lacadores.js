@@ -81,6 +81,44 @@ router.post('/update', (req, res, next) => {
   });
 });
 
+//Seta o todos os laçadores de um clube como Indepentende;
+router.post('/setLacadorIndependenteByClube', (req, res, next) => {
+  Lacador.setLacadorIndependenteByClube(req.body['idClubedelaco'], (err, callback) => {
+    if (err) {
+      console.log(err);
+      res.json({
+        success: false,
+        msg: "Erro ao remover o vinculo entre Clube de laco e os Laçadores",
+        erro: err
+      });
+    } else {
+      res.json({
+        success: true,
+        msg: "Clubes desvinculados dos Laçadores com sucesso."
+      });
+    }
+  });
+});
+
+//Seta o todos os laçadores de um clube como Indepentende;
+router.post('/setLacadorIndependenteById', (req, res, next) => {
+  Lacador.setLacadorIndependenteById(req.body['idLacador'], (err, callback) => {
+    if (err) {
+      console.log(err);
+      res.json({
+        success: false,
+        msg: "Erro ao remover o vinculo entre Clube de laco e os Laçadores",
+        erro: err
+      });
+    } else {
+      res.json({
+        success: true,
+        msg: "Clubes desvinculados dos Laçadores com sucesso."
+      });
+    }
+  });
+});
+
 // Delete
 router.post('/remove', (req, res, next) => {
   Lacador.removeLacador(req.body.idLacador, (err, callback) => {
