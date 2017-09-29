@@ -62,7 +62,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nhtml {\n    font-size: 14px;\n}\n\n/* do not group these rules */\n*::-webkit-input-placeholder {\n    color: #AAAFB4!important;\n}\n*:-moz-placeholder {\n    /* FF 4-18 */\n    color: AAAFB4!important;\n}\n*::-moz-placeholder {\n    /* FF 19+ */\n    color: AAAFB4!important;\n}\n*:-ms-input-placeholder {\n    /* IE 10+ */\n    color: AAAFB4!important;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\r\nhtml {\r\n    font-size: 14px;\r\n}\r\n\r\n/* do not group these rules */\r\n*::-webkit-input-placeholder {\r\n    color: #AAAFB4!important;\r\n}\r\n*:-moz-placeholder {\r\n    /* FF 4-18 */\r\n    color: AAAFB4!important;\r\n}\r\n*::-moz-placeholder {\r\n    /* FF 19+ */\r\n    color: AAAFB4!important;\r\n}\r\n*:-ms-input-placeholder {\r\n    /* IE 10+ */\r\n    color: AAAFB4!important;\r\n}\r\n", ""]);
 
 // exports
 
