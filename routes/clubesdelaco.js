@@ -55,6 +55,7 @@ router.post('/update', (req, res, next) => {
         erro: err
       });
     } else {
+      console.log('router.post com sucesso');
       res.json({
         success: true,
         msg: "Clube de laço atualizado com sucesso."
@@ -99,10 +100,34 @@ router.post('/remove', (req, res, next) => {
 router.post('/add', (req, res, next) => {
   let newClubedelaco = new Clubedelaco({
     name: req.body.name,
-    sede: req.body.sede,
     email: req.body.email,
-    status: req.body.status
+    sede: req.body.sede,
+    status: req.body.status,
+    razaoSocial: req.body.razaoSocial,
+    cnpj: req.body.cnpj,
+    sigla : req.body.sigla,
+    dataFundacao : req.body.dataFundacao,
+    registroSETEL: req.body.registroSETEL,
+    rua: req.body.rua,
+    numeroSala: req.body.numeroSala,
+    bairro: req.body.bairro,
+    cep: req.body.cep,
+    cidade: req.body.cidade,
+    foneDDD: req.body.foneDDD,
+    fone: req.body.fone,
+    faxDDD: req.body.faxDDD,
+    fax: req.body.fax,
+    nomeRepresentante: req.body.nomeRepresentante,
+    cpfRepresentante: req.body.cpfRepresentante,
+    rgRepresentante: req.body.rgRepresentante,
+    cargoRepresentante: req.body.cargoRepresentante,
+    foneDDDRepresentante: req.body.foneDDDRepresentante,
+    foneRepresentante: req.body.foneRepresentante,
+    atuacao: req.body.atuacao
   })
+
+  console.log('chegou no add');
+  console.log(req.body);
 
   //valida unique keys: CNPJ
   //  Clubedelaco.getClubedelacoByCNPJ(newClubedelaco, (err, federacaoEncontrada) => {

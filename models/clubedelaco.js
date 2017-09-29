@@ -4,22 +4,31 @@ const config = require('../config/database');
 
 // Clubedelaco Schema
 const ClubedelacoSchema = mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  sede: {
-    type: String,
-    required: true
-  },
-  status: {
-    type: Boolean,
-    required: true
-  }
+  name: { type: String, required: true},
+  email: { type: String, required: true },
+  sede: { type: String, required: true },
+  status: { type: Boolean, required: true },
+  razaoSocial: { type: String, required: true },
+  cnpj: { type: String, required: true },
+  sigla: { type: String },
+  dataFundacao: { type: String },
+  registroSETEL: { type: String },
+  rua: { type: String },
+  numeroSala: { type: String },
+  bairro: { type: String },
+  cep: { type: String },
+  cidade: { type: String },
+  foneDDD: { type: String },
+  fone: { type: String },
+  faxDDD: { type: String },
+  fax: { type: String },
+  nomeRepresentante: { type: String },
+  cpfRepresentante: { type: String },
+  rgRepresentante: { type: String },
+  cargoRepresentante: { type: String },
+  foneDDDRepresentante: { type: String },
+  foneRepresentante: { type: String },
+  atuacao: { type: String }
 });
 
 const Clubedelaco = module.exports = mongoose.model('Clubedelaco', ClubedelacoSchema);
@@ -54,7 +63,9 @@ module.exports.getClubedelacoByEmail = function(email, callback){
 
 // Add
 module.exports.addClubedelaco = function(newClubedelaco, callback){
+      console.log('addClubedelaco');
       newClubedelaco.save(callback);
+      console.log(callback);
   };
 
 //remove
@@ -73,9 +84,31 @@ module.exports.updateById = function(clubedelaco,callback){
       "name": clubedelaco.name,
       "email": clubedelaco.email,
       "sede": clubedelaco.sede,
-      "status": clubedelaco.status
+      "status": clubedelaco.status,
+      "razaoSocial": clubedelaco.razaoSocial,
+      "cnpj": clubedelaco.cnpj,
+      "sigla" : clubedelaco.sigla,
+      "dataFundacao" : clubedelaco.dataFundacao,
+      "registroSETEL": clubedelaco.registroSETEL,
+      "rua": clubedelaco.rua,
+      "numeroSala": clubedelaco.numeroSala,
+      "bairro": clubedelaco.bairro,
+      "cep": clubedelaco.cep,
+      "cidade": clubedelaco.cidade,
+      "foneDDD": clubedelaco.foneDDD,
+      "fone": clubedelaco.fone,
+      "faxDDD": clubedelaco.faxDDD,
+      "fax": clubedelaco.fax,
+      "nomeRepresentante": clubedelaco.nomeRepresentante,
+      "cpfRepresentante": clubedelaco.cpfRepresentante,
+      "rgRepresentante": clubedelaco.rgRepresentante,
+      "cargoRepresentante": clubedelaco.cargoRepresentante,
+      "foneDDDRepresentante": clubedelaco.foneDDDRepresentante,
+      "foneRepresentante": clubedelaco.foneRepresentante,
+      "atuacao": clubedelaco.atuacao
     }
   };
+  console.log("sets");
   console.log(sets);
   Clubedelaco.updateOne(query, sets, callback);
   console.log(callback);

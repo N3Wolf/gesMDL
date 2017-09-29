@@ -5,11 +5,14 @@ import { LacadoresService } from '../../../services/lacadores.service';
 import { ValidateService } from '../../../services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
+import { NgbDateStruct, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 //import { uiSelect } from 'ui-select';
 //import { ngSanitize } from 'angular-sanitize';
 
 import { ActivatedRoute } from '@angular/router';
 
+
+const now = new Date();
 
 @Component({
   selector: 'app-lacadores-view',
@@ -49,7 +52,8 @@ export class LacadoresViewComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private clubesdelacoService: ClubesdelacoService,
-    private lacadoresService: LacadoresService
+    private lacadoresService: LacadoresService,
+    private ngbDateParserFormatter : NgbDateParserFormatter
 
   ) { }
 
@@ -68,8 +72,10 @@ export class LacadoresViewComponent implements OnInit {
       //Edit ou View
       this.lacadoresService.getLacadorById(this.idRecord).subscribe((result) => {
         this.Lacador = result;
-        // console.log('this.Lacador');
-        // console.log(this.Lacador);
+        //pega a data no formato do banco de dados e monta o array do componente Datepicker
+        this.Lacador.arrayDataAssociacao = this.ngbDateParserFormatter.parse(this.Lacador.dataAssociacao);
+         console.log('this.Lacador');
+         console.log(this.Lacador);
         // console.log('this.Lacador.idClube');
         // console.log(this.Lacador.idClube);
         if(this.isEdit){
@@ -124,7 +130,10 @@ export class LacadoresViewComponent implements OnInit {
     }
   }
 
+
 onLacadoresSubmit() {
+  //Monta a data de fundação no formato para o banco de dados.
+  this.Lacador.dataAssociacao = new Date (this.Lacador.arrayDataAssociacao.year, this.Lacador.arrayDataAssociacao.month-1, this.Lacador.arrayDataAssociacao.day);
   const newLacador = {
     name: this.Lacador.name,
     cpf: this.Lacador.cpf,
@@ -158,7 +167,7 @@ onLacadoresSubmit() {
   //
 
    console.log('newLacador');
-   console.log(newLacador.idClube);
+   console.log(newLacador);
 
   if (this.isInsert) {
     this.lacadoresService.addLacador(newLacador).subscribe(data => {
@@ -174,11 +183,13 @@ onLacadoresSubmit() {
     //isEdit
     this.lacadoresService.updateLacador(this.Lacador).subscribe(data => {
       if (data.success) {
-        //console.log(data);
-        this.router.navigate(['lacadores-view', { id: this.Lacador._id, isEdit: true }]);
-        this.flashMessage.show('Laçador atualizado com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
+        console.log(data);
+        //this.router.navigate(['lacadores-view', { id: this.Lacador._id, isEdit: true }]);
+        this.flashMessage.show('Laçador atualizado com sucesso.', { cssClass: 'alert-success', timeout: 5000 });
+        window.scrollTo(0,0);
       } else {
-        this.flashMessage.show('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+        this.flashMessage.show('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg, { cssClass: 'alert-danger', timeout: 5000 });
+        window.scrollTo(0,0);
       }
     })
   }

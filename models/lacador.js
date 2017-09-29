@@ -3,22 +3,10 @@ const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 
 const LacadorSchema = mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  cpf: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  endereco: {
-    type: String,
-    required: true
-  },
+  name: { type: String,  required: true },
+  cpf: { type: String, required: true },
+  email: { type: String, required: true },
+  endereco: { type: String, required: true },
   status: { type: Boolean, required: true },
   picture: {  type: Buffer, contentType: String},
   idClube: { type: String },
@@ -103,7 +91,13 @@ module.exports.updateById = function(lacador, callback) {
       "endereco": lacador.endereco,
       "status": lacador.status,
       "picture": lacador.picture,
-      "idClube": lacador.idClube
+      "idClube": lacador.idClube,
+      "apelido": lacador.apelido,
+      "foneDDD1": lacador.foneDDD1,
+      "fone1": lacador.fone1,
+      "foneDDD2": lacador.foneDDD2,
+      "fone2": lacador.fone2,
+      "dataAssociacao": lacador.dataAssociacao
     }
   };
 

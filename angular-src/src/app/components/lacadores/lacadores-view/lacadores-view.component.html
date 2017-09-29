@@ -11,11 +11,11 @@
 
             <div id="div_id_As" class="form-group required">
                 <label for="clube" class="control-label col-md-4  requiredField"> Clube <span class="asteriskField">*</span> </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
+                <div *ngIf="isView" class="controls col-md-7 ">
                     <p style="margin-top: 10px" type="text" ><label style="font-weight: normal"> {{Lacador.nameClube}} </label> </p>
                 </div>
-                <div *ngIf="!isView" class="controls col-md-8 ">
-                    <select name="clube" id="repeatSelect" class="input-md form-control" style="margin-bottom: 10px;" [(ngModel)]="Lacador.idClube">
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                    <select name="clube" id="repeatSelect" class="input-md form-control " style="margin-bottom: 10px;" [(ngModel)]="Lacador.idClube">
                         <option> </option>
                         <option *ngFor="let clube of Clubedelaco" [ngValue]="clube._id">{{clube.name}}
                         </option>
@@ -26,111 +26,100 @@
 
 
                 <label for="nomeLacador" class="control-label col-md-4  requiredField"> Nome do Laçador <span class="asteriskField">*</span> </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
+                <div *ngIf="isView" class="controls col-md-7 ">
                   <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.name}} </label> </p>
                 </div>
-                <div *ngIf="!isView" class="controls col-md-8 ">
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
                   <input class="input-md  textinput textInput form-control" id="id_name" maxlength="30" [(ngModel)]="Lacador.name" name="name" placeholder="Digite o nome do laçador" style="margin-bottom: 10px" type="text">
                 </div>
 
                 <label for="apelido" class="control-label col-md-4  requiredField"> Apelido </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
+                <div *ngIf="isView" class="controls col-md-7 ">
                   <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.apelido}} </label></p>
                 </div>
-                <div *ngIf="!isView" class="controls col-md-8 ">
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
                   <input class="input-md  textinput textInput form-control" id="id_apelido" maxlength="30" [(ngModel)]="Lacador.apelido" name="apelido" placeholder="Digite o apelido" style="margin-bottom: 10px" type="text">
                 </div>
 
                 <label for="foneDDD1" class="control-label col-md-4  requiredField"> Fone 1 </label>
-                <div *ngIf="isView" class="col-sm-4">
-                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> ({{this.Lacador.foneDDD1}}) {{this.Lacador.fone1}} </label></p>
+                <div *ngIf="isView" class="col-sm-7">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.foneDDD1}} {{this.Lacador.fone1}} </label></p>
                 </div>
-                <div *ngIf="!isView" class="controls col-md-2">
-                  <input class="form-control" id="id_fone1" maxlength="2" [(ngModel)]="Lacador.foneDDD1" name="foneDDD1" placeholder="(##)" style="margin-bottom: 10px %" type="text">
-                </div>
-                <div *ngIf="!isView" class="controls col-md-6">
-                  <input class="form-control" id="id_fone1" maxlength="30" [(ngModel)]="Lacador.fone1" name="fone1" placeholder="Digite um numero de telefone" style="margin-bottom: 10px" type="text">
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                  <input class="form-control col-md-2" id="id_fone1" maxlength="2" [(ngModel)]="Lacador.foneDDD1" name="foneDDD1" placeholder="(##)" style="margin-bottom: 10px ; width:50" type="text">
+                  <input class="form-control" id="id_fone1" maxlength="30" [(ngModel)]="Lacador.fone1" name="fone1" placeholder="Digite um numero de telefone" style="margin-bottom: 10px;  margin-left: 5px" type="text">
                 </div>
 
                 <label for="foneDDD2" class="control-label col-md-4  requiredField"> Fone 2 </label>
-                <div *ngIf="isView" class="col-sm-4">
-                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> ({{this.Lacador.foneDDD2}}) {{this.Lacador.fone2}} </label></p>
+                <div *ngIf="isView" class="col-sm-7">
+                  <p style="margin-top: 10px " type="text"> <label style="font-weight: normal"> {{this.Lacador.foneDDD2}} {{this.Lacador.fone2}} </label></p>
                 </div>
-                <div *ngIf="!isView" class="controls col-md-2">
-                  <input class="form-control" id="id_fone2" maxlength="2" [(ngModel)]="Lacador.foneDDD2" name="foneDDD2" placeholder="(##)" style="margin-bottom: 10px %" type="text">
-                </div>
-                <div *ngIf="!isView" class="controls col-md-6">
-                  <input class="form-control" id="id_fone2" maxlength="30" [(ngModel)]="Lacador.fone2" name="fone2" placeholder="Digite um numero de telefone" style="margin-bottom: 10px" type="text">
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                  <input class="form-control col-md-2" id="id_fone2" maxlength="2" [(ngModel)]="Lacador.foneDDD2" name="foneDDD2" placeholder="(##)" style="margin-bottom: 10px; " type="text">
+                  <input class="form-control" id="id_fone2" maxlength="30" [(ngModel)]="Lacador.fone2" name="fone2" placeholder="Digite um numero de telefone" style="margin-bottom: 10px ; margin-left: 5px" type="text">
                 </div>
 
                 <label for="cpf" class="control-label col-md-4  requiredField"> CPF <span class="asteriskField">*</span> </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
+                <div *ngIf="isView" class="controls col-md-7 ">
                   <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.cpf}} </label></p>
                 </div>
-                <div *ngIf="!isView" class="controls col-md-8 ">
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
                   <input class="input-md  textinput textInput form-control" id="id_sede" maxlength="30" [(ngModel)]="Lacador.cpf" name="cpf" placeholder="Digite o CPF do laçador" style="margin-bottom: 10px" type="text">
                 </div>
 
 
 
                 <label for="cpf" class="control-label col-md-4  requiredField"> Endereço <span class="asteriskField">*</span> </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
+                <div *ngIf="isView" class="controls col-md-7 ">
                   <p style="margin-top: 10px" type="text"> <label style="font-weight: normal">{{this.Lacador.endereco}}</label> </p>
                 </div>
-                <div *ngIf="!isView" class="controls col-md-8 ">
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
                   <input class="input-md  textinput textInput form-control" id="id_sede" maxlength="30" [(ngModel)]="Lacador.endereco" name="endereco" placeholder="Digite um endereço de referência" style="margin-bottom: 10px" type="text">
                 </div>
 
 
 
                 <label for="email" class="control-label col-md-4"> E-mail </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
+                <div *ngIf="isView" class="controls col-md-7 ">
                   <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.email}} </label></p>
                 </div>
-                <div *ngIf="!isView" class="controls col-md-8 ">
+                <div *ngIf="!isView" class="controls  col-md-7 input-group">
                   <input class="input-md  textinput textInput form-control" id="id_email" maxlength="30" [(ngModel)]="Lacador.email" name="email" placeholder="Digite um e-mail de contato" style="margin-bottom: 10px" type="text">
                 </div>
 
 
 
                 <label for="dataAssociacao" class="control-label col-md-4  requiredField"> Data de Associação </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
-                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.dataAssociacao | date: 'dd/MM/yyyy'}} </label></p>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{ this.Lacador.dataAssociacao | date:"dd/MM/yyyy"}} </label></p>
                 </div>
-                <div *ngIf="!isView" class="input-group date col-md-8 ">
-                  <input class="input-md  dateInput dateinput form-control" id="dataAssociacao" maxlength="30" [(ngModel)]="Lacador.dataAssociacao" name="dataAssociacao" placeholder="Digite a data de Associacao" style="margin-bottom: 10px" type="date">
+                <div *ngIf="!isView" class="controls date col-md-7 input-group">
+                  <input class="input-md textinput textInput form-control" placeholder="yyyy-mm-dd"
+                             id="dataAssociacao" name="dataAssociacao" [(ngModel)]="Lacador.arrayDataAssociacao" ngbDatepicker #d="ngbDatepicker">
+                      <button class="input-group-addon" style="width: 8%"  (click)="d.toggle()" type="button">
+                        <span class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;"></span>
+                        <!-- <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
+                      </button>
+
+                  <!-- <ngb-datepicker [(ngModel)]="model"></ngb-datepicker> -->
+                  <!-- <input class="input-md  textinput textInput form-control" id="dataAssociacao" maxlength="30" [(ngModel)]="Lacador.dataAssociacao" name="dataAssociacao" placeholder="Digite a data de Associacao" style="margin-bottom: 10px" type="date"> -->
                 </div>
 
-                <label for="email" class="control-label col-md-4  requiredField"> E-mail </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
-                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.email}} </label></p>
-                </div>
-                <div *ngIf="!isView" class="controls col-md-8 ">
-                  <input class="input-md  textinput textInput form-control" id="id_email" maxlength="30" [(ngModel)]="Lacador.email" name="email" placeholder="Digite um e-mail de contato" style="margin-bottom: 10px" type="text">
-                </div>
-
-                <label for="email" class="control-label col-md-4  requiredField"> E-mail </label>
-                <div *ngIf="isView" class="controls col-md-8 ">
-                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.email}} </label></p>
-                </div>
-                <div *ngIf="!isView" class="controls col-md-8 ">
-                  <input class="input-md  textinput textInput form-control" id="id_email" maxlength="30" [(ngModel)]="Lacador.email" name="email" placeholder="Digite um e-mail de contato" style="margin-bottom: 10px" type="text">
-                </div>
 
 
             </div>
 
             <!-- <div id="div_picture" class="form-group required">
               <label for="picture" class="control-label col-md-4  requiredField"> Foto <span class="asteriskField">*</span> </label>
-              <div *ngIf="isView" class="controls col-md-8 ">
+              <div *ngIf="isView" class="controls col-md-7 ">
                 <p style="margin-top: 10px" type="text">{{this.Lacador.email}} </p>
               </div>
-              <div *ngIf="!isView" class="controls col-md-8 ">
+              <div *ngIf="!isView" class="controls col-md-7 ">
                 <input class="input-md  textinput textInput form-control" id="id_email" maxlength="30" [(ngModel)]="Lacador.picture" name="picture" placeholder="Selecione uma foto de seu computador" style="margin-bottom: 10px" type="image">
               </div>
             </div> -->
               <!-- <label for="id_As" class="control-label col-md-4  requiredField">Status<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 " style="margin-bottom: 10px">
+              <div class="controls col-md-7 " style="margin-bottom: 10px">
                 <label class="radio-inline"> <input type="radio"  checked name="As" id="id_As_1" value="I"  style="margin-bottom: 10px">Ativo </label>
                 <label class="radio-inline"> <input type="radio" name="As" id="id_As_2" value="CI"  style="margin-bottom: 10px">Inativo </label>
               </div>
@@ -139,55 +128,55 @@
 <!--
             <div id="div_id_password1" class="form-group required">
               <label for="id_password1" class="control-label col-md-4  requiredField">Password<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 ">
+              <div class="controls col-md-7 ">
                 <input class="input-md textinput textInput form-control" id="id_password1" name="password1" placeholder="Create a password" style="margin-bottom: 10px" type="password" />
               </div>
             </div>
             <div id="div_id_password2" class="form-group required">
               <label for="id_password2" class="control-label col-md-4  requiredField"> Re:password<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 ">
+              <div class="controls col-md-7 ">
                 <input class="input-md textinput textInput form-control" id="id_password2" name="password2" placeholder="Confirm your password" style="margin-bottom: 10px" type="password" />
               </div>
             </div>
             <div id="div_id_name" class="form-group required">
               <label for="id_name" class="control-label col-md-4  requiredField"> full name<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 ">
+              <div class="controls col-md-7 ">
                 <input class="input-md textinput textInput form-control" id="id_name" name="name" placeholder="Your Frist name and Last name" style="margin-bottom: 10px" type="text" />
               </div>
             </div>
             <div id="div_id_gender" class="form-group required">
               <label for="id_gender" class="control-label col-md-4  requiredField"> Gender<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 " style="margin-bottom: 10px">
+              <div class="controls col-md-7 " style="margin-bottom: 10px">
                 <label class="radio-inline"> <input type="radio" name="gender" id="id_gender_1" value="M"  style="margin-bottom: 10px">Male</label>
                 <label class="radio-inline"> <input type="radio" name="gender" id="id_gender_2" value="F"  style="margin-bottom: 10px">Female </label>
               </div>
             </div>
             <div id="div_id_company" class="form-group required">
               <label for="id_company" class="control-label col-md-4  requiredField"> company name<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 ">
+              <div class="controls col-md-7 ">
                 <input class="input-md textinput textInput form-control" id="id_company" name="company" placeholder="your company name" style="margin-bottom: 10px" type="text" />
               </div>
             </div>
             <div id="div_id_catagory" class="form-group required">
               <label for="id_catagory" class="control-label col-md-4  requiredField"> catagory<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 ">
+              <div class="controls col-md-7 ">
                 <input class="input-md textinput textInput form-control" id="id_catagory" name="catagory" placeholder="skills catagory" style="margin-bottom: 10px" type="text" />
               </div>
             </div>
             <div id="div_id_number" class="form-group required">
               <label for="id_number" class="control-label col-md-4  requiredField"> contact number<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 ">
+              <div class="controls col-md-7 ">
                 <input class="input-md textinput textInput form-control" id="id_number" name="number" placeholder="provide your number" style="margin-bottom: 10px" type="text" />
               </div>
             </div>
             <div id="div_id_location" class="form-group required">
               <label for="id_location" class="control-label col-md-4  requiredField"> Your Location<span class="asteriskField">*</span> </label>
-              <div class="controls col-md-8 ">
+              <div class="controls col-md-7 ">
                 <input class="input-md textinput textInput form-control" id="id_location" name="location" placeholder="Your Pincode and City" style="margin-bottom: 10px" type="text" />
               </div>
             </div>
             <div class="form-group">
-              <div class="controls col-md-offset-4 col-md-8 ">
+              <div class="controls col-md-offset-4 col-md-7 ">
                 <div id="div_id_terms" class="checkbox required">
                   <label for="id_terms" class=" requiredField">
                                          <input class="input-ms checkboxinput" id="id_terms" name="terms" style="margin-bottom: 10px" type="checkbox" />
@@ -199,7 +188,7 @@
             </div>  -->
             <div class="form-group">
               <div class="aab controls col-md-4 "></div>
-              <div class="controls col-md-8 ">
+              <div class="controls col-md-7 ">
                 <button *ngIf="!isView" id="submit-id-save" type="submit" class="btn btn-primary btn btn-confirm"><i class="icon-hand-right">Salvar</i></button>
                 <input type="button" [routerLink]="['/lacadores']"  name="BtnCancel" value="Voltar" class="btn btn btn-cancel" id="button-id-cancelar" >
 

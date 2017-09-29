@@ -1,10 +1,11 @@
+//Native stuf
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
-
+//Componentes desenvolvidos
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
@@ -13,16 +14,6 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
-
-
-
-import {ValidateService} from './services/validate.service';
-import {AuthService} from './services/auth.service';
-import {FederacaoService} from './services/federacao.service';
-import {ClubesdelacoService} from './services/clubesdelaco.service';
-import { LacadoresService} from './services/lacadores.service';
-
-import {AuthGuard} from './guards/auth.guard';
 import { FooterComponent } from './components/footer/footer.component';
 import { ClubesdelacoComponent } from './components/clubesdelaco/clubesdelaco.component';
 import { FederacaoComponent } from './components/federacao/federacao.component';
@@ -32,8 +23,21 @@ import { FederacaoAddComponent } from './components/federacao/federacao-add/fede
 import { ClubesdelacoViewComponent } from './components/clubesdelaco/clubesdelaco-view/clubesdelaco-view.component';
 import { LacadoresViewComponent } from './components/lacadores/lacadores-view/lacadores-view.component';
 
+//Serviços desenvolvidos
+import {ValidateService} from './services/validate.service';
+import {AuthService} from './services/auth.service';
+import {FederacaoService} from './services/federacao.service';
+import {ClubesdelacoService} from './services/clubesdelaco.service';
+import { LacadoresService} from './services/lacadores.service';
+
+//Guardas desenvolvidas
+import {AuthGuard} from './guards/auth.guard';
+
 //third party stuff
 import {FlashMessagesModule} from 'angular2-flash-messages';
+import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { DatepickerConfigComponent } from './components/datepicker-config/datepicker-config.component';
+import { MyNgbDateParserFormatter } from './classes/myNgbDateParserFormatter'
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes =  [
@@ -50,6 +54,7 @@ const appRoutes: Routes =  [
   {path:'lacadores-view', component: LacadoresViewComponent, canActivate:[AuthGuard]}
   //resto das routes aqui
 ]
+
 
 @NgModule({
   declarations: [
@@ -68,7 +73,8 @@ const appRoutes: Routes =  [
     FederacaoViewComponent,
     FederacaoAddComponent,
     ClubesdelacoViewComponent,
-    LacadoresViewComponent
+    LacadoresViewComponent,
+    DatepickerConfigComponent
 //    BrowserAnimationsModule
 
   ],
@@ -78,9 +84,17 @@ const appRoutes: Routes =  [
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule
+    FlashMessagesModule,
+    NgbModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard, FederacaoService, ClubesdelacoService, LacadoresService],
+  providers: [
+    ValidateService,
+    AuthService,
+    AuthGuard,
+    FederacaoService,
+    ClubesdelacoService,
+    LacadoresService,
+    {provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter}] ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    font-size: 14px;
+}
+
+/* do not group these rules */
+*::-webkit-input-placeholder {
+    color: #AAAFB4!important;
+}
+*:-moz-placeholder {
+    /* FF 4-18 */
+    color: AAAFB4!important;
+}
+*::-moz-placeholder {
+    /* FF 19+ */
+    color: AAAFB4!important;
+}
+*:-ms-input-placeholder {
+    /* IE 10+ */
+    color: AAAFB4!important;
+}
