@@ -30,8 +30,8 @@ const clubesdelaco = require('./routes/clubesdelaco');
 const lacadores = require('./routes/lacadores');
 
 // Port number
-//const port = 3000;
-const port = process.env.PORT || 8080;
+const port = 3000;
+//const port = process.env.PORT || 8080;
 
 // CORS middleware
 app.use(cors());

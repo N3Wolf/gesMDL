@@ -93,10 +93,10 @@
                 <div *ngIf="isView" class="controls col-md-7 ">
                   <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{ this.Lacador.dataAssociacao | date:"dd/MM/yyyy"}} </label></p>
                 </div>
-                <div *ngIf="!isView" class="controls date col-md-7 input-group">
-                  <input class="input-md textinput textInput form-control" placeholder="yyyy-mm-dd"
-                             id="dataAssociacao" name="dataAssociacao" [(ngModel)]="Lacador.arrayDataAssociacao" ngbDatepicker #d="ngbDatepicker">
-                      <button class="input-group-addon" style="width: 8%"  (click)="d.toggle()" type="button">
+                <div *ngIf="!isView" class="controls date col-md-7 input-group" style="margin-bottom: 10px">
+                  <input class="input-md textinput textInput form-control" placeholder="dd/MM/yyyy"
+                             id="dataAssociacao" name="dataAssociacao" [(ngModel)]="Lacador.arrayDataAssociacao" ngbDatepicker #d="ngbDatepicker" >
+                      <button class="input-group-addon" style="width: 8%"  (click)="d.toggle()" type="button" >
                         <span class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;"></span>
                         <!-- <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/> -->
                       </button>
@@ -105,6 +105,16 @@
                   <!-- <input class="input-md  textinput textInput form-control" id="dataAssociacao" maxlength="30" [(ngModel)]="Lacador.dataAssociacao" name="dataAssociacao" placeholder="Digite a data de Associacao" style="margin-bottom: 10px" type="date"> -->
                 </div>
 
+                <label for="picture" class="control-label col-md-4"> picture </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.picture}} </label></p>
+                </div>
+                <div *ngIf="!isView" class="controls file col-md-7 input-group" style="margin-bottom: 10px">
+                  <input type="text" #pictureInput  class="input-md  form-control image-preview-filename" id="id_picture" name="picture" placeholder="Escolha uma foto do computador" disabled="disabled">
+                  <button class="input-group-addon" style="width: 8%"  (click)="onUploadPicture()" type="button" >
+                      <span class="fa fa-photo" style="width: 0.2rem; height: 1rem; cursor: pointer;"></span>
+                  </button>
+                </div>
 
 
             </div>

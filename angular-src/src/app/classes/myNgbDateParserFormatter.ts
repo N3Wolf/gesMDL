@@ -30,8 +30,8 @@ export class MyNgbDateParserFormatter extends NgbDateParserFormatter {
 				returnVal = null;
 			} else {
 				try {
-					let dateParts = this.datePipe.transform(value, 'M-d-y').split('-');
-					returnVal = { year: parseInt(dateParts[2]), month: parseInt(dateParts[0]), day: parseInt(dateParts[1]) };
+					let dateParts = this.datePipe.transform(value, 'dd/MM/yyyy').split('/');
+					returnVal = { year: parseInt(dateParts[2]), month: parseInt(dateParts[1]), day: parseInt(dateParts[0]) };
 				} catch (e) {
 					returnVal = null;
 				}
@@ -44,7 +44,7 @@ export class MyNgbDateParserFormatter extends NgbDateParserFormatter {
 				return '';
 			}
 			try {
-				return this.datePipe.transform(new Date(date.year, date.month - 1, date.day), 'shortDate');
+				return this.datePipe.transform(new Date(date.year, date.month - 1, date.day), 'dd/MM/yyyy');
 			} catch (e) {
 				return '';
 			}
@@ -55,7 +55,7 @@ export class MyNgbDateParserFormatter extends NgbDateParserFormatter {
 				return '';
 			}
 			try {
-				return this.datePipe.transform(new Date(date.year, date.month - 1, date.day), 'y-MM-dd');
+				return this.datePipe.transform(new Date(date.year, date.month - 1, date.day), 'dd-MM-yyyy');
 			} catch (e) {
 				return '';
 			}

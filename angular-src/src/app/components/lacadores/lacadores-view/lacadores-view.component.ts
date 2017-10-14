@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 //import { FederacaoService } from '../../../services/federacao.service';
 import { ClubesdelacoService } from '../../../services/clubesdelaco.service';
 import { LacadoresService } from '../../../services/lacadores.service';
@@ -20,6 +20,7 @@ const now = new Date();
   styleUrls: ['./lacadores-view.component.css']
 })
 export class LacadoresViewComponent implements OnInit {
+   @ViewChild('pictureInput') fileInput;
    Lacador : any =  {
     _id: String,
     name: String,
@@ -129,6 +130,18 @@ export class LacadoresViewComponent implements OnInit {
       }
     }
   }
+
+
+onUploadPicture() {
+  let fileBrowser = this.fileInput.nativeElement;
+  if (fileBrowser.files && fileBrowser.files[0]) {
+      const formData = new FormData();
+      formData.append("image", fileBrowser.files[0]);
+      // this.projectService.upload(formData, this.project.id).subscribe(res => {
+      //   // do stuff w/my uploaded file
+      // });
+    }
+}
 
 
 onLacadoresSubmit() {
