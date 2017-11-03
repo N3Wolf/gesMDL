@@ -1,0 +1,81 @@
+<!-- <h2 class="page-header">Criar conta</h2>
+<form (submit)="onRegisterSubmit()">
+  <div class="form-group">
+    <label>Nome</label>
+    <input type="text" [(ngModel)]="name" name="name" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Usuário</label>
+    <input type="text" [(ngModel)]="username" name="username" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>E-mail</label>
+    <input type="text" [(ngModel)]="email" name="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Senha</label>
+    <input type="password" [(ngModel)]="password" name="password" class="form-control">
+  </div>
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form> -->
+
+  <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Criar conta</div>
+        <!-- <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" [routerLink]="['/login']">Fazer Login</a></div> -->
+      </div>
+      <div class="panel-body">
+        <form id="signupform" class="form-horizontal" role="form" (submit)="onRegisterSubmit()">
+
+          <div id="signupalert" style="display:none" class="alert alert-danger">
+            <p>Error:</p>
+            <span></span>
+          </div>
+
+          <div class="form-group">
+            <label for="firstname" class="col-md-3 control-label">Nome</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Seu nome aqui">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastname" class="col-md-3 control-label">Usuário</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Seu usuário aqui">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-md-3 control-label">Email</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="Seu e-mail aqui">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-md-3 control-label">Password</label>
+            <div class="col-md-9">
+              <input type="password" class="form-control"  [(ngModel)]="password" name="password" placeholder="Minimo de 8 digitos">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <!-- Button -->
+            <div class="col-md-offset-3 col-md-9">
+              <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> Criar conta</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12 control">
+              <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+              Já possui uma conta?
+
+                <a [routerLink]="['/login']">Faça o login aqui</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,52 @@
+<app-sidenav *ngIf="!isDetail"></app-sidenav>
+
+<div class="col-md-9">
+  <div id="addboxFederacao" style="margin-top:30px" class="mainbox col-md-12 col-md-offset-0 col-sm-0 ">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Clubes de laço cadastrados                         <a [routerLink]="['/clubesdelacoView', {isInsert: true}]" style="float: right; font-size: 16px; border-style='solid'"><span class="fa fa-plus" > Adicionar </span></a></div>
+      </div>
+      <div class="panel-body">
+  <!-- <div class="panel-body col-md-12 col-md-offset-0 col-sm-0" style="margin-top:30px">
+
+  <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+    <div class="dataTables_length" id="DataTables_Table_0_length">
+      <label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control">
+        <option value="10">10</option><option value="25">25</option>
+        <option value="50">50</option><option value="100">100</option>
+      </select> entries</label></div>
+    <div id="DataTables_Table_0_filter" class="dataTables_filter">
+      <label>Search:<input type="search" class="form-control " placeholder="" aria-controls="DataTables_Table_0"></label></div> -->
+
+  <!-- <table *ngFor="let obj of objclube" class="table datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info"> -->
+  <table class="table datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+    <thead>
+      <tr role="row">
+        <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="" style="width: 307px;">Nome</th>
+        <!-- <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 476px;">Razão Social</th> -->
+        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 115px;">E-mail</th>
+        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 233px;">Sede/Localização</th>
+        <!-- <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 215px;">Status</th> -->
+        <!-- <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 215px;">Ações</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr role="row" >
+          <tr role="row" *ngFor="let registro of ClubesList">
+            <td class="sorting_1"><a [routerLink]="['/clubesdelacoView', { id : registro._id , isView: true}]" >{{registro.name}}</a></td>
+            <!-- <td>{{registro.razaosocial}}</td> -->
+            <td>{{registro.email}}</td>
+            <td>{{registro.sede}}</td>
+            <!-- <td>{{registro.status ? 'Ativo': 'Inativo'}}</td> -->
+            <td><span (click)="onEditRequest(registro._id)" class="fa fa-edit"></span></td>
+            <td><span  (click)="onDeleteRequest(registro._id, registro.name)" class="glyphicon glyphicon-remove"></span></td>
+
+          </tr>
+    </tbody>
+  </table>
+  <div class="panel-footer" id="DataTables_Table_0_info" role="status" aria-live="polite">
+    <label style="float:right" > {{this.registros}} <small>registros encontrados</small> </label>
+  </div>
+  <!-- <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous">Previous</a><span><a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">2</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0">3</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="4" tabindex="0">4</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="5" tabindex="0">5</a><a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="6" tabindex="0">6</a></span> -->
+    <!-- <a class="paginate_button next" aria-controls="DataTables_Table_0" data-dt-idx="7" tabindex="0" id="DataTables_Table_0_next">Next</a> -->
+</div>

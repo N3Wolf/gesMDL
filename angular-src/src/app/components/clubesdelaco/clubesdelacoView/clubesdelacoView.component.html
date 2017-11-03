@@ -1,0 +1,268 @@
+<div class="col-md-9">
+  <div id="addboxClubeLaco" style="margin-top:30px" class="mainbox col-md-12 col-md-offset-0 col-sm-0 ">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Cadastro do Clube de Laço</div>
+      </div>
+      <div class="panel-body">
+
+          <form form id="clubedelacoForm" class="form-horizontal" role="form" (submit)="onClubesdelacoSubmit()">
+            <!-- Nome do clube -->
+            <div id="div_id_As" class="form-group required">
+              <div id="div_nomeclube" class="form-group required">
+                <label for="nomeclube" class="control-label col-md-4  requiredField"> Nome do clube: <span class="asteriskField">*</span> </label>
+                <div *ngIf="isView" class="controls col-md-8 ">
+                  <p style="margin-top: 10px" type="text">{{this.Clubedelaco.name}} </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group ">
+                  <input class="input-md  textinput textInput form-control" id="id_name" maxlength="30" [(ngModel)]="Clubedelaco.name" name="name" placeholder="Escolha um nome para o Clube" style="margin-bottom: 10px" type="text">
+                </div>
+              </div>
+
+
+              <div id="div_sede_localização" class="form-group required">
+                <label for="sede_localizacao" class="control-label col-md-4  requiredField"> Sede / Localização <span class="asteriskField">*</span> </label>
+                <div *ngIf="isView" class="controls col-md-8 ">
+                  <p style="margin-top: 10px" type="text">{{this.Clubedelaco.sede}} </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group ">
+                  <input class="input-md  textinput textInput form-control" id="id_sede" maxlength="30" [(ngModel)]="Clubedelaco.sede" name="sede" placeholder="Sede ou localização do clube" style="margin-bottom: 10px" type="text">
+                </div>
+              </div>
+
+              <div id="div_email" class="form-group required">
+                <label for="email" class="control-label col-md-4  requiredField"> E-mail <span class="asteriskField">*</span> </label>
+                <div *ngIf="isView" class="controls col-md-8 ">
+                  <p style="margin-top: 10px" type="text">{{this.Clubedelaco.email}} </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group ">
+                  <input class="input-md  textinput textInput form-control" id="id_email" maxlength="30" [(ngModel)]="Clubedelaco.email" name="email" placeholder="Sede ou localização do clube" style="margin-bottom: 10px" type="text">
+                </div>
+              </div>
+
+
+            <div id="div_razaoSocial" class="form-group required">
+              <label for="razaoSocial" class="control-label col-md-4  requiredField"> Razão Social <span class="asteriskField">*</span> </label>
+              <div *ngIf="isView" class="controls col-md-8 ">
+                <p style="margin-top: 10px" type="text">{{this.Clubedelaco.razaoSocial}} </p>
+              </div>
+              <div *ngIf="!isView" class="controls col-md-7 input-group ">
+                <input class="input-md  textinput textInput form-control" id="id_razaoSocial" maxlength="30" [(ngModel)]="Clubedelaco.razaoSocial" name="razaoSocial" placeholder="Razão social do clube" style="margin-bottom: 10px" type="text">
+              </div>
+            </div>
+
+
+          <div id="div_cnpj" class="form-group required">
+            <label for="cnpj" class="control-label col-md-4  requiredField"> CNPJ <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.cnpj}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group">
+              <input class="input-md  textinput textInput form-control" id="id_cnpj" maxlength="30" [(ngModel)]="Clubedelaco.cnpj" name="cnpj" placeholder="CNPJ do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_sigla" class="form-group ">
+            <label for="sigla" class="control-label col-md-4  requiredField"> Sigla </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.sigla}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_sigla" maxlength="30" [(ngModel)]="Clubedelaco.sigla" name="sigla" placeholder="sigla do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_dataFundacao" class="form-group required">
+            <label for="dataFundacao" class="control-label col-md-4  requiredField"> Data de Fundação <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-7 ">
+              <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Clubedelaco.dataFundacao | date:"dd/MM/yyyy" }}  </label></p>
+            </div>
+            <div *ngIf="!isView" class="controls date col-md-7 input-group ">
+              <input class="input-md textinput textInput form-control" placeholder="dd/mm/yyyy"
+                         id="id_dataFundacao" name="dataFundacao" [(ngModel)]="Clubedelaco.arrayDataFundacao" ngbDatepicker #d="ngbDatepicker">
+                  <button class="input-group-addon" style="width: 8%"  (click)="d.toggle()" type="button">
+                    <span class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;"></span>
+
+                  </button>
+            </div>
+          </div>
+
+
+          <div id="div_registroSETEL" class="form-group required">
+            <label for="registroSETEL" class="control-label col-md-4  requiredField"> Registro SETEL <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.registroSETEL}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_registroSETEL" maxlength="30" [(ngModel)]="Clubedelaco.registroSETEL" name="registroSETEL" placeholder="Registro SETEL do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_rua" class="form-group required">
+            <label for="rua" class="control-label col-md-4  requiredField"> Rua </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.rua}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_rua" maxlength="30" [(ngModel)]="Clubedelaco.rua" name="rua" placeholder="Rua do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_numeroSala" class="form-group required">
+            <label for="numeroSala" class="control-label col-md-4  requiredField"> Número/Sala <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.numeroSala}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_numeroSala" maxlength="30" [(ngModel)]="Clubedelaco.numeroSala" name="numeroSala" placeholder="Numero/Sala do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_bairro" class="form-group ">
+            <label for="bairro" class="control-label col-md-4  requiredField"> Bairro  </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.bairro}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_bairro" maxlength="30" [(ngModel)]="Clubedelaco.bairro" name="bairro" placeholder="Bairro do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+
+          <div id="div_cep" class="form-group ">
+            <label for="cep" class="control-label col-md-4  requiredField"> CEP  </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.cep}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_cep" maxlength="30" [(ngModel)]="Clubedelaco.cep" name="cep" placeholder="CEP do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_cidade" class="form-group ">
+            <label for="cidade" class="control-label col-md-4  requiredField"> Cidade  </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.cidade}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_cidade" maxlength="30" [(ngModel)]="Clubedelaco.cidade" name="cidade" placeholder="cidade do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_foneDDD" class="form-group ">
+            <label for="foneDDD" class="control-label col-md-4  requiredField"> Fone  </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.foneDDD}} {{this.Clubedelaco.fone}}</p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="form-control col-md-2" id="id_foneDDD" maxlength="2" [(ngModel)]="Clubedelaco.foneDDD" name="foneDDD" placeholder="(##)" style="margin-bottom: 10px; " type="text">
+              <input class="form-control" id="id_fone" maxlength="30" [(ngModel)]="Clubedelaco.fone" name="fone" placeholder="Fone do clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
+            </div>
+          </div>
+
+
+          <div id="div_faxDDD" class="form-group ">
+            <label for="faxDDD" class="control-label col-md-4  requiredField"> Fax </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text"><label style="font-weight: normal"> {{this.Clubedelaco.fax}}  {{this.Clubedelaco.faxDDD}} </label> </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="form-control col-md-2" id="id_faxDDD" maxlength="2" [(ngModel)]="Clubedelaco.faxDDD" name="faxDDD" placeholder="(##)" style="margin-bottom: 10px" type="text">
+              <input class="form-control" id="id_fax" maxlength="30" [(ngModel)]="Clubedelaco.fax" name="fax" placeholder="Fax do Clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
+            </div>
+          </div>
+
+          <div id="div_atuacao" class="form-group required">
+            <label for="atuacao" class="control-label col-md-4  requiredField"> Atuação <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-7 input-group ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.atuacao}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <textarea class="input-md  textinput textInput form-control" id="id_atuacao" maxlength="300" [(ngModel)]="Clubedelaco.atuacao" name="atuacao" placeholder="Área de abrangência e público alvo." style="margin-bottom: 0px" type="text" rows="4"></textarea>
+            </div>
+          </div>
+          <div id="div_representante" class="form-group col-md-12">
+            <h4 class="page-header" style="margin-left: 65px">Representante </h4>
+          </div>
+          <div id="div_nomeRepresentante" class="form-group required">
+            <label for="nomeRepresentante" class="control-label col-md-4  requiredField"> Nome <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.nomeRepresentante}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_nomeRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.nomeRepresentante" name="nomeRepresentante" placeholder="Nome do representante do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_cpfRepresentante" class="form-group required">
+            <label for="cpfRepresentante" class="control-label col-md-4  requiredField"> CPF <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-7 input-group ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.cpfRepresentante}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group  ">
+              <input class="input-md  textinput textInput form-control" id="id_cpfRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.cpfRepresentante" name="cpfRepresentante" placeholder="CPF do representante do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_rgRepresentante" class="form-group required">
+            <label for="rgRepresentante" class="control-label col-md-4  requiredField"> RG  <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.rgRepresentante}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_rgRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.rgRepresentante" name="rgRepresentante" placeholder="RG do representante do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_cargoRepresentante" class="form-group required">
+            <label for="cargoRepresentante" class="control-label col-md-4  requiredField"> Cargo  <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.cargoRepresentante}} </p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="input-md  textinput textInput form-control" id="id_cargoRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.cargoRepresentante" name="cargoRepresentante" placeholder="RG do representante do clube" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+
+          <div id="div_foneDDDRepresentante" class="form-group required">
+            <label for="foneDDDRepresentante" class="control-label col-md-4  requiredField"> Fone  <span class="asteriskField">*</span> </label>
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p style="margin-top: 10px" type="text">{{this.Clubedelaco.foneDDDRepresentante}} {{this.Clubedelaco.foneRepresentante}}</p>
+            </div>
+            <div *ngIf="!isView" class="controls col-md-7 input-group ">
+              <input class="form-control col-md-2" id="id_foneDDDRepresentante" maxlength="2" [(ngModel)]="Clubedelaco.foneDDDRepresentante" name="foneDDDRepresentante" placeholder="(##)" style="margin-bottom: 10px" type="text">
+              <input class="form-control" id="id_foneRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.foneRepresentante" name="foneRepresentante" placeholder="Fone do representante do Clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
+            </div>
+          </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+            <div class="form-group">
+              <div *ngIf="!isInsert">
+                <app-lacadores [paramIdClube]="idRecord" [isDetail]= "true"></app-lacadores>
+              </div>
+              <div class="aab controls col-md-4 "></div>
+              <div class="controls col-md-8 ">
+
+                <button *ngIf="!isView" id="submit-id-save" type="submit" class="btn btn-primary btn btn-confirm"><i class="icon-hand-right">Salvar</i></button>
+                <input type="button" [routerLink]="['/clubesdelaco']"  name="BtnCancel" value="Voltar" class="btn btn btn-cancel" id="button-id-cancelar" >
+              </div>
+            </div>
+
+          </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>

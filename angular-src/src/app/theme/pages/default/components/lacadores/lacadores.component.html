@@ -1,0 +1,197 @@
+<!-- BEGIN: Subheader -->
+<div class="m-subheader">
+	<div class="d-flex align-items-center">
+		<div class="mr-auto">
+			<h3 class="m-subheader__title m-subheader__title--separator">
+				Laçadores cadastrados
+			</h3>
+			<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+				<li class="m-nav__item m-nav__item--home">
+					<a href="#" class="m-nav__link m-nav__link--icon">
+						<i class="m-nav__link-icon la la-home"></i>
+					</a>
+				</li>
+				<li class="m-nav__separator">
+					-
+				</li>
+				<li class="m-nav__item">
+					<a routerLink="/clubesdelaco" class="m-nav__link">
+						<span class="m-nav__link-text">
+							Laçadores
+						</span>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+		<div>
+			<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+				<a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+					<i class="la la-plus m--hide"></i>
+					<i class="la la-ellipsis-h"></i>
+				</a>
+				<div class="m-dropdown__wrapper">
+					<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+					<div class="m-dropdown__inner">
+						<div class="m-dropdown__body">
+							<div class="m-dropdown__content">
+								<ul class="m-nav">
+									<li class="m-nav__section m-nav__section--first m--hide">
+										<span class="m-nav__section-text">
+											Ações rápidas
+										</span>
+									</li>
+									<!-- <li class="m-nav__item">
+										<div *ngIf="isView" href="" class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-share"></i>
+											<span (click)="onEditRequest(this.Clubedelaco._id)" class="m-nav__link-text">
+												Editar
+											</span>
+										</div>
+									</li> -->
+									<li class="m-nav__item">
+										<a [routerLink]="['/lacadoresView', {isInsert: true}]" class="m-nav__link">
+											<i class="m-nav__link-icon fa fa-plus"></i>
+											<span class="m-nav__link-text">
+												Adicionar
+											</span>
+										</a>
+									</li>
+									<li class="m-nav__item">
+										<a href="" class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-info"></i>
+											<span class="m-nav__link-text">
+												-
+											</span>
+										</a>
+									</li>
+									<li class="m-nav__item">
+										<a href="" class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+											<span class="m-nav__link-text">
+												-
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<div class="col-lg-12">
+  <div class="m-portlet">
+    <div class="m-portlet__head">
+      <!-- <div class="m-portlet__head-caption">
+        <div class="m-portlet__head-title"> -->
+      <a class="btn btn-primary m-btn m-btn--icon float-right " style="margin-top:1.25rem" [routerLink]="['/lacadoresView', {isInsert: true}]" >
+        <span>
+          <i class="fa fa-plus" > </i>
+          <span>
+            Adicionar
+          </span>
+        </span>
+      </a>
+    </div>
+    <div class="m-portlet__body">
+      <div class="m-section">
+        <!-- <span class="m-section__sub">
+
+        </span> -->
+        <div class="m-section__content">
+
+      <div>
+        <table class="table m-table m-table--head-bg-success"  id="lacadores" width="90%" role="grid" aria-describedby="DataTables_Table_0_info">
+          <thead class='thead-success'>
+            <tr role="row">
+              <th title="Field #1"> Nome </th>
+              <th title="Field #2"> CPF </th>
+              <th title="Field #3"> E-mail </th>
+              <th title="Field #4"> Fone </th>
+              <th title="Field #5"> Endereço </th>
+              <th title="Field #6"> Cidade </th>
+              <th title="Field #7">  </th>
+              <th title="Field #8">  </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr role="row">
+              <tr role="row" *ngFor="let registro of objLacadores">
+                <td ><a class="m-nav__link" [routerLink]="['/lacadoresView', { id : registro._id , isView: true}]">{{registro.name}}</a></td>
+                <td>{{registro.cpf}}</td>
+                <td>{{registro.email}}</td>
+                <td>{{registro.foneDDD1}} {{registro.fone1}} </td>
+                <td>{{registro.endereco}}</td>
+                <td>{{registro.cidade}}</td>
+                <td>
+                  <!-- <a class="m-nav__link" href=""> -->
+                    <span class="m-nav__link-text" (click)="onEditRequest(registro._id)">
+                      <i class="m-nav__link-icon fa fa-edit"></i>
+                    </span>
+                  <!-- </a> -->
+                </td>
+                <td>
+                  <!-- <a class="m-nav__link" href=""> -->
+                    <span  class="m-nav__link-text" (click)="onDeleteRequest(registro._id, registro.name)">
+                      <i class="m-nav__link-icon fa fa-remove"></i>
+                    </span>
+                  <!-- </a> -->
+              </td>
+          </tbody>
+        </table>
+        <div class="panel-footer" id="DataTables_Table_0_info" role="status" aria-live="polite">
+          <label style="float:right"> {{this.registros}} <small>registros encontrados</small> </label>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <!-- Caso o compomente tenha sido chamado para ser exibido como membro de um master-DETAIL  -->
+
+  <!-- <ng-template #blocoDetail>
+    <div id="addboxFederacao" style="" class="mainbox col-md-12 col-md-offset-0 col-sm-0 ">
+      <div class="panel panel-default" style="margin-bottom: 5px">
+        <div class="panel-heading">
+          <div class="panel-title" >Laçadores cadastrados </div>
+        </div>
+        <div class="panel-body">
+
+
+          <table  class="table datatable dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+            <thead>
+              <tr role="row">
+                <th class="sorting_asc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="ascending" aria-label="" style="width: 307px;">Nome</th>
+                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 150px;">CPF</th>
+                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 230px;">E-mail</th>
+                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 350px;">Endereco</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr role="row">
+                <tr role="row" *ngFor="let registro of objLacadores | json">
+                  <td class="sorting_1"><a [routerLink]="['/lacadoresView', { id : registro._id , isView: true}]">{{registro.name}}</a></td>
+
+                  <td>{{registro.cpf}}</td>
+                  <td>{{registro.email}}</td>
+                  <td>{{registro.endereco}}</td>
+
+                </tr>
+            </tbody>
+          </table>
+          <div class="panel-footer" id="DataTables_Table_0_info" role="status" aria-live="polite">
+            <label style="float:right"> {{this.registros}} <small>laçador(es) registrado(s)</small> </label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </ng-template> -->

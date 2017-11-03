@@ -1,0 +1,33 @@
+{
+  "name": "gesmdl",
+  "version": "1.0.0",
+  "description": "gesMDL - Gestão MDL",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon && /angular-src/nodemon"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "^1.17.2",
+    "cors": "*",
+    "express": "^4.15.4",
+    "jsonwebtoken": "^8.0.0",
+    "mongoose": "^4.11.10",
+    "nodemon": "^1.12.0",
+    "passport": "*",
+    "passport-jwt": "*",
+    "typescript": "^2.5.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N3Wolf/gesMDL.git"
+  },
+  "author": "Ederson Sparenberger@n3works",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N3Wolf/gesMDL/issues"
+  },
+  "homepage": "https://github.com/N3Wolf/gesMDL#readme"
+}

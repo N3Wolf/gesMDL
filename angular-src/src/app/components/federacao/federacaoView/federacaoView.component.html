@@ -1,0 +1,141 @@
+<app-sidenav></app-sidenav>
+<div class="col-md-9">
+  <div id="addboxFederacao" style="margin-top:30px" class="mainbox col-md-12 col-md-offset-0 col-sm-0 ">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title">Cadastro de Federação</div>
+      </div>
+      <div class="panel-body">
+
+
+
+          <form id="federacaoForm" class="form-horizontal" role="form" (submit)="onFederacaoSubmit()">
+            <!-- Nome do clube -->
+            <div id="div_id_As" class="form-group required">
+              <div id="div_nomeclube" class="form-group required">
+                <label for="nomefederacao" class="control-label col-md-4  requiredField"> Nome da Federação: <span class="asteriskField">*</span> </label>
+                <!-- exibe label se for isView.
+                    exibe input se for isEdit ou isInsert-->
+                <div *ngIf="isView" class="controls col-md-8 ">
+                  <p style="margin-top: 10px" type="text">{{this.Federacao.name}} </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-8 ">
+                  <input class="input-md  textinput textInput form-control" id="id_nome" maxlength="30" [(ngModel)]="Federacao.name" name="name" placeholder="Digite o nome da Federação" style="margin-bottom: 10px" type="text">
+                </div>
+              </div>
+              <!-- Razão Social -->
+              <div id="div_razaosocial" class="form-group required">
+                <label for="razaosocial" class="control-label col-md-4  requiredField"> Razão social <span class="asteriskField">*</span> </label>
+                <div *ngIf="isView" class="controls col-md-8 ">
+                  <p style="margin-top: 10px" type="text">{{this.Federacao.razaosocial}} </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-8 ">
+                  <input class="input-md textinput form-control" id="id_razaosocial" [(ngModel)]="Federacao.razaosocial" name="razaosocial" placeholder="Digite a razão social" style="margin-bottom: 10px" type="text" >
+                </div>
+              </div>
+              <!-- CNPJ -->
+              <div id="div_razaosocial" class="form-group required">
+                <label for="razaosocial" class="control-label col-md-4  requiredField"> CNPJ <span class="asteriskField">*</span> </label>
+                <!-- exibe label se for isView.
+                    exibe input se for isEdit ou isInsert-->
+                <div *ngIf="isView" class="controls col-md-8 ">
+                  <p style="margin-top: 10px" type="text">{{this.Federacao.cnpj}} </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-8 ">
+                  <input class="input-md textinput form-control" id="id_CNPJ" [(ngModel)]="Federacao.cnpj" name="cnpj" placeholder="Digite o CNPJ" style="margin-bottom: 10px" type="text" >
+                </div>
+              </div>
+              <!-- email -->
+              <div id="div_email" class="form-group required">
+                <label for="email" class="control-label col-md-4  requiredField"> E-mail <span class="asteriskField">*</span> </label>
+                <!-- exibe label se for isView.
+                    exibe input se for isEdit ou isInsert-->
+                <div *ngIf="isView" class="controls col-md-8 ">
+                  <p style="margin-top: 10px" type="text">{{this.Federacao.email}} </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-8 ">
+                  <input class="input-md textinput form-control" id="id_email" [(ngModel)]="Federacao.email" name="email" placeholder="Digite um e-mail de contato" style="margin-bottom: 10px" type="email">
+                </div>
+              </div>
+              <!-- STATUS -->
+              <!-- <label for="id_As" class="control-label col-md-4  requiredField">Status<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 " style="margin-bottom: 10px">
+                <label class="radio-inline"> <input type="radio" id="" name="" ng-value="true"  ng-Model="Federacao.status"  style="margin-bottom: 10px">Ativa </label>
+                <label class="radio-inline"> <input type="radio" id="" name="" ng-value="false" ng-Model="Federecao.status" style="margin-bottom: 10px">Inativa</label>
+              </div> -->
+            </div>
+
+<!--
+            <div id="div_id_password1" class="form-group required">
+              <label for="id_password1" class="control-label col-md-4  requiredField">Password<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <input class="input-md textinput textInput form-control" id="id_password1" name="password1" placeholder="Create a password" style="margin-bottom: 10px" type="password" />
+              </div>
+            </div>
+            <div id="div_id_password2" class="form-group required">
+              <label for="id_password2" class="control-label col-md-4  requiredField"> Re:password<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <input class="input-md textinput textInput form-control" id="id_password2" name="password2" placeholder="Confirm your password" style="margin-bottom: 10px" type="password" />
+              </div>
+            </div>
+            <div id="div_id_name" class="form-group required">
+              <label for="id_name" class="control-label col-md-4  requiredField"> full name<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <input class="input-md textinput textInput form-control" id="id_name" name="name" placeholder="Your Frist name and Last name" style="margin-bottom: 10px" type="text" />
+              </div>
+            </div>
+            <div id="div_id_gender" class="form-group required">
+              <label for="id_gender" class="control-label col-md-4  requiredField"> Gender<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 " style="margin-bottom: 10px">
+                <label class="radio-inline"> <input type="radio" name="gender" id="id_gender_1" value="M"  style="margin-bottom: 10px">Male</label>
+                <label class="radio-inline"> <input type="radio" name="gender" id="id_gender_2" value="F"  style="margin-bottom: 10px">Female </label>
+              </div>
+            </div>
+            <div id="div_id_company" class="form-group required">
+              <label for="id_company" class="control-label col-md-4  requiredField"> company name<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <input class="input-md textinput textInput form-control" id="id_company" name="company" placeholder="your company name" style="margin-bottom: 10px" type="text" />
+              </div>
+            </div>
+            <div id="div_id_catagory" class="form-group required">
+              <label for="id_catagory" class="control-label col-md-4  requiredField"> catagory<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <input class="input-md textinput textInput form-control" id="id_catagory" name="catagory" placeholder="skills catagory" style="margin-bottom: 10px" type="text" />
+              </div>
+            </div>
+            <div id="div_id_number" class="form-group required">
+              <label for="id_number" class="control-label col-md-4  requiredField"> contact number<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <input class="input-md textinput textInput form-control" id="id_number" name="number" placeholder="provide your number" style="margin-bottom: 10px" type="text" />
+              </div>
+            </div>
+            <div id="div_id_location" class="form-group required">
+              <label for="id_location" class="control-label col-md-4  requiredField"> Your Location<span class="asteriskField">*</span> </label>
+              <div class="controls col-md-8 ">
+                <input class="input-md textinput textInput form-control" id="id_location" name="location" placeholder="Your Pincode and City" style="margin-bottom: 10px" type="text" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="controls col-md-offset-4 col-md-8 ">
+                <div id="div_id_terms" class="checkbox required">
+                  <label for="id_terms" class=" requiredField">
+                                         <input class="input-ms checkboxinput" id="id_terms" name="terms" style="margin-bottom: 10px" type="checkbox" />
+                                         Agree with the terms and conditions
+                                    </label>
+                </div>
+
+              </div>
+            </div>  -->
+            <div class="form-group">
+              <div class="aab controls col-md-4 "></div>
+              <div class="controls col-md-8 ">
+                <button *ngIf="!isView" id="submit-id-save" type="submit" class="btn btn-primary btn btn-confirm"><i class="icon-hand-right">Salvar</i></button>
+                <input type="button" [routerLink]="['/federacao']"  name="BtnCancel" value="Voltar" class="btn btn btn-cancel" id="button-id-cancelar" >
+              </div>
+            </div>
+
+          </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+      <div class="col-md-3 col-md-offset-0 col-sm-0 " style="margin-top:30px">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="panel-title">Menu de navegação</div>
+              </div>
+
+            <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
+            <div id="sidebar" class="sidebar well hidden-xs-down " style="background-color:#ffffff ">
+                <h5><i class="glyphicon glyphicon-info-sign">  </i>
+                  <small><b>INFORMAÇÕES</b></small>
+              </h5>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+
+                </ul>
+                <h5><i class="glyphicon glyphicon-home">  </i>
+                    <small><b>  GESTÃO</b></small>
+                </h5>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/federacao']">Federação</a></li>
+                    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/clubesdelaco']">Clubes de laço</a></li>
+                    <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}"><a [routerLink]="['/lacadores']">Laçadores</a></li>
+                </ul>
+           </div>
+        </div>
+    </div>
