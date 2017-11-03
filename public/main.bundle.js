@@ -1492,7 +1492,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AuthenticationService = (function () {
     function AuthenticationService(http) {
         this.http = http;
-        this.isDev = true; // Change to false before deployment
+        this.isDev = false; // Change to false before deployment
     }
     AuthenticationService.prototype.login = function (email, password) {
         var user = {
