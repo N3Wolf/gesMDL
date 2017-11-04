@@ -34,6 +34,14 @@ const routes: Routes = [
         "loadChildren": ".\/pages\/default\/components\/federacao\/federacaoView\/federacaoView.module#federacaoViewModule"
       },
       {
+        "path": "users",
+        "loadChildren": ".\/pages\/default\/components\/users\/users.module#usersModule"
+      },
+      {
+        "path": "usersView",
+        "loadChildren": ".\/pages\/default\/components\/users\/usersView\/usersView.module#usersViewModule"
+      },
+      {
         "path": "angular\/ng-bootstrap",
         "loadChildren": ".\/pages\/default\/angular\/ng-bootstrap\/ng-bootstrap.module#NgBootstrapModule"
       },

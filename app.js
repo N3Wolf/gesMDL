@@ -28,6 +28,7 @@ const users = require('./routes/users');
 const federacoes = require('./routes/federacoes');
 const clubesdelaco = require('./routes/clubesdelaco');
 const lacadores = require('./routes/lacadores');
+// const userGroups = require('./routes/userGroups');
 
 // Port number
 //const port = 3000;

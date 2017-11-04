@@ -8,17 +8,13 @@
 		<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow">
 			<li class="m-menu__item  " routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
 				<a routerLink="/index" class="m-menu__link">
-					<i class="m-menu__link-icon flaticon-line-graph"></i>
+					<i class="m-menu__link-icon fa fa-inbox"></i>
 					<span class="m-menu__link-title">
 						<span class="m-menu__link-wrap">
 							<span class="m-menu__link-text">
-								Dashboard
+								Painel de trabalho
 							</span>
-							<span class="m-menu__link-badge">
-								<span class="m-badge m-badge--danger">
-									2
-								</span>
-							</span>
+
 						</span>
 					</span>
 				</a>
@@ -113,7 +109,7 @@
 			</li>
 			<li class="m-menu__item  m-menu__item--submenu" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true"  data-menu-submenu-toggle="hover">
 				<a  routerLink="/federacao" class="m-menu__link">
-					<i class="m-menu__link-icon flaticon-layers"></i>
+					<i class="m-menu__link-icon fa fa-puzzle-piece"></i>
 					<span class="m-menu__link-text">
 						Federação
 					</span>
@@ -150,19 +146,19 @@
 				</div>
 			</li> -->
 			<li class="m-menu__item  m-menu__item--submenu" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true"  data-menu-submenu-toggle="hover">
-				<a  href="#" class="m-menu__link m-menu__toggle">
-					<i class="m-menu__link-icon flaticon-share"></i>
+				<a   routerLink="/clubesdelaco" class="m-menu__link">
+					<i class="m-menu__link-icon fa fa-sitemap"></i>
 					<span class="m-menu__link-text">
 						Clubes de Laço
 					</span>
-					<i class="m-menu__ver-arrow la la-angle-right"></i>
+					<!-- <i class="m-menu__ver-arrow la la-angle-right"></i> -->
 				</a>
-				<div class="m-menu__submenu">
+				<!-- <div class="m-menu__submenu">
 					<span class="m-menu__arrow"></span>
 					<ul class="m-menu__subnav">
-						<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
+						<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" > -->
 							<!-- <a  routerLink="/clubesdelaco" class="m-menu__link"> -->
-								<a  routerLink="/clubesdelaco" class="m-menu__link">
+								<!-- <a  routerLink="/clubesdelaco" class="m-menu__link">
 
 								<i class="m-menu__link-bullet m-menu__link-bullet--dot">
 									<span></span>
@@ -171,7 +167,7 @@
 									Listar
 								</span>
 							</a>
-						</li>
+						</li>-->
 						<!-- <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
 							<a  routerLink="/lacadores" class="m-menu__link">
 								<i class="m-menu__link-bullet m-menu__link-bullet--dot">
@@ -201,13 +197,13 @@
 									Socicons
 								</span>
 							</a>
-						</li> -->
+						</li>
 					</ul>
-				</div>
+				</div>-->
 			 </li>
 			<li class="m-menu__item  m-menu__item--submenu" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true"  data-menu-submenu-toggle="hover">
 				<a  routerLink="/lacadores" class="m-menu__link">
-					<i class="m-menu__link-icon flaticon-share"></i>
+					<i class="m-menu__link-icon fa fa-address-card-o"></i>
 					<span class="m-menu__link-text">
 						Laçadores
 					</span>
@@ -223,6 +219,31 @@
 						</li>
 					</ul>
 				</div>
+			</li>
+			<li class="m-menu__section">
+				<h4 class="m-menu__section-text">
+					SISTEMA
+				</h4>
+				<i class="m-menu__section-icon flaticon-more-v3"></i>
+			</li>
+			<li class="m-menu__item  m-menu__item--submenu" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true"  data-menu-submenu-toggle="hover">
+				<a  routerLink="/users" class="m-menu__link">
+					<i class="m-menu__link-icon fa fa-user-circle"></i>
+					<span class="m-menu__link-text">
+						Usuários
+					</span>
+				</a>
+				<!-- <div class="m-menu__submenu">
+					<ul class="m-menu__subnav">
+						<li class="m-menu__item  m-menu__item--parent" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >
+							<a  routerLink="/users" class="m-menu__link">
+								<span class="m-menu__link-text">
+									Usuários
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div> -->
 			</li>
 
 						<!-- <li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"  aria-haspopup="true" >

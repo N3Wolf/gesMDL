@@ -107,17 +107,18 @@ router.post('/setLacadorIndependenteById', (req, res, next) => {
       console.log(err);
       res.json({
         success: false,
-        msg: "Erro ao remover o vinculo entre Clube de laco e os Laçadores",
+        msg: "Erro ao remover o vinculo entre Clube de laco e seus Laçadores",
         erro: err
       });
     } else {
       res.json({
         success: true,
-        msg: "Clubes desvinculados dos Laçadores com sucesso."
+        msg: "Clube desvinculado dos Laçadores com sucesso."
       });
     }
   });
 });
+
 
 // Delete
 router.post('/remove', (req, res, next) => {
@@ -126,12 +127,12 @@ router.post('/remove', (req, res, next) => {
       console.log(err);
       res.json({
         success: false,
-        msg: "Erro ao remover o registro do Laçador de laço."
+        msg: "Erro ao remover o registro do Laçador."
       });
     } else {
       res.json({
         success: true,
-        msg: "Laçador de laço removido do sistema com sucesso."
+        msg: "Laçador  removido do sistema com sucesso."
       });
     }
   });

@@ -37,7 +37,7 @@ export class AuthService {
     this.loadToken();
     headers.append('Authorization', this.authToken);
     headers.append('Content-Type', 'application/json');
-    let ep = this.prepEndpoint('user/profile');
+    let ep = this.prepEndpoint('user/view');
     let user = localStorage.getItem('user');
     return this.http.get(ep, { headers: headers, params: { user: user } })
       .map(res => res.json());
