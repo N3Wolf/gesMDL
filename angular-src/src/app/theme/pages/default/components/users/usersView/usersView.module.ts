@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutModule } from '../../../../../layouts/layout.module';
 import { DefaultComponent } from '../../../default.component';
 import { UsersViewComponent } from './usersView.component';
+import {  Validators, ReactiveFormsModule  } from '@angular/forms';
 
 //import { AuthGuard } from '../../guards/auth.guard';
 import { AuthService } from '../../../services/auth.service';
@@ -40,7 +41,9 @@ imports: [
     //FederacaoService,
     AuthService,
     UsersService,
-    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter }
+    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter },
+    ReactiveFormsModule,
+    Validators
   ], exports: [
     RouterModule
   ], declarations: [

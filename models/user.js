@@ -63,7 +63,7 @@ module.exports.comparePassword = function(candidatePassword, hash, callback){
 //update
 module.exports.updateById = function(targetUser, callback) {
   const query = {
-    _id: user._id
+    _id: targetUser._id
   };
   const newSet = {
     $set: {

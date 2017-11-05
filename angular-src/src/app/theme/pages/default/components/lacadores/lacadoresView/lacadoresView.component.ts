@@ -7,6 +7,7 @@ import { LacadoresService } from '../../../services/lacadores.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 import { NgbDateStruct, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup,FormControl, Validators, ReactiveFormsModule  } from '@angular/forms';
 //import { uiSelect } from 'ui-select';
 //import { ngSanitize } from 'angular-sanitize';
 
@@ -151,73 +152,88 @@ export class LacadoresViewComponent implements OnInit {
     }
   }
 
+  //toca todos os campos do form, para ativar a validação
+  private markFormGroupTouched(formGroup: FormGroup) {
+      (<any>Object).values(formGroup.controls).forEach(control => {
+        control.markAsTouched();
 
-  onLacadoresSubmit() {
-    //Monta a data de fundação no formato para o banco de dados.
-    this.Lacador.dataAssociacao = new Date(this.Lacador.arrayDataAssociacao.year, this.Lacador.arrayDataAssociacao.month - 1, this.Lacador.arrayDataAssociacao.day);
-    const newLacador = {
-      name: this.Lacador.name,
-      cpf: this.Lacador.cpf,
-      endereco: this.Lacador.endereco,
-      email: this.Lacador.email,
-      picture: this.Lacador.picture,
-      idClube: this.Lacador.idClube,
-      status: true, //this.Federacao.status,
-      apelido: this.Lacador.apelido,
-      foneDDD1: this.Lacador.foneDDD1,
-      fone1: this.Lacador.fone1,
-      foneDDD2: this.Lacador.foneDDD2,
-      fone2: this.Lacador.fone2,
-      dataAssociacao: this.Lacador.dataAssociacao
-
-    }
-    //console.log(newLacador);
-    //console.log('newLacador');
-
-    // Required Fields
-    //  if(!this.validateService.validateFederacao(federacao)){
-    //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
-    //    return false;
-    //  }
-    //
-    //   // Validar o email
-    //   if(!this.validateService.validateEmail(user.email)){
-    //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
-    //     return false;
-    //   }
-    //
-
-    console.log('newLacador');
-    console.log(newLacador);
-
-    if (this.isInsert) {
-      this.lacadoresService.addLacador(newLacador).subscribe(data => {
-        if (data.success) {
-          //console.log(data);
-          this.router.navigate(['lacadoresView', { id: data.id, isView: true }]);
-          //TODO: Mensagem
-          //this.flashMessage.show('Laçador registrado com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
-        } else {
-          //TODO: Mensagem
-          //this.flashMessage.show('Ocorreu um erro ao tentar inserir este Laçador. Favor entre em contato com o suporte técnico do sistema.', { cssClass: 'alert-danger', timeout: 3000 });
+        if (control.controls) {
+          control.controls.forEach(c => this.markFormGroupTouched(c));
         }
-      })
+      });
+    }
+
+  onLacadoresSubmit(lacadorForm: FormGroup) {
+    //toca todos os campos do form, para ativar a validação
+    this.markFormGroupTouched(lacadorForm);
+    if (!lacadorForm.valid) {
+        console.log("Form com erros!");
     } else {
-      //isEdit
-      this.lacadoresService.updateLacador(this.Lacador).subscribe(data => {
-        if (data.success) {
-          console.log(data);
-          //this.router.navigate(['lacadoresView', { id: this.Lacador._id, isEdit: true }]);
-          //TODO: Mensagem
-          //this.flashMessage.show('Laçador atualizado com sucesso.', { cssClass: 'alert-success', timeout: 5000 });
-          window.scrollTo(0, 0);
-        } else {
-          //TODO: Mensagem
-          //this.flashMessage.show('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg, { cssClass: 'alert-danger', timeout: 5000 });
-          window.scrollTo(0, 0);
-        }
-      })
-    }
+      //Monta a data de fundação no formato para o banco de dados.
+      this.Lacador.dataAssociacao = new Date(this.Lacador.arrayDataAssociacao.year, this.Lacador.arrayDataAssociacao.month - 1, this.Lacador.arrayDataAssociacao.day);
+      const newLacador = {
+        name: this.Lacador.name,
+        cpf: this.Lacador.cpf,
+        endereco: this.Lacador.endereco,
+        email: this.Lacador.email,
+        picture: this.Lacador.picture,
+        idClube: this.Lacador.idClube,
+        status: true, //this.Federacao.status,
+        apelido: this.Lacador.apelido,
+        foneDDD1: this.Lacador.foneDDD1,
+        fone1: this.Lacador.fone1,
+        foneDDD2: this.Lacador.foneDDD2,
+        fone2: this.Lacador.fone2,
+        dataAssociacao: this.Lacador.dataAssociacao
 
+      }
+      //console.log(newLacador);
+      //console.log('newLacador');
+
+      // Required Fields
+      //  if(!this.validateService.validateFederacao(federacao)){
+      //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
+      //    return false;
+      //  }
+      //
+      //   // Validar o email
+      //   if(!this.validateService.validateEmail(user.email)){
+      //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
+      //     return false;
+      //   }
+      //
+
+      console.log('newLacador');
+      console.log(newLacador);
+
+      if (this.isInsert) {
+        this.lacadoresService.addLacador(newLacador).subscribe(data => {
+          if (data.success) {
+            //console.log(data);
+            this.router.navigate(['lacadoresView', { id: data.id, isView: true }]);
+            //TODO: Mensagem
+            //this.flashMessage.show('Laçador registrado com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
+          } else {
+            //TODO: Mensagem
+            //this.flashMessage.show('Ocorreu um erro ao tentar inserir este Laçador. Favor entre em contato com o suporte técnico do sistema.', { cssClass: 'alert-danger', timeout: 3000 });
+          }
+        })
+      } else {
+        //isEdit
+        this.lacadoresService.updateLacador(this.Lacador).subscribe(data => {
+          if (data.success) {
+            console.log(data);
+            //this.router.navigate(['lacadoresView', { id: this.Lacador._id, isEdit: true }]);
+            //TODO: Mensagem
+            //this.flashMessage.show('Laçador atualizado com sucesso.', { cssClass: 'alert-success', timeout: 5000 });
+            window.scrollTo(0, 0);
+          } else {
+            //TODO: Mensagem
+            //this.flashMessage.show('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg, { cssClass: 'alert-danger', timeout: 5000 });
+            window.scrollTo(0, 0);
+          }
+        })
+      }
+    }
   }
 }

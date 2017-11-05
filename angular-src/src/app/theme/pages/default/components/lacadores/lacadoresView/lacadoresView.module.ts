@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 //import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, Validators, ReactiveFormsModule   } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutModule } from '../../../../../layouts/layout.module';
@@ -43,7 +43,9 @@ imports: [
     AuthService,
     ClubesdelacoService,
     LacadoresService,
-    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter }
+    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter },
+    Validators,
+    ReactiveFormsModule
   ], exports: [
     RouterModule
   ], declarations: [

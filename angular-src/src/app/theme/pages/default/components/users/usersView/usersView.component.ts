@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-//import { FederacaoService } from '../../../services/federacao.service';
-import { ClubesdelacoService } from '../../../services/clubesdelaco.service';
+// import { appOutputMessages } from '../../../../../../shared/appmessages';
 import { UsersService } from '../../../services/user.service';
+import { FormGroup,FormControl, Validators, ReactiveFormsModule  } from '@angular/forms';
+import { ClubesdelacoService } from '../../../services/clubesdelaco.service';
 //Depreciado
 //import { ValidateService } from '../../../services/validate.service';
 import { Router } from '@angular/router';
@@ -35,10 +36,12 @@ export class UsersViewComponent implements OnInit {
   isInsert: boolean;
   isEdit: boolean;
   idRecord: any;
+  //userForm: FormGroup;
 
   constructor(
     //Depreciado
     //private validateService: ValidateService,
+
 
     private router: Router,
     private route: ActivatedRoute,
@@ -48,6 +51,7 @@ export class UsersViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     //pega todos os parametros passados pela url
     this.route.params.subscribe((params) => {
       if (params.id) { this.idRecord = params.id; }
@@ -106,70 +110,94 @@ export class UsersViewComponent implements OnInit {
     }
   }
 
+  private markFormGroupTouched(formGroup: FormGroup) {
+      (<any>Object).values(formGroup.controls).forEach(control => {
+        control.markAsTouched();
 
-  onUsersSubmit() {
+        if (control.controls) {
+          control.controls.forEach(c => this.markFormGroupTouched(c));
+        }
+      });
+    }
+
+  // validateAllFormFields(formGroup: any) {         //{1}
+  //   Object.keys(formGroup.controls).forEach(field => {  //{2}
+  //     const control = formGroup.get(field);             //{3}
+  //     if (control instanceof FormControl) {             //{4}
+  //       control.markAsTouched({ onlySelf: true });
+  //     } else if (control instanceof FormGroup) {        //{5}
+  //       this.validateAllFormFields(control);            //{6}
+  //     }
+  //   });
+  // }
+
+  onUsersSubmit(userForm: FormGroup) {
+    this.markFormGroupTouched(userForm);
+    if (!userForm.valid) {
+        console.log("Form com erros!");
+    } else {
     //Monta a data de fundação no formato para o banco de dados.
     //this.User.dataCadastro = new Date(this.User.arrayDataAssociacao.year, this.User.arrayDataAssociacao.month - 1, this.User.arrayDataAssociacao.day);
-    const newUser = {
-      name: this.User.name,
-      email: this.User.email,
-      username: this.User.username,
-      password: this.User.password,
-      //TODO: Campo status em tela
-      status: true,
-      picture: this.User.picture,
-      cpf: this.User.cpf,
-      foneDDD1: this.User.foneDDD1,
-      fone1: this.User.fone1,
-      dataCadastro: this.User.dataCadastro
+      const newUser = {
+        name: this.User.name,
+        email: this.User.email,
+        username: this.User.username,
+        password: this.User.password,
+        //TODO: Campo status em tela
+        status: true,
+        picture: this.User.picture,
+        cpf: this.User.cpf,
+        foneDDD1: this.User.foneDDD1,
+        fone1: this.User.fone1,
+        dataCadastro: this.User.dataCadastro
 
+      }
+      //console.log(newLacador);
+      //console.log('newLacador');
+
+      // Required Fields
+      //  if(!this.validateService.validateFederacao(federacao)){
+      //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
+      //    return false;
+      //  }
+      //
+      //   // Validar o email
+      //   if(!this.validateService.validateEmail(user.email)){
+      //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
+      //     return false;
+      //   }
+      //
+
+      console.log('newUser');
+      console.log(newUser);
+
+      if (this.isInsert) {
+        this.usersService.addUser(newUser).subscribe(data => {
+          if (data.success) {
+            console.log(data);
+            //TODO: Mensagem
+            alert('Usuário registrado com sucesso.');
+          } else {
+            //TODO: Mensagem
+            alert('Ocorreu um erro ao tentar inserir este Laçador. Favor entre em contato com o suporte técnico do sistema.' + data.msg);
+          }
+          this.router.navigate(['usersView', { id: data.id, isView: true }]);
+        })
+      } else {
+        //isEdit
+        this.usersService.updateUser(this.User).subscribe(data => {
+          if (data.success) {
+            console.log(data);
+            //TODO: Mensagem
+            alert('Usuário atualizado com sucesso.');
+            window.scrollTo(0, 0);
+          } else {
+            //TODO: Mensagem
+            alert('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.');
+            window.scrollTo(0, 0);
+          }
+        })
+      }
     }
-    //console.log(newLacador);
-    //console.log('newLacador');
-
-    // Required Fields
-    //  if(!this.validateService.validateFederacao(federacao)){
-    //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
-    //    return false;
-    //  }
-    //
-    //   // Validar o email
-    //   if(!this.validateService.validateEmail(user.email)){
-    //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
-    //     return false;
-    //   }
-    //
-
-    console.log('newUser');
-    console.log(newUser);
-
-    if (this.isInsert) {
-      this.usersService.addUser(newUser).subscribe(data => {
-        if (data.success) {
-          console.log(data);
-          //TODO: Mensagem
-          alert('Usuário registrado com sucesso.');
-        } else {
-          //TODO: Mensagem
-          alert('Ocorreu um erro ao tentar inserir este Laçador. Favor entre em contato com o suporte técnico do sistema.' + data.msg);
-        }
-        this.router.navigate(['usersView', { id: data.id, isView: true }]);
-      })
-    } else {
-      //isEdit
-      this.usersService.updateUser(this.User).subscribe(data => {
-        if (data.success) {
-          console.log(data);
-          //TODO: Mensagem
-          alert('Usuário atualizado com sucesso.');
-          window.scrollTo(0, 0);
-        } else {
-          //TODO: Mensagem
-          alert('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.');
-          window.scrollTo(0, 0);
-        }
-      })
-    }
-
   }
 }
