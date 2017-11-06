@@ -9,7 +9,7 @@ import { ClubesdelacoViewComponent } from './clubesdelacoView.component';
 //import { LacadoresModule } from '../../lacadores/lacadores.module';
 import { LayoutModule } from '../../../../../layouts/layout.module';
 import { DefaultComponent } from '../../../default.component';
-
+import {  Validators, ReactiveFormsModule  } from '@angular/forms';
 //import { AuthGuard } from '../../guards/auth.guard';
 import { AuthService } from '../../../services/auth.service';
 import { FederacaoService } from '../../../services/federacao.service';
@@ -49,7 +49,9 @@ imports: [
     AuthService,
     ClubesdelacoService,
     LacadoresService,
-    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter }
+    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter },
+    Validators,
+    ReactiveFormsModule
   ], exports: [
     RouterModule
   ], declarations: [

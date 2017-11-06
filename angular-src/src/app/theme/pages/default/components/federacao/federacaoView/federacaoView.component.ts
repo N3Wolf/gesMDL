@@ -5,6 +5,8 @@ import { FederacaoService } from '../../../services/federacao.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup,FormControl, Validators, ReactiveFormsModule  } from '@angular/forms';
+
 
 @Component({
   selector: '.m-grid__item.m-grid__item--fluid.m-wrapper',
@@ -62,57 +64,73 @@ export class FederacaoViewComponent implements OnInit {
     this.router.navigate(['/federacaoView', { id: idFederacao, isEdit: true }]);
   }
 
-  onFederacaoSubmit() {
-    const newFederacao = {
-      name: this.Federacao.name,
-      cnpj: this.Federacao.cnpj,
-      razaosocial: this.Federacao.razaosocial,
-      status: true,//this.Federacao.status,
-      email: this.Federacao.email
+
+  private markFormGroupTouched(formGroup: FormGroup) {
+      (<any>Object).values(formGroup.controls).forEach(control => {
+        control.markAsTouched();
+
+        if (control.controls) {
+          control.controls.forEach(c => this.markFormGroupTouched(c));
+        }
+      });
     }
 
-    // Required Fields
-    //  if(!this.validateService.validateFederacao(federacao)){
-    //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
-    //    return false;
-    //  }
-    //
-    //   // Validar o email
-    //   if(!this.validateService.validateEmail(user.email)){
-    //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
-    //     return false;
-    //   }
-    //
 
-    // Register user
-
-    if (this.isInsert) {
-      this.federacaoService.addFederacao(newFederacao).subscribe(data => {
-        if (data.success) {
-          //console.log(data);
-          this.router.navigate(['federacaoView', { id: data.id, isView: true }]);
-          //TODO: Mensagem
-          alert('Federação registrada com sucesso.');
-        } else {
-          //TODO: Mensagem
-          alert('Ocorreu um erro ao tentar inserir este registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg);
-        }
-      })
+  onFederacaoSubmit(federacaoForm: FormGroup) {
+    this.markFormGroupTouched(federacaoForm);
+    if (!federacaoForm.valid) {
+        console.log("Form com erros!");
     } else {
-      //isEdit
-      this.federacaoService.updateFederacao(this.Federacao).subscribe(data => {
-        if (data.success) {
-          console.log(data);
-          alert("Registro alterado com sucesso");
-          this.router.navigate(['federacaoView', { id: this.Federacao._id, isEdit: true }]);
-          //TODO: Mensagem
-          //this.flashMessage.show('Federação atualizada com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
-        } else {
-          //TODO: Mensagem
-          alert('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema:  ' + data.msg);
-        }
-      })
-    }
+      const newFederacao = {
+        name: this.Federacao.name,
+        cnpj: this.Federacao.cnpj,
+        razaosocial: this.Federacao.razaosocial,
+        status: true,//this.Federacao.status,
+        email: this.Federacao.email
+      }
 
+      // Required Fields
+      //  if(!this.validateService.validateFederacao(federacao)){
+      //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
+      //    return false;
+      //  }
+      //
+      //   // Validar o email
+      //   if(!this.validateService.validateEmail(user.email)){
+      //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
+      //     return false;
+      //   }
+      //
+
+      // Register user
+
+      if (this.isInsert) {
+        this.federacaoService.addFederacao(newFederacao).subscribe(data => {
+          if (data.success) {
+            //console.log(data);
+            this.router.navigate(['federacaoView', { id: data.id, isView: true }]);
+            //TODO: Mensagem
+            alert('Federação registrada com sucesso.');
+          } else {
+            //TODO: Mensagem
+            alert('Ocorreu um erro ao tentar inserir este registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg);
+          }
+        })
+      } else {
+        //isEdit
+        this.federacaoService.updateFederacao(this.Federacao).subscribe(data => {
+          if (data.success) {
+            console.log(data);
+            alert("Registro alterado com sucesso");
+            this.router.navigate(['federacaoView', { id: this.Federacao._id, isEdit: true }]);
+            //TODO: Mensagem
+            //this.flashMessage.show('Federação atualizada com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
+          } else {
+            //TODO: Mensagem
+            alert('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema:  ' + data.msg);
+          }
+        })
+      }
+    }
   }
 }

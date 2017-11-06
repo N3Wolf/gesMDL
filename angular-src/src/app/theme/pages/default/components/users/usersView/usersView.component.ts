@@ -6,7 +6,6 @@ import { ClubesdelacoService } from '../../../services/clubesdelaco.service';
 //Depreciado
 //import { ValidateService } from '../../../services/validate.service';
 import { Router } from '@angular/router';
-import { NgbDateStruct, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute } from '@angular/router';
 
 
@@ -46,7 +45,7 @@ export class UsersViewComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private usersService: UsersService,
-    private ngbDateParserFormatter: NgbDateParserFormatter
+
 
   ) { }
 
@@ -70,9 +69,9 @@ export class UsersViewComponent implements OnInit {
       this.usersService.getUserById(this.idRecord).subscribe((result) => {
         this.User = result;
         //pega a data no formato do banco de dados e monta o array do componente Datepicker
-        if (this.User.dataCadastro){
-          this.User.arrayDataAssociacao = this.ngbDateParserFormatter.parse(this.User.dataAssociacao);
-        }
+        // if (this.User.dataCadastro){
+        //   this.User.arrayDataAssociacao = this.ngbDateParserFormatter.parse(this.User.dataAssociacao);
+        // }
         console.log('this.User');
         console.log(this.User);
         // console.log('this.Lacador.idClube');

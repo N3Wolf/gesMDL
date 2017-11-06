@@ -110,7 +110,7 @@
     </div>
   </div>
   <!--begin::Form-->
-	<form  #formClubedelaco="ngForm" form class="m-form m-form--label-align-right" id="clubedelacoForm" (submit)="onClubesdelacoSubmit()">
+	<form #clubedelacoForm="ngForm" class="m-form m-form--label-align-right " id="clubedelacoForm" (submit)="onClubesdelacoSubmit(clubedelacoForm)">
     <div class="m-portlet__body">
 			<div class="m-form__section m-form__section--first">
         <!-- <div class="m-form__heading">
@@ -127,8 +127,16 @@
             <div *ngIf="isView" class="controls col-md-8 ">
               <p class ='col-form-label' >{{this.Clubedelaco.name}} </p>
             </div>
-            <div *ngIf="!isView" class="controls col-md-8 input-group ">
-              <input class="form-control m-input" id="id_name" maxlength="50" [(ngModel)]="Clubedelaco.name" name="name" placeholder="Escolha um nome para o Clube" style="margin-bottom: 10px" type="text">
+            <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger">
+              <input class="form-control m-input" id="id_name" #name="ngModel" required minlength="3" maxlength="60" [(ngModel)]="Clubedelaco.name" name="name" placeholder="Escolha um nome para o Clube" style="margin-bottom: 10px" type="text">
+							<div *ngIf="name.invalid && (name.dirty || name.touched)" class="form-control-feedback">
+								<div *ngIf="name.errors.required" style="font-size: 1rem">
+									Este campo não pode ficar em branco.
+								</div>
+								<div *ngIf="name.errors.minlength" style="font-size: 1rem">
+									Este campo requer ao menos 3 caracteres
+								</div>
+							</div>
             </div>
           </div>
         </div>
@@ -141,8 +149,16 @@
             <div *ngIf="isView" class="controls col-md-8 ">
               <p class ='col-form-label' type="text">{{this.Clubedelaco.sede}} </p>
             </div>
-            <div *ngIf="!isView" class="col-lg-8">
-              <input class="form-control m-input" id="id_sede" maxlength="30" [(ngModel)]="Clubedelaco.sede" name="sede" placeholder="Sede ou localização do clube" style="margin-bottom: 10px" type="text">
+            <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger">
+              <input class="form-control m-input" id="id_sede" #sede="ngModel" required maxlength="60" [(ngModel)]="Clubedelaco.sede" name="sede" placeholder="Sede ou localização do clube" style="margin-bottom: 10px" type="text">
+							<div *ngIf="sede.invalid && (sede.dirty || sede.touched)" class="form-control-feedback">
+								<div *ngIf="sede.errors.required" style="font-size: 1rem" >
+									Este campo não pode ficar em branco.
+								</div>
+								<div *ngIf="sede.errors.minlength" style="font-size: 1rem">
+									Este campo requer ao menos 3 caracteres
+								</div>
+							</div>
             </div>
           </div>
         </div>
@@ -155,8 +171,16 @@
             <div *ngIf="isView" class="controls col-md-8 ">
               <p class ='col-form-label' type="text">{{this.Clubedelaco.email}} </p>
             </div>
-            <div *ngIf="!isView" class="col-lg-8">
-              <input class="form-control m-input" id="id_email" maxlength="30" [(ngModel)]="Clubedelaco.email" name="email" placeholder="Email do clube" style="margin-bottom: 10px" type="text">
+            <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger">
+              <input class="form-control m-input" id="id_email" #email="ngModel" required maxlength="30" [(ngModel)]="Clubedelaco.email" name="email" placeholder="Email do clube" style="margin-bottom: 10px" type="text">
+							<div *ngIf="email.invalid && (email.dirty || email.touched)" class="form-control-feedback">
+								<div *ngIf="email.errors.required" style="font-size: 1rem">
+									Este campo não pode ficar em branco.
+								</div>
+								<div *ngIf="email.errors.email" style="font-size: 1rem">
+									Este campo exige um e-mail válido.
+								</div>
+							</div>
             </div>
           </div>
         </div>
@@ -169,8 +193,16 @@
             <div *ngIf="isView" class="controls col-md-8 ">
               <p class ='col-form-label' type="text">{{this.Clubedelaco.razaoSocial}} </p>
             </div>
-            <div *ngIf="!isView" class="col-lg-8">
-              <input class="form-control m-input" id="id_razaoSocial" maxlength="30" [(ngModel)]="Clubedelaco.razaoSocial" name="razaoSocial" placeholder="Razão social do clube" style="margin-bottom: 10px" type="text">
+            <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger">
+              <input class="form-control m-input" id="id_razaoSocial" #razaoSocial="ngModel" required minlength="3" maxlength="80" [(ngModel)]="Clubedelaco.razaoSocial" name="razaoSocial" placeholder="Razão social do clube" style="margin-bottom: 10px" type="text">
+							<div *ngIf="razaoSocial.invalid && (razaoSocial.dirty || razaoSocial.touched)" class="form-control-feedback">
+								<div *ngIf="razaoSocial.errors.required" style="font-size: 1rem">
+									Este campo não pode ficar em branco.
+								</div>
+								<div *ngIf="razaoSocial.errors.minlength" style="font-size: 1rem">
+									Este campo exige ao menos 3 caracteres
+								</div>
+							</div>
             </div>
           </div>
         </div>
@@ -183,8 +215,13 @@
             <div *ngIf="isView" class="controls col-md-8 ">
               <p class ='col-form-label' type="text">{{this.Clubedelaco.cnpj}} </p>
             </div>
-            <div *ngIf="!isView" class="col-lg-8">
-              <input class="form-control m-input" id="id_cnpj" maxlength="30" [(ngModel)]="Clubedelaco.cnpj" name="cnpj" placeholder="CNPJ do clube" style="margin-bottom: 10px" type="text">
+            <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger">
+              <input class="form-control m-input" id="id_cnpj" #cnpj="ngModel" required maxlength="30" [(ngModel)]="Clubedelaco.cnpj" name="cnpj" placeholder="CNPJ do clube" style="margin-bottom: 10px" type="text">
+							<div *ngIf="cnpj.invalid && (cnpj.dirty || cnpj.touched)" class="form-control-feedback">
+								<span *ngIf="cnpj.errors.required" style="font-size: 1rem">
+									Este campo não pode ficar em branco.
+								</span>
+							</div>
             </div>
           </div>
         </div>
@@ -198,7 +235,7 @@
               <p class ='col-form-label' type="text">{{this.Clubedelaco.sigla}} </p>
             </div>
             <div *ngIf="!isView" class="col-lg-8">
-              <input class="form-control m-input" id="id_sigla" maxlength="30" [(ngModel)]="Clubedelaco.sigla" name="sigla" placeholder="sigla do clube" style="margin-bottom: 10px" type="text">
+              <input class="form-control m-input" id="id_sigla" maxlength="30" [(ngModel)]="Clubedelaco.sigla" name="sigla" placeholder="Sigla do clube" style="margin-bottom: 10px" type="text">
             </div>
           </div>
         </div>
@@ -211,7 +248,7 @@
             <div *ngIf="isView" class="controls col-md-8 ">
               <p class ='col-form-label' type="date"> {{this.Clubedelaco.dataFundacao | date:"dd/MM/yyyy" }} </p>
             </div>
-            <div *ngIf="!isView" class="col-lg-8 form-group m-form__group ">
+            <div *ngIf="!isView" class="form-group m-form__group ">
               <div class="input-group">
 								<button class = "input-group-addon" style="width: 15%"  (click)="d.toggle()" type="button">
 									<span class="input-group-addon" id="basic-addon2">
@@ -229,13 +266,13 @@
 
 				<div class="form-group m-form__group row">
 					<label class="col-lg-3 col-form-label">
-						Sigla
+						Registro SETEL
 					</label>
 					<div class="col-lg-6">
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.registroSETEL}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_registroSETEL" maxlength="30" [(ngModel)]="Clubedelaco.registroSETEL" name="registroSETEL" placeholder="Registro SETEL do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -249,7 +286,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.rua}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_rua" maxlength="30" [(ngModel)]="Clubedelaco.rua" name="rua" placeholder="nome da rua do endereço do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -263,7 +300,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.numeroSala}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_numeroSala" maxlength="30" [(ngModel)]="Clubedelaco.numeroSala" name="numeroSala" placeholder="Numero/Sala do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -277,7 +314,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.bairro}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_bairro" maxlength="30" [(ngModel)]="Clubedelaco.bairro" name="bairro" placeholder="Bairro do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -291,7 +328,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.cep}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_cep" maxlength="30" [(ngModel)]="Clubedelaco.cep" name="cep" placeholder="CEP do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -305,7 +342,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.cidade}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_cidade" maxlength="30" [(ngModel)]="Clubedelaco.cidade" name="cidade" placeholder="cidade do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -319,10 +356,10 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.foneDDD}} {{this.Clubedelaco.fone}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8 form-group m-form__group">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 						  <div class="input-group">
-								<input class="form-control m-input col-lg-3" id="id_foneDDD" maxlength="2" [(ngModel)]="Clubedelaco.foneDDD" name="foneDDD" placeholder="(##)" style="margin-bottom: 10px; " type="text">
-								<input class="form-control m-input col-lg-9" id="id_fone" maxlength="30" [(ngModel)]="Clubedelaco.fone" name="fone" placeholder="Fone do clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
+								<input class="form-control m-input col-lg-2" id="id_foneDDD" maxlength="2" [(ngModel)]="Clubedelaco.foneDDD" name="foneDDD" placeholder="DDD" style="margin-bottom: 10px; " type="text">
+								<input class="form-control m-input col-lg-10" id="id_fone" maxlength="30" [(ngModel)]="Clubedelaco.fone" name="fone" placeholder="Fone do clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
 							</div>
 						</div>
 					</div>
@@ -336,10 +373,10 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.faxDDD}} {{this.Clubedelaco.fax}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8 form-group m-form__group">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<div class="input-group">
-								<input class="form-control m-input col-lg-3" id="id_faxDDD" maxlength="2" [(ngModel)]="Clubedelaco.faxDDD" name="faxDDD" placeholder="(##)" style="margin-bottom: 10px" type="text">
-								<input class="form-control m-input col-lg-9" id="id_fax" maxlength="30" [(ngModel)]="Clubedelaco.fax" name="fax" placeholder="Fax do Clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
+								<input class="form-control m-input col-lg-2" id="id_faxDDD" maxlength="2" [(ngModel)]="Clubedelaco.faxDDD" name="faxDDD" placeholder="DDD" style="margin-bottom: 10px" type="text">
+								<input class="form-control m-input col-lg-10" id="id_fax" maxlength="30" [(ngModel)]="Clubedelaco.fax" name="fax" placeholder="Fax do Clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
 							</div>
 						</div>
 					</div>
@@ -353,7 +390,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.atuacao}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<textarea class="form-control m-input" id="id_atuacao" maxlength="300" [(ngModel)]="Clubedelaco.atuacao" name="atuacao" placeholder="Área de abrangência e público alvo." style="margin-bottom: 0px" type="text" rows="4"></textarea>
 						</div>
 					</div>
@@ -378,7 +415,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.nomeRepresentante}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_nomeRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.nomeRepresentante" name="nomeRepresentante" placeholder="Nome do representante do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -392,7 +429,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.cpfRepresentante}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_cpfRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.cpfRepresentante" name="cpfRepresentante" placeholder="CPF do representante do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -406,7 +443,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.rgRepresentante}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_rgRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.rgRepresentante" name="rgRepresentante" placeholder="RG do representante do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -420,7 +457,7 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.cargoRepresentante}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<input class="form-control m-input" id="id_cargoRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.cargoRepresentante" name="cargoRepresentante" placeholder="RG do representante do clube" style="margin-bottom: 10px" type="text">
 						</div>
 					</div>
@@ -434,10 +471,10 @@
 						<div *ngIf="isView" class="controls col-md-8 ">
 							<p class ='col-form-label' type="text">{{this.Clubedelaco.foneDDDRepresentante}} {{this.Clubedelaco.foneRepresentante}} </p>
 						</div>
-						<div *ngIf="!isView" class="col-lg-8 form-group m-form__group">
+						<div *ngIf="!isView" class="form-group m-form__group ">
 							<div class="input-group">
-								<input class="form-control m-input col-lg-3" id="id_foneDDDRepresentante" maxlength="2" [(ngModel)]="Clubedelaco.foneDDDRepresentante" name="foneDDDRepresentante" placeholder="(##)" style="margin-bottom: 10px" type="text">
-								<input class="form-control m-input col-lg-9" id="id_foneRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.foneRepresentante" name="foneRepresentante" placeholder="Fone do representante do Clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
+								<input class="form-control m-input col-lg-2" id="id_foneDDDRepresentante" maxlength="2" [(ngModel)]="Clubedelaco.foneDDDRepresentante" name="foneDDDRepresentante" placeholder="DDD" style="margin-bottom: 10px" type="text">
+								<input class="form-control m-input col-lg-10" id="id_foneRepresentante" maxlength="30" [(ngModel)]="Clubedelaco.foneRepresentante" name="foneRepresentante" placeholder="Fone do representante do Clube" style="margin-bottom: 10px; margin-left: 5px" type="text">
 							</div>
 						</div>
 					</div>

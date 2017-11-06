@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LayoutModule } from '../../../../../layouts/layout.module';
 import { DefaultComponent } from '../../../default.component';
 import { FederacaoViewComponent } from './federacaoView.component';
-
+import {  Validators, ReactiveFormsModule  } from '@angular/forms';
 //import { AuthGuard } from '../../guards/auth.guard';
 import { AuthService } from '../../../services/auth.service';
 //import { FederacaoService } from '../../../services/federacao.service';
@@ -45,7 +45,9 @@ imports: [
     ClubesdelacoService,
     LacadoresService,
     FederacaoService,
-    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter }
+    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter },
+    ReactiveFormsModule,
+    Validators
   ], exports: [
     RouterModule
   ], declarations: [

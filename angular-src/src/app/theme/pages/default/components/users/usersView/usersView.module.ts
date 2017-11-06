@@ -11,9 +11,6 @@ import {  Validators, ReactiveFormsModule  } from '@angular/forms';
 //import { AuthGuard } from '../../guards/auth.guard';
 import { AuthService } from '../../../services/auth.service';
 import { UsersService } from '../../../services/user.service';
-import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-import { MyNgbDateParserFormatter } from '../../../../../../classes/myNgbDateParserFormatter';
-import { DatepickerConfigComponent } from '../../datepicker-config/datepicker-config.component';
 
 //import { SharedModule } from '../../../components/sharedModule.module';
 
@@ -35,20 +32,17 @@ imports: [
     FormsModule,
     CommonModule,
     RouterModule.forChild(routes),
-    LayoutModule,
-    NgbModule.forRoot()
+    LayoutModule
   ], providers: [
     //FederacaoService,
     AuthService,
     UsersService,
-    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter },
     ReactiveFormsModule,
     Validators
   ], exports: [
     RouterModule
   ], declarations: [
-    UsersViewComponent,
-    DatepickerConfigComponent
+    UsersViewComponent
   ]
 })
 export class usersViewModule {

@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NgbDateStruct, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 //import { ScriptLoaderService } from '../../../../../../_services/script-loader.service';
 //import { MyNgbDateParserFormatter } from '../../../classes/myNgbDateParserFormatter'
-
+import { FormGroup,FormControl, Validators, ReactiveFormsModule  } from '@angular/forms';
 
 
 @Component({
@@ -133,89 +133,103 @@ export class ClubesdelacoViewComponent implements OnInit {
     this.router.navigate(['/clubesdelacoView', { id: idClubedelaco, isEdit: true }]);
   }
 
-  onClubesdelacoSubmit() {
-    //Monta a data de fundação no formato para o banco de dados.
-    if (this.Clubedelaco.arrayDataFundacao) {
-      this.Clubedelaco.dataFundacao = new Date(this.Clubedelaco.arrayDataFundacao.year, this.Clubedelaco.arrayDataFundacao.month - 1, this.Clubedelaco.arrayDataFundacao.day);
-    } else {
-      this.Clubedelaco.dataFundacao = null
+
+  private markFormGroupTouched(formGroup: FormGroup) {
+      (<any>Object).values(formGroup.controls).forEach(control => {
+        control.markAsTouched();
+
+        if (control.controls) {
+          control.controls.forEach(c => this.markFormGroupTouched(c));
+        }
+      });
     }
 
-    // Required Fields
-    //  if(!this.validateService.validateFederacao(federacao)){
-    //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
-    //    return false;
-    //  }
-    //
-    //   // Validar o email
-    //   if(!this.validateService.validateEmail(user.email)){
-    //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
-    //     return false;
-    //   }
-    //
-
-    // Register user
-
-    if (this.isInsert) {
-      const newClubedelaco = {
-        name: this.Clubedelaco.name,
-        sede: this.Clubedelaco.sede,
-        email: this.Clubedelaco.email,
-        status: true, //this.Federacao.status,
-        razaoSocial: this.Clubedelaco.razaoSocial,
-        cnpj: this.Clubedelaco.cnpj,
-        sigla: this.Clubedelaco.sigla,
-        dataFundacao: this.Clubedelaco.dataFundacao,
-        registroSETEL: this.Clubedelaco.registroSETEL,
-        rua: this.Clubedelaco.rua,
-        numeroSala: this.Clubedelaco.numeroSala,
-        bairro: this.Clubedelaco.bairro,
-        cep: this.Clubedelaco.cep,
-        cidade: this.Clubedelaco.cidade,
-        foneDDD: this.Clubedelaco.foneDDD,
-        fone: this.Clubedelaco.fone,
-        faxDDD: this.Clubedelaco.faxDDD,
-        fax: this.Clubedelaco.fax,
-        nomeRepresentante: this.Clubedelaco.nomeRepresentante,
-        cpfRepresentante: this.Clubedelaco.cpfRepresentante,
-        rgRepresentante: this.Clubedelaco.rgRepresentante,
-        cargoRepresentante: this.Clubedelaco.cargoRepresentante,
-        foneDDDRepresentante: this.Clubedelaco.foneDDDRepresentante,
-        foneRepresentante: this.Clubedelaco.foneRepresentante,
-        atuacao: this.Clubedelaco.atuacao
+  onClubesdelacoSubmit(clubesdelacoForm: FormGroup) {
+    this.markFormGroupTouched(clubesdelacoForm);
+    if (!clubesdelacoForm.valid) {
+        console.log("Form com erros!");
+    } else {
+      //Monta a data de fundação no formato para o banco de dados.
+      if (this.Clubedelaco.arrayDataFundacao) {
+        this.Clubedelaco.dataFundacao = new Date(this.Clubedelaco.arrayDataFundacao.year, this.Clubedelaco.arrayDataFundacao.month - 1, this.Clubedelaco.arrayDataFundacao.day);
+      } else {
+        this.Clubedelaco.dataFundacao = null
       }
-      console.log('this.Clubedelaco');
-      console.log(this.Clubedelaco);
 
-      this.clubesdelacoService.addClubedelaco(newClubedelaco).subscribe(data => {
-        if (data.success) {
-          this.router.navigate(['clubesdelacoView', { id: data.id, isView: true }]);
-          //TODO: Mensagem
-          //this.flashMessage.show('Clube de Laço registrado com sucesso.', { cssClass: 'alert-success', timeout: 3000 });
-        } else {
-          //TODO: Mensagem
-          //this.flashMessage.show('Ocorreu um erro ao tentar inserir este Clube de laço. Favor entre em contato com o suporte técnico do sistema.', { cssClass: 'alert-danger', timeout: 3000 });
-        }
-      })
-    } else {
-      //isEdit
-      this.clubesdelacoService.updateClubedelaco(this.Clubedelaco).subscribe(data => {
-        if (data.success) {
-          //TODO: Mensagem
-          //this.flashMessage.show('Clube de Laço atualizado com sucesso.', { cssClass: 'alert-success', timeout: 5000 });
-          window.scrollTo(0, 0);
-          //this.router.navigate(['clubesdelacoView', { id: this.Clubedelaco._id, isEdit: true }]);
+      // Required Fields
+      //  if(!this.validateService.validateFederacao(federacao)){
+      //    this.flashMessage.show('Para continuar é necessário preencher todos os campos', {cssClass:'alert-danger', timeout:3000});
+      //    return false;
+      //  }
+      //
+      //   // Validar o email
+      //   if(!this.validateService.validateEmail(user.email)){
+      //     this.flashMessage.show('Para continuar é necessário informar um e-mail válido', {cssClass:'alert-danger', timeout:3000});
+      //     return false;
+      //   }
+      //
 
-        } else {
-          window.scrollTo(0, 0);
-          //TODO: Mensagem
-          //this.flashMessage.show('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema.' + data.msg, { cssClass: 'alert-danger', timeout: 3000 });
+      // Register user
+
+      if (this.isInsert) {
+        const newClubedelaco = {
+          name: this.Clubedelaco.name,
+          sede: this.Clubedelaco.sede,
+          email: this.Clubedelaco.email,
+          status: true, //this.Federacao.status,
+          razaoSocial: this.Clubedelaco.razaoSocial,
+          cnpj: this.Clubedelaco.cnpj,
+          sigla: this.Clubedelaco.sigla,
+          dataFundacao: this.Clubedelaco.dataFundacao,
+          registroSETEL: this.Clubedelaco.registroSETEL,
+          rua: this.Clubedelaco.rua,
+          numeroSala: this.Clubedelaco.numeroSala,
+          bairro: this.Clubedelaco.bairro,
+          cep: this.Clubedelaco.cep,
+          cidade: this.Clubedelaco.cidade,
+          foneDDD: this.Clubedelaco.foneDDD,
+          fone: this.Clubedelaco.fone,
+          faxDDD: this.Clubedelaco.faxDDD,
+          fax: this.Clubedelaco.fax,
+          nomeRepresentante: this.Clubedelaco.nomeRepresentante,
+          cpfRepresentante: this.Clubedelaco.cpfRepresentante,
+          rgRepresentante: this.Clubedelaco.rgRepresentante,
+          cargoRepresentante: this.Clubedelaco.cargoRepresentante,
+          foneDDDRepresentante: this.Clubedelaco.foneDDDRepresentante,
+          foneRepresentante: this.Clubedelaco.foneRepresentante,
+          atuacao: this.Clubedelaco.atuacao
         }
-      })
+        console.log('this.Clubedelaco');
+        console.log(this.Clubedelaco);
+
+        this.clubesdelacoService.addClubedelaco(newClubedelaco).subscribe(data => {
+          if (data.success) {
+            this.router.navigate(['clubesdelacoView', { id: data.id, isView: true }]);
+            //TODO: Mensagem
+            alert('Clube de Laço registrado com sucesso.');
+          } else {
+            //TODO: Mensagem
+            alert('Ocorreu um erro ao tentar inserir este Clube de laço. Favor entre em contato com o suporte técnico do sistema.');
+          }
+        })
+      } else {
+        //isEdit
+        this.clubesdelacoService.updateClubedelaco(this.Clubedelaco).subscribe(data => {
+          if (data.success) {
+            //TODO: Mensagem
+            alert('Clube de Laço atualizado com sucesso.');
+            window.scrollTo(0, 0);
+            //this.router.navigate(['clubesdelacoView', { id: this.Clubedelaco._id, isEdit: true }]);
+
+          } else {
+            window.scrollTo(0, 0);
+            //TODO: Mensagem
+            alert('Ocorreu um erro ao tentar atualizar o registro. Favor entre em contato com o suporte técnico do sistema: ' + data.msg);
+          }
+        })
+      }
     }
-
   }
-
 
 
 }

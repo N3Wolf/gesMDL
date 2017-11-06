@@ -6,6 +6,7 @@ import { LacadoresService } from '../../../services/lacadores.service';
 //import { ValidateService } from '../../../services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
+//TODO: Quando 2 módulos usando ngDatepicker são abertos em sequencia, ocorre erro ao tentar carregar 2x o ngDatepicker
 import { NgbDateStruct, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup,FormControl, Validators, ReactiveFormsModule  } from '@angular/forms';
 //import { uiSelect } from 'ui-select';

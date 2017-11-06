@@ -112,7 +112,7 @@
 
 
     <!--begin::Form-->
-    <form form #formFederacao="ngForm" class="m-form m-form--label-align-right" id="formFederacao" (submit)="onFederacaoSubmit(formFederacao.value)">
+    <form #federacaoForm="ngForm" class="m-form m-form--label-align-right" id="formFederacao" (submit)="onFederacaoSubmit(federacaoForm)">
       <div class="m-portlet__body">
         <div class="m-form__section m-form__section--first">
           <!-- <div class="m-form__heading">
@@ -129,8 +129,16 @@
               <div *ngIf="isView" class="controls col-md-8 ">
                 <p class ='col-form-label' >{{this.Federacao.name}} </p>
               </div>
-              <div *ngIf="!isView" class="controls col-md-8 input-group ">
-                <input class="form-control m-input" id="id_nome" maxlength="30" [(ngModel)]="Federacao.name" name="name" placeholder="Digite o nome da Federação" style="margin-bottom: 10px" type="text">
+              <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger ">
+                <input class="form-control m-input" id="id_nome" #name="ngModel" required minlength="3" maxlength="60" [(ngModel)]="Federacao.name" name="name" placeholder="Digite o nome da Federação" style="margin-bottom: 10px" type="text">
+								<div *ngIf="name.invalid && (name.dirty || name.touched)" class="form-control-feedback" style="font-size: 1rem">
+									<div *ngIf="name.errors.required">
+								    Este campo não pode ficar em branco.
+								  </div>
+								  <div *ngIf="name.errors.minlength">
+								    Este campo exige ao menos 3 caracteres
+								  </div>
+								</div>
               </div>
             </div>
           </div>
@@ -144,8 +152,16 @@
               <div *ngIf="isView" class="controls col-md-8 ">
                 <p class ='col-form-label' >{{this.Federacao.razaosocial}} </p>
               </div>
-              <div *ngIf="!isView" class="controls col-md-8 input-group ">
-                <input class="form-control m-input" id="id_razaosocial" [(ngModel)]="Federacao.razaosocial" name="razaosocial" placeholder="Digite a razão social" style="margin-bottom: 10px" type="text" >
+              <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger ">
+                <input class="form-control m-input" #razaosocial="ngModel" required minlenght="3" id="id_razaosocial" [(ngModel)]="Federacao.razaosocial" name="razaosocial" placeholder="Digite a razão social" style="margin-bottom: 10px" type="text" >
+								<div *ngIf="razaosocial.invalid && (razaosocial.dirty || razaosocial.touched)" class="form-control-feedback" style="font-size: 1rem">
+									<div *ngIf="razaosocial.errors.required">
+								    Este campo não pode ficar em branco.
+								  </div>
+								  <div *ngIf="razaosocial.errors.minlength">
+								    Este campo exige ao menos 3 caracteres
+								  </div>
+								</div>
               </div>
             </div>
           </div>
@@ -159,8 +175,16 @@
               <div *ngIf="isView" class="controls col-md-8 ">
                 <p class ='col-form-label' >{{this.Federacao.cnpj}} </p>
               </div>
-              <div *ngIf="!isView" class="controls col-md-8 input-group ">
-                <input class="form-control m-input" id="id_CNPJ" [(ngModel)]="Federacao.cnpj" name="cnpj" placeholder="Digite o CNPJ" style="margin-bottom: 10px" type="text" >
+              <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger">
+                <input class="form-control m-input" #cnpj="ngModel" required minlenght="3" id="id_CNPJ" [(ngModel)]="Federacao.cnpj" name="cnpj" placeholder="Digite o CNPJ" style="margin-bottom: 10px" type="text" >
+								<div *ngIf="cnpj.invalid && (cnpj.dirty || cnpj.touched)" class="form-control-feedback" style="font-size: 1rem">
+									<div *ngIf="cnpj.errors.required">
+								    Este campo não pode ficar em branco.
+								  </div>
+								  <div *ngIf="cnpj.errors.minlength">
+								    Este campo exige ao menos 3 caracteres
+								  </div>
+								</div>
               </div>
             </div>
           </div>
@@ -174,8 +198,16 @@
               <div *ngIf="isView" class="controls col-md-8 ">
                 <p class ='col-form-label' >{{this.Federacao.email}} </p>
               </div>
-              <div *ngIf="!isView" class="controls col-md-8 input-group ">
-                <input class="form-control m-input" id="id_email" [(ngModel)]="Federacao.email" name="email" placeholder="Digite um e-mail de contato" style="margin-bottom: 10px" type="email">
+              <div *ngIf="!isView" class="form-group m-form__group has-danger has-danger ">
+                <input class="form-control m-input"  #email="ngModel" required minlenght="3" id="id_email" [(ngModel)]="Federacao.email" name="email" placeholder="Digite um e-mail de contato" style="margin-bottom: 10px" type="email">
+								<div *ngIf="email.invalid && (email.dirty || email.touched)" class="form-control-feedback">
+									<div *ngIf="email.errors.required" style="font-size: 1rem">
+								    Este campo não pode ficar em branco.
+								  </div>
+									<div *ngIf="email.errors.email" style="font-size: 1rem">
+								    Este campo exige um e-mail válido.
+								  </div>
+								</div>
               </div>
             </div>
           </div>
