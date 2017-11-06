@@ -10,7 +10,7 @@ export class AuthenticationService {
   isDev: boolean;
 
   constructor(private http: Http) {
-      this.isDev = true; // Change to false before deployment
+      this.isDev = false; // Change to false before deployment
   }
 
   login(email: string, password: string) {
