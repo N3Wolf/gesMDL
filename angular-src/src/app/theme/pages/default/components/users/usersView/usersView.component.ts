@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 // import { appOutputMessages } from '../../../../../../shared/appmessages';
-import { UsersService } from '../../../services/user.service';
+import { UserService } from '../../../services/user.service';
 import { FormGroup,FormControl, Validators, ReactiveFormsModule  } from '@angular/forms';
 import { ClubesdelacoService } from '../../../services/clubesdelaco.service';
 //Depreciado
@@ -44,7 +44,7 @@ export class UsersViewComponent implements OnInit {
 
     private router: Router,
     private route: ActivatedRoute,
-    private usersService: UsersService,
+    private usersService: UserService,
 
 
   ) { }

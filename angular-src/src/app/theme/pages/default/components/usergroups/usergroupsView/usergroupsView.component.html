@@ -1,0 +1,450 @@
+<!-- BEGIN: Subheader -->
+<div class="m-subheader">
+	<div class="d-flex align-items-center">
+		<div class="mr-auto">
+			<h3 class="m-subheader__title m-subheader__title--separator">
+				Registro do Laçador
+			</h3>
+			<ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+				<li class="m-nav__item m-nav__item--home">
+					<a href="#" class="m-nav__link m-nav__link--icon">
+						<i class="m-nav__link-icon la la-home"></i>
+					</a>
+				</li>
+				<li class="m-nav__separator">
+					-
+				</li>
+				<li class="m-nav__item">
+					<a routerLink="/lacadores" class="m-nav__link">
+						<span class="m-nav__link-text">
+							Laçadores
+						</span>
+					</a>
+				</li>
+				<li class="m-nav__separator">
+					-
+				</li>
+				<li class="m-nav__item">
+					<a href="javascript:history.go(0)" class="m-nav__link">
+						<span class="m-nav__link-text">
+							Ver Detalhes
+						</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<div class="m-dropdown m-dropdown--inline m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push" data-dropdown-toggle="hover" aria-expanded="true">
+				<a href="#" class="m-portlet__nav-link btn btn-lg btn-secondary  m-btn m-btn--outline-2x m-btn--air m-btn--icon m-btn--icon-only m-btn--pill  m-dropdown__toggle">
+					<i class="la la-plus m--hide"></i>
+					<i class="la la-ellipsis-h"></i>
+				</a>
+				<div class="m-dropdown__wrapper">
+					<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+					<div class="m-dropdown__inner">
+						<div class="m-dropdown__body">
+							<div class="m-dropdown__content">
+								<ul class="m-nav">
+									<li class="m-nav__section m-nav__section--first m--hide">
+										<span class="m-nav__section-text">
+											Ações rápidas
+										</span>
+									</li>
+									<li class="m-nav__item">
+										<div *ngIf="isView" href="" class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-share"></i>
+											<span (click)="onEditRequest(this.Lacador._id)" class="m-nav__link-text">
+												Editar
+											</span>
+										</div>
+									</li>
+									<li class="m-nav__item">
+										<a href="" class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-chat-1"></i>
+											<span class="m-nav__link-text">
+												-
+											</span>
+										</a>
+									</li>
+									<li class="m-nav__item">
+										<a href="" class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-info"></i>
+											<span class="m-nav__link-text">
+												-
+											</span>
+										</a>
+									</li>
+									<li class="m-nav__item">
+										<a href="" class="m-nav__link">
+											<i class="m-nav__link-icon flaticon-lifebuoy"></i>
+											<span class="m-nav__link-text">
+												-
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<div class="col-lg-12">
+<div class="m-portlet">
+  <div class="m-portlet__head">
+    <div class="m-portlet__head-caption">
+      <div class="m-portlet__head-title">
+        <span class="m-portlet__head-icon m--hide">
+          <i class="la la-gear"></i>
+        </span>
+				<!-- <h3 class="m-form__heading-title">
+					1. Dados do Clube:
+				</h3> -->
+				<h2 class="m-portlet__head-text" style="font-size: 1.75rem">
+          1. Dados do Laçador:
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!--begin::Form-->
+  <form #lacadorForm="ngForm" class="m-form m-form--label-align-right" id="clubedelacoForm" (submit)="onLacadoresSubmit(lacadorForm)">
+    <div class="m-portlet__body">
+			<div class="m-form__section m-form__section--first">
+        <!-- <div class="m-form__heading">
+          <h3 class="m-form__heading-title">
+            1. Dados do Clube:
+          </h3>
+        </div> -->
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             Nome:
+             <span class="asteriskField">*</span>
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label' >{{this.Lacador.name}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger ">
+              <input class="form-control form-control-danger m-input" id="id_name" maxlength="60" #name="ngModel" required minlenght="3" [(ngModel)]="Lacador.name" name="name" placeholder="Digite o nome do laçador" style="margin-bottom: 10px" type="text">
+							<div *ngIf="name.invalid && (name.dirty || name.touched)" class="form-control-feedback" style="font-size: 1rem">
+								<div *ngIf="name.errors.required">
+									Este campo não pode ficar em branco.
+								</div>
+								<div *ngIf="name.errors.minlength">
+									Este campo requer ao menos 3 caracteres
+								</div>
+							</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             Clube de laço:
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label'> {{Lacador.nameClube}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger input-group ">
+              <select name="clube" id="repeatSelect" class="form-control form-control-danger m-input" [(ngModel)]="Lacador.idClube">
+                  <option> </option>
+                  <option *ngFor="let clube of Clubedelaco" [ngValue]="clube._id">
+                    {{clube.name}}
+                  </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             Apelido:
+             <span class="asteriskField">*</span>
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label' >{{this.Lacador.apelido}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger ">
+              <input class="form-control form-control-danger m-input" id="id_apelido" maxlength="30" required minlenght="2" #apelido="ngModel" [(ngModel)]="Lacador.apelido" name="apelido" placeholder="Digite o apelido" style="margin-bottom: 10px" type="text">
+							<div *ngIf="apelido.invalid && (apelido.dirty || apelido.touched)" class="form-control-feedback" style="font-size: 1rem">
+								<div *ngIf="apelido.errors.required">
+									Este campo não pode ficar em branco.
+								</div>
+								<div *ngIf="apelido.errors.minlength">
+									Este campo requer ao menos 2 caracteres
+								</div>
+							</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             Fone 1:
+
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label'>{{this.Lacador.foneDDD1}} {{this.Lacador.fone1}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger input-group " >
+              <input class="form-control form-control-danger m-input col-md-2" id="id_fone1" maxlength="2" [(ngModel)]="Lacador.foneDDD1" name="foneDDD1" placeholder="DDD" style="margin-bottom: 10px ; width:50" type="text">
+              <input class="form-control form-control-danger m-input col-md-10" id="id_fone1" maxlength="30" [(ngModel)]="Lacador.fone1" name="fone1" placeholder="Digite um numero de telefone" style="margin-bottom: 10px;  margin-left: 5px" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             Fone 2:
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label'>{{this.Lacador.foneDDD2}} {{this.Lacador.fone2}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger input-group ">
+              <input class="form-control form-control-danger m-input col-md-2" id="id_fone2" maxlength="2" [(ngModel)]="Lacador.foneDDD2" name="foneDDD2" placeholder="DDD" style="margin-bottom: 10px; " type="text">
+              <input class="form-control form-control-danger m-input col-md-10" id="id_fone2" maxlength="30" [(ngModel)]="Lacador.fone2" name="fone2" placeholder="Digite um numero de telefone" style="margin-bottom: 10px ; margin-left: 5px" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             CPF:
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label'>{{this.Lacador.cpf}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger input-group ">
+              <input class="form-control form-control-danger m-input" id="id_sede" maxlength="30" [(ngModel)]="Lacador.cpf" name="cpf" placeholder="Digite o CPF do laçador" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             Endereço:
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label'>{{this.Lacador.endereco}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger input-group ">
+              <input class="form-control m-input" id="id_sede" maxlength="30" [(ngModel)]="Lacador.endereco" name="endereco" placeholder="Digite um endereço de referência" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             E-mail:
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label'>{{this.Lacador.email}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger ">
+              <input class="form-control form-control-danger m-input" id="id_email" maxlength="30" [(ngModel)]="Lacador.email" name="email" placeholder="Digite um e-mail de contato" style="margin-bottom: 10px" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+            Data de Associação
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label' type="date"> {{this.Lacador.dataAssociacao | date:"dd/MM/yyyy" }} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger ">
+              <div class="input-group">
+								<button class = "input-group-addon" style="width: 15%"  (click)="d.toggle()" type="button">
+									<span class="input-group-addon" id="basic-addon2">
+										<span class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;"></span>
+									</span>
+
+								</button>
+                <input (click)="d.toggle()" readonly type="text" class="form-control form-control-danger m-input" placeholder="dd/mm/yyyy" aria-describedby="basic-addon2"
+                         id="id_dataAssociacao" name="dataAssociacao" [(ngModel)]="Lacador.arrayDataAssociacao" ngbDatepicker #d="ngbDatepicker">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group m-form__group row">
+          <label class="col-lg-3 col-form-label">
+             Foto:
+          </label>
+          <div class="col-lg-6">
+            <div *ngIf="isView" class="controls col-md-8 ">
+              <p class ='col-form-label'>{{this.Lacador.picture}} </p>
+            </div>
+            <div *ngIf="!isView" class="form-group m-form__group has-danger input-group ">
+              <button class="input-group-addon" style="width: 15%"  (click)="onUploadPicture()" type="button" >
+                	<span class="input-group-addon" id="basic-addon2" >
+                      <span class="fa fa-photo" style="width: 1.2rem; height: 1rem; cursor: pointer;"></span>
+                  </span>
+              </button>
+              <input (click)="onUploadPicture()" type="text" #pictureInput  class="form-control form-control-danger m-input" id="id_picture" name="picture" placeholder="Escolha uma foto do computador" readonly>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+          <!--  FORMULÁRIO ANTIGO
+
+          <form #formLacador="ngForm" form id="lacadorForm" class="form-horizontal" role="form" (submit)="onLacadoresSubmit(formLacador.value)">
+
+
+            <div id="div_id_As" class="form-group required">
+                <label for="clube" class="control-label col-md-4  requiredField"> Clube <span class="asteriskField">*</span> </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                    <p style="margin-top: 10px" type="text" ><label style="font-weight: normal"> {{Lacador.nameClube}} </label> </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                    <select name="clube" id="repeatSelect" class="input-md form-control " style="margin-bottom: 10px;" [(ngModel)]="Lacador.idClube">
+                        <option> </option>
+                        <option *ngFor="let clube of Clubedelaco" [ngValue]="clube._id">{{clube.name}}
+                        </option>
+
+                    </select>
+                </div>
+
+
+
+                <label for="nomeLacador" class="control-label col-md-4  requiredField"> Nome do Laçador <span class="asteriskField">*</span> </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.name}} </label> </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                  <input class="input-md  textinput textInput form-control" id="id_name" maxlength="30" [(ngModel)]="Lacador.name" name="name" placeholder="Digite o nome do laçador" style="margin-bottom: 10px" type="text">
+                </div>
+
+                <label for="apelido" class="control-label col-md-4  requiredField"> Apelido </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.apelido}} </label></p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                  <input class="input-md  textinput textInput form-control" id="id_apelido" maxlength="30" [(ngModel)]="Lacador.apelido" name="apelido" placeholder="Digite o apelido" style="margin-bottom: 10px" type="text">
+                </div>
+
+                <label for="foneDDD1" class="control-label col-md-4  requiredField"> Fone 1 </label>
+                <div *ngIf="isView" class="col-sm-7">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.foneDDD1}} {{this.Lacador.fone1}} </label></p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                  <input class="form-control col-md-2" id="id_fone1" maxlength="2" [(ngModel)]="Lacador.foneDDD1" name="foneDDD1" placeholder="(##)" style="margin-bottom: 10px ; width:50" type="text">
+                  <input class="form-control" id="id_fone1" maxlength="30" [(ngModel)]="Lacador.fone1" name="fone1" placeholder="Digite um numero de telefone" style="margin-bottom: 10px;  margin-left: 5px" type="text">
+                </div>
+
+                <label for="foneDDD2" class="control-label col-md-4  requiredField"> Fone 2 </label>
+                <div *ngIf="isView" class="col-sm-7">
+                  <p style="margin-top: 10px " type="text"> <label style="font-weight: normal"> {{this.Lacador.foneDDD2}} {{this.Lacador.fone2}} </label></p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                  <input class="form-control col-md-2" id="id_fone2" maxlength="2" [(ngModel)]="Lacador.foneDDD2" name="foneDDD2" placeholder="(##)" style="margin-bottom: 10px; " type="text">
+                  <input class="form-control" id="id_fone2" maxlength="30" [(ngModel)]="Lacador.fone2" name="fone2" placeholder="Digite um numero de telefone" style="margin-bottom: 10px ; margin-left: 5px" type="text">
+                </div>
+
+                <label for="cpf" class="control-label col-md-4  requiredField"> CPF <span class="asteriskField">*</span> </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.cpf}} </label></p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                  <input class="input-md  textinput textInput form-control" id="id_sede" maxlength="30" [(ngModel)]="Lacador.cpf" name="cpf" placeholder="Digite o CPF do laçador" style="margin-bottom: 10px" type="text">
+                </div>
+
+
+
+                <label for="cpf" class="control-label col-md-4  requiredField"> Endereço <span class="asteriskField">*</span> </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal">{{this.Lacador.endereco}}</label> </p>
+                </div>
+                <div *ngIf="!isView" class="controls col-md-7 input-group">
+                  <input class="input-md  textinput textInput form-control" id="id_sede" maxlength="30" [(ngModel)]="Lacador.endereco" name="endereco" placeholder="Digite um endereço de referência" style="margin-bottom: 10px" type="text">
+                </div>
+
+
+
+                <label for="email" class="control-label col-md-4"> E-mail </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.email}} </label></p>
+                </div>
+                <div *ngIf="!isView" class="controls  col-md-7 input-group">
+                  <input class="input-md  textinput textInput form-control" id="id_email" maxlength="30" [(ngModel)]="Lacador.email" name="email" placeholder="Digite um e-mail de contato" style="margin-bottom: 10px" type="text">
+                </div>
+
+
+
+                <label for="dataAssociacao" class="control-label col-md-4  requiredField"> Data de Associação </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <div *ngIf="this.Lacador.dataAssociacao">
+                    <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{  this.Lacador.dataAssociacao }} </label></p>
+                  </div>
+                  <div *ngIf="!(this.Lacador.dataAssociacao)" >
+                    <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> Não informada </label></p>
+                  </div>
+                </div>
+                <div *ngIf="!isView" class="controls date col-md-7 input-group" style="margin-bottom: 10px">
+                  <input class="input-md textinput textInput form-control" placeholder="dd/MM/yyyy"
+                             id="dataAssociacao" name="dataAssociacao" [(ngModel)]="Lacador.arrayDataAssociacao" ngbDatepicker #d="ngbDatepicker" >
+                      <button class="input-group-addon" style="width: 8%"  (click)="d.toggle()" type="button" >
+                        <span class="fa fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;"></span>
+
+                      </button>
+
+
+                </div>
+
+                <label for="picture" class="control-label col-md-4"> picture </label>
+                <div *ngIf="isView" class="controls col-md-7 ">
+                  <p style="margin-top: 10px" type="text"> <label style="font-weight: normal"> {{this.Lacador.picture}} </label></p>
+                </div>
+                <div *ngIf="!isView" class="controls file col-md-7 input-group" style="margin-bottom: 10px">
+                  <input type="text" #pictureInput  class="input-md  form-control image-preview-filename" id="id_picture" name="picture" placeholder="Escolha uma foto do computador" disabled="disabled">
+                  <button class="input-group-addon" style="width: 8%"  (click)="onUploadPicture()" type="button" >
+                      <span class="fa fa-photo" style="width: 0.2rem; height: 1rem; cursor: pointer;"></span>
+                  </button>
+                </div>
+
+
+            </div> -->
+
+
+
+     <!-- INICIO::RODAPÉ DE AÇÕES -->
+     <div class="m-portlet__foot m-portlet__foot--fit">
+      <div class="m-form__actions m-form__actions">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-6">
+						<button *ngIf="!isView" id="submit-id-save" type="submit" class="btn btn-primary"><i class="icon-hand-right">Salvar</i></button>
+            <a class="m-nav__link" style="padding-left: 2rem"  [routerLink]="['/lacadores']"> Voltar </a>
+					</div>
+		 		</div>
+      </div>
+     </div>
+     <!-- FIM::RODAPÉ DE AÇÕES -->
+   </div>
+  </div>
+ <!-- FIM::PORTLET -->
+ </form>
+<!--end::Form-->
+</div>

@@ -77,8 +77,8 @@ export class LacadoresComponent implements OnInit {
     if (confirm("Confirma a exclusão do laçador \'" + nameLacador + "\'?")) {
       this.lacadoresService.removeLacador(idLacador).subscribe(data => {
         if (data.success) {
-          //TODO: Mensagem 
-          //this.flashMessage.show('Registro removido com sucesso.', { cssClass: 'alert-success', timeout: 5000 });
+          //TODO: Mensagem
+          alert('Registro removido com sucesso.');
           location.reload();
           //this.router.navigate(['/federacao']);
         }

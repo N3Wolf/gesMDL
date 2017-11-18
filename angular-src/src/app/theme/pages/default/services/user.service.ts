@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class UsersService {
+export class UserService {
   user: any;
   constructor(
     private authService: AuthService,

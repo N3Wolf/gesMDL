@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 //import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, Validators, ReactiveFormsModule   } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutModule } from '../../../../../layouts/layout.module';
 import { DefaultComponent } from '../../../default.component';
-import { UsersViewComponent } from './usersView.component';
-import {  Validators, ReactiveFormsModule  } from '@angular/forms';
+import { UsergroupsViewComponent } from './usergroupsView.component';
 
 //import { AuthGuard } from '../../guards/auth.guard';
 import { AuthService } from '../../../services/auth.service';
-import { UserService } from '../../../services/user.service';
+//import { FederacaoService } from '../../../services/federacao.service';
+import { UsergroupService } from '../../../services/usergroup.service';
+import { NgbModule, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { MyNgbDateParserFormatter } from '../../../../../../classes/myNgbDateParserFormatter';
+import { DatepickerConfigComponent } from '../../datepicker-config/datepicker-config.component';
 
 //import { SharedModule } from '../../../components/sharedModule.module';
 
@@ -21,7 +24,7 @@ const routes: Routes = [
     "children": [
       {
         "path": "",
-        "component": UsersViewComponent
+        "component": UsergroupsViewComponent
       }
     ]
   }
@@ -32,19 +35,22 @@ imports: [
     FormsModule,
     CommonModule,
     RouterModule.forChild(routes),
-    LayoutModule
+    LayoutModule,
+    NgbModule.forRoot()
   ], providers: [
     //FederacaoService,
     AuthService,
-    UserService,
-    ReactiveFormsModule,
-    Validators
+    UsergroupService,
+    { provide: NgbDateParserFormatter, useClass: MyNgbDateParserFormatter },
+    Validators,
+    ReactiveFormsModule
   ], exports: [
     RouterModule
   ], declarations: [
-    UsersViewComponent
+    UsergroupsViewComponent,
+    DatepickerConfigComponent
   ]
 })
-export class usersViewModule {
+export class lacadoresViewModule {
 
 }

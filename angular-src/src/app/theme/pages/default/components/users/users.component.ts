@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 //Depreciado
 //import { ValidateService } from '../../services/validate.service';
-import { UsersService } from '../../services/user.service';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Helpers } from '../../../../../helpers';
@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
 
     //Depreciado
     //private validateService: ValidateService,
-    private usersService: UsersService,
+    private usersService: UserService,
     private router: Router,
     private route: ActivatedRoute
   ) { }

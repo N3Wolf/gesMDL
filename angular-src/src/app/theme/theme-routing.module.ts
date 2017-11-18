@@ -42,6 +42,10 @@ const routes: Routes = [
         "loadChildren": ".\/pages\/default\/components\/users\/usersView\/usersView.module#usersViewModule"
       },
       {
+        "path": "usergroups",
+        "loadChildren": ".\/pages\/default\/components\/usergroups\/usergroups.module#UsergroupsModule"
+      },
+      {
         "path": "angular\/ng-bootstrap",
         "loadChildren": ".\/pages\/default\/angular\/ng-bootstrap\/ng-bootstrap.module#NgBootstrapModule"
       },

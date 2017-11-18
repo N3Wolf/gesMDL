@@ -5,9 +5,11 @@ import { LayoutModule } from '../../../../layouts/layout.module';
 import { DefaultComponent } from '../../default.component';
 //import { AuthGuard } from '../../guards/auth.guard';
 import { AuthService } from '../../services/auth.service';
+import { UsergroupService } from '../../services/usergroups.service';
 import { UserService } from '../../services/user.service';
-import { UsersComponent } from './users.component';
+import { UsergroupsComponent } from './usergroups.component';
 
+//import { SharedModule, SharedLacadoresComponent } from '../../components/sharedModule.module';
 
 const routes: Routes = [
   {
@@ -16,7 +18,7 @@ const routes: Routes = [
     "children": [
       {
         "path": "",
-        "component": UsersComponent
+        "component": UsergroupsComponent
       }
     ]
   }
@@ -26,14 +28,16 @@ imports: [
     CommonModule, RouterModule.forChild(routes), LayoutModule
   ], providers: [
     AuthService,
-    UserService,
+    UsergroupService,
+    UserService
   ], exports: [
-    RouterModule,
+    //RouterModule,
+    UsergroupsComponent
   ], declarations: [
-    UsersComponent
+    UsergroupsComponent
   ]
 })
-export class usersModule {
+export class UsergroupsModule {
 
 
 
